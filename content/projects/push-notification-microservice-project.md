@@ -23,13 +23,13 @@ Below are sequence diagrams that illustrate the internal and system-level flows 
 
 The internal sequence diagram outlines the core logic within the **Notification Service**. When a notification request is received, the system fetches the token, platform, and region, selects the appropriate notification provider, and sends the notification.
 
-{{< figure src="/images/Push_Notification_Service_Internal_Sequence_Diagram.png" >}}
+![Push_Notification_Service_Internal_Sequence_Diagram](/images/Push_Notification_Service_Internal_Sequence_Diagram.png)
 
 ### System Sequence Diagram
 
 The system sequence diagram shows how different components of the microservice, such as the **Chat Backend** and **Mobile App Frontend**, interact with the push notification service. The diagram demonstrates how tokens and regions are passed from the mobile app to the backend, which stores the data and sends it to the **Push Notification Service**.
 
-{{< figure src="/images/Push_Notification_System_Sequence_Diagram.png" >}}
+![Push_Notification_System_Sequence_Diagra](/images/Push_Notification_System_Sequence_Diagram.png)
 
 ## Features
 

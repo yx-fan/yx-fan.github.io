@@ -167,14 +167,10 @@
 <p>Below are sequence diagrams that illustrate the internal and system-level flows of the notification process.</p>
 <h3 id="internal-sequence-diagram">Internal Sequence Diagram</h3>
 <p>The internal sequence diagram outlines the core logic within the <strong>Notification Service</strong>. When a notification request is received, the system fetches the token, platform, and region, selects the appropriate notification provider, and sends the notification.</p>
-<figure><img src="/images/Push_Notification_Service_Internal_Sequence_Diagram.png">
-</figure>
-
+<p><img src="/images/Push_Notification_Service_Internal_Sequence_Diagram.png" alt="Push_Notification_Service_Internal_Sequence_Diagram"></p>
 <h3 id="system-sequence-diagram">System Sequence Diagram</h3>
 <p>The system sequence diagram shows how different components of the microservice, such as the <strong>Chat Backend</strong> and <strong>Mobile App Frontend</strong>, interact with the push notification service. The diagram demonstrates how tokens and regions are passed from the mobile app to the backend, which stores the data and sends it to the <strong>Push Notification Service</strong>.</p>
-<figure><img src="/images/Push_Notification_System_Sequence_Diagram.png">
-</figure>
-
+<p><img src="/images/Push_Notification_System_Sequence_Diagram.png" alt="Push_Notification_System_Sequence_Diagra"></p>
 <h2 id="features">Features</h2>
 <ul>
 <li><strong>Platform-Agnostic Notifications</strong>: The service supports sending notifications to both iOS and Android platforms using Firebase or APNs, with the flexibility to add more providers.</li>
