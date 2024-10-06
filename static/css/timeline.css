@@ -1,0 +1,152 @@
+/* 时间轴的总体样式 */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #ddd;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: 1;
+  }
+  
+  /* 时间轴项的样式 */
+  .timeline-item {
+    padding: 20px 40px;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+  }
+  
+  /* 交替对齐时间轴项 */
+  .timeline-item:nth-child(odd) {
+    position: relative;
+    left: 0;
+  }
+  
+  .timeline-item:nth-child(even) {
+    position: relative;
+    left: 50%;
+  }
+  
+  /* 蓝色圆圈的样式 */
+  .timeline-circle-left {
+    position: absolute;
+    top: 20px;
+    left: 100%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: 4px solid #2196F3;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .timeline-circle-right {
+    position: absolute;
+    top: 20px;
+    left: 0%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border: 4px solid #2196F3;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  /* 时间日期的样式 */
+  .timeline-item .timeline-date {
+    position: absolute;
+    top: 12px;
+    width: 120px;
+    text-align: right;
+    left: -160px;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-date {
+    left: calc(100% + 40px);
+    text-align: left;
+  }
+  
+  /* 内容的样式 */
+  .timeline-item .timeline-content h3 {
+    margin: 0;
+    font-size: 1.25em;
+  }
+  
+  .timeline-item .timeline-content p {
+    margin: 10px 0;
+    font-size: 1em;
+    line-height: 1.5;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+
+  /* 时间轴小点的样式 */
+.small-circle-left, .small-circle-right {
+    position: absolute;
+    top: 55px; /* 相对于大点的垂直位置 */
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border: 2px solid #FF9800; /* 小点的颜色 */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* 左侧的小点 */
+.small-circle-left {
+    left: 100%;
+    transform: translateX(-50%);
+}
+
+/* 右侧的小点 */
+.small-circle-right {
+    left: 0;
+    transform: translateX(-50%);
+}
+  
+  /* 响应式样式 */
+  @media screen and (max-width: 768px) {
+    .timeline::after {
+      left: 60px;
+    }
+  
+    .timeline-item {
+      width: 100%;
+      padding-left: 80px;
+      padding-right: 25px;
+      left: 0;
+    }
+  
+    .timeline-item .timeline-circle {
+      left: 60px;
+      transform: translateX(0);
+    }
+  
+    .timeline-item .timeline-date {
+      left: 0;
+      top: -20px;
+      text-align: left;
+      font-size: 0.9em;
+    }
+  
+    .timeline-item:nth-child(even) .timeline-date {
+      left: 0;
+    }
+  }
+  

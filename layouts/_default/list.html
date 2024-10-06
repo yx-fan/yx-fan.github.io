@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <head>
+    <!-- 引入自定义样式 -->
+    <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}">
+  </head>
+
+  <!-- 项目展示的网格布局 -->
+  <div class="project-grid">
+    {{ range .Pages }}
+      <div class="project-card">
+        <img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt="{{ .Title }}" class="project-image">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <!-- 只显示项目的摘要而不是整个内容 -->
+        <p>{{ .Summary }}</p>
+        <a href="{{ .Permalink }}" class="read-more">Read more</a>
+      </div>
+    {{ end }}
+  </div>
+{{ end }}

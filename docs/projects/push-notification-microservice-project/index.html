@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Push Notification Microservice | Yuxin Fan</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="A gRPC-based push notification microservice.">
+    <meta name="generator" content="Hugo 0.135.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://yx-fan.github.io/projects/push-notification-microservice-project/">
+    
+
+    <meta property="og:url" content="https://yx-fan.github.io/projects/push-notification-microservice-project/">
+  <meta property="og:site_name" content="Yuxin Fan">
+  <meta property="og:title" content="Push Notification Microservice">
+  <meta property="og:description" content="A gRPC-based push notification microservice.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-10-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-05T00:00:00+00:00">
+
+  <meta itemprop="name" content="Push Notification Microservice">
+  <meta itemprop="description" content="A gRPC-based push notification microservice.">
+  <meta itemprop="datePublished" content="2024-10-05T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-05T00:00:00+00:00">
+  <meta itemprop="wordCount" content="708">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Push Notification Microservice">
+  <meta name="twitter:description" content="A gRPC-based push notification microservice.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Yuxin Fan
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/resume.pdf" title="Resume page">
+              Resume
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        My Projects
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Push Notification Microservice</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2024-10-05T00:00:00Z">October 5, 2024</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h1 id="push-notification-microservice">Push Notification Microservice</h1>
+<h2 id="overview">Overview</h2>
+<p>The <strong>Push Notification Microservice</strong> is a project I developed to handle the complexities of sending push notifications to different platforms, such as iOS and Android, using multiple providers. The service is built with <strong>Node.js</strong> and <strong>gRPC</strong>, enabling it to efficiently send notifications based on the platform and region.</p>
+<p>Additionally, the project includes <strong>grpcui</strong>, a web-based UI that allows developers to interact with the gRPC service directly through a browser. This service is designed to be scalable and easily extendable, allowing integration with new notification providers in the future.</p>
+<h2 id="system-architecture">System Architecture</h2>
+<p>This microservice integrates with various platforms using different notification providers (such as Firebase for Android and APNs for iOS). The architecture is designed to select the appropriate provider based on the platform and region of the recipient.</p>
+<p>Below are sequence diagrams that illustrate the internal and system-level flows of the notification process.</p>
+<h3 id="internal-sequence-diagram">Internal Sequence Diagram</h3>
+<p>The internal sequence diagram outlines the core logic within the <strong>Notification Service</strong>. When a notification request is received, the system fetches the token, platform, and region, selects the appropriate notification provider, and sends the notification.</p>
+<figure><img src="/images/Push_Notification_Service_Internal_Sequence_Diagram.png">
+</figure>
+
+<h3 id="system-sequence-diagram">System Sequence Diagram</h3>
+<p>The system sequence diagram shows how different components of the microservice, such as the <strong>Chat Backend</strong> and <strong>Mobile App Frontend</strong>, interact with the push notification service. The diagram demonstrates how tokens and regions are passed from the mobile app to the backend, which stores the data and sends it to the <strong>Push Notification Service</strong>.</p>
+<figure><img src="/images/Push_Notification_System_Sequence_Diagram.png">
+</figure>
+
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Platform-Agnostic Notifications</strong>: The service supports sending notifications to both iOS and Android platforms using Firebase or APNs, with the flexibility to add more providers.</li>
+<li><strong>gRPC-Based Communication</strong>: The use of gRPC allows for high performance, strong typing, and efficient communication between services.</li>
+<li><strong>grpcui Integration</strong>: A web-based UI for easily interacting with and testing the gRPC server.</li>
+<li><strong>Scalable Design</strong>: The architecture is designed to scale horizontally and allows for easy addition of new notification providers or features.</li>
+</ul>
+<h2 id="project-structure">Project Structure</h2>
+<p>Here is a brief overview of the project structure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>push-notification-microservice/
+</span></span><span style="display:flex;"><span>│
+</span></span><span style="display:flex;"><span>├── .github/                <span style="color:#75715e"># GitHub workflows for CI/CD</span>
+</span></span><span style="display:flex;"><span>│   └── workflows/
+</span></span><span style="display:flex;"><span>│       └── release-notification.yml
+</span></span><span style="display:flex;"><span>├── docker.example/         <span style="color:#75715e"># Example Docker setup for development</span>
+</span></span><span style="display:flex;"><span>├── docs/                   <span style="color:#75715e"># Documentation and diagrams</span>
+</span></span><span style="display:flex;"><span>├── src/                    <span style="color:#75715e"># Source code</span>
+</span></span><span style="display:flex;"><span>│   ├── api/v1/             <span style="color:#75715e"># gRPC API definitions</span>
+</span></span><span style="display:flex;"><span>│   │   ├── generated/      <span style="color:#75715e"># Generated TypeScript code from proto files</span>
+</span></span><span style="display:flex;"><span>│   │   └── notification.proto  <span style="color:#75715e"># Protobuf file for push notification service</span>
+</span></span><span style="display:flex;"><span>│   ├── config/             <span style="color:#75715e"># Configuration files</span>
+</span></span><span style="display:flex;"><span>│   ├── controllers/        <span style="color:#75715e"># Controllers for handling requests</span>
+</span></span><span style="display:flex;"><span>│   ├── providers/          <span style="color:#75715e"># Providers for Firebase, APNs, etc.</span>
+</span></span><span style="display:flex;"><span>│   ├── services/           <span style="color:#75715e"># Core business logic</span>
+</span></span><span style="display:flex;"><span>│   ├── utils/              <span style="color:#75715e"># Utility functions (error handling, logging)</span>
+</span></span><span style="display:flex;"><span>│   ├── app.ts              <span style="color:#75715e"># Express app setup</span>
+</span></span><span style="display:flex;"><span>│   └── grpcServer.ts       <span style="color:#75715e"># gRPC server setup</span>
+</span></span><span style="display:flex;"><span>└── test/                   <span style="color:#75715e"># Unit and integration tests</span>
+</span></span></code></pre></div><h2 id="technologies-used">Technologies Used</h2>
+<ul>
+<li><strong>Node.js</strong>: The core framework used for building the backend of the microservice.</li>
+<li><strong>TypeScript</strong>: Ensures type safety throughout the project.</li>
+<li><strong>gRPC</strong>: Used for communication between services.</li>
+<li><strong>Firebase</strong>: A provider for sending notifications to Android devices.</li>
+<li><strong>APNs</strong>: A provider for sending notifications to iOS devices.</li>
+<li><strong>Docker</strong>: The service is containerized using Docker for easy deployment.</li>
+</ul>
+<h2 id="development-process">Development Process</h2>
+<p>Throughout the development process, my goal was to create a flexible and scalable solution that can handle notifications for multiple platforms in different regions. The microservice architecture was chosen to allow for easy scaling and integration of new notification providers.</p>
+<p>The use of gRPC offers several advantages, including efficient communication between services and the ability to strictly define APIs using Protobuf.</p>
+<p>I also implemented <strong>grpcui</strong> to provide an easy-to-use web interface for testing and interacting with the gRPC service. This has been invaluable during the testing phase.</p>
+<h2 id="diagrams">Diagrams</h2>
+<p>I created detailed sequence diagrams to help visualize the internal flow and system-level interactions of the microservice. These diagrams have been crucial in understanding how different components communicate with each other, and they helped guide the development process.</p>
+<p>You can view the diagrams above in the <strong>System Architecture</strong> section.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <strong>Push Notification Microservice</strong> was developed as part of a broader system for handling notifications across platforms and regions. It is a flexible, scalable solution that leverages the power of gRPC and supports multiple providers. In the future, I plan to extend this project by adding more notification providers and further optimizing performance.</p>
+<p>For more projects and updates, visit my <a href="https://github.com/yx-fan/push-notification-microservice">GitHub profile</a>.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://yx-fan.github.io/" >
+    &copy;  Yuxin Fan 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

@@ -1,0 +1,54 @@
+.project-grid {
+  display: flex;
+  flex-wrap: wrap; /* 使卡片自动换行 */
+  justify-content: center; /* 水平居中对齐 */
+  padding: 40px;
+  max-width: 1400px; /* 让网格更宽一些 */
+  margin: 0 auto;
+}
+
+.project-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px; /* 增加内边距 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 加深阴影效果 */
+  text-align: center;
+  max-width: 400px; /* 增加卡片的最大宽度 */
+  min-height: 400px; /* 保证卡片的最小高度 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 30px; /* 增加卡片之间的间距 */
+}
+
+.project-image {
+  width: 100%;
+  height: 250px; /* 增加图片高度 */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px; /* 增加图片和文本之间的间距 */
+}
+
+.project-card h2 {
+  font-size: 1.8em; /* 增加标题的字体大小 */
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  font-size: 1.1em; /* 增加摘要文字的字体大小 */
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px; /* 增加按钮的大小 */
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px; /* 圆角更大 */
+}
+
+.read-more:hover {
+  background-color: #0056b3;
+}
