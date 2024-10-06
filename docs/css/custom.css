@@ -14,12 +14,13 @@
   padding: 30px; /* 增加内边距 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 加深阴影效果 */
   text-align: center;
-  max-width: 400px; /* 增加卡片的最大宽度 */
+  flex-basis: calc(33.33% - 40px); /* 每个卡片占1/3宽度，减去外边距 */
+  max-width: calc(33.33% - 40px); /* 保证最大宽度和 flex-basis 一致 */
   min-height: 400px; /* 保证卡片的最小高度 */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 30px; /* 增加卡片之间的间距 */
+  margin: 20px; /* 增加卡片之间的间距 */
 }
 
 .project-image {
