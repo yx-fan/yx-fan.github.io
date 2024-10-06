@@ -15,5 +15,12 @@
       <guid>https://yx-fan.github.io/projects/msg-queue-microservice-project/</guid>
       <description>Learn how I built a message queue microservice using gRPC and RabbitMQ, with support for direct and fanout publish/subscribe models.</description>
     </item>
+    <item>
+      <title>Push Notification Microservice</title>
+      <link>https://yx-fan.github.io/projects/push-notification-microservice-project/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/projects/push-notification-microservice-project/</guid>
+      <description>A gRPC-based push notification microservice.</description>
+    </item>
   </channel>
 </rss>

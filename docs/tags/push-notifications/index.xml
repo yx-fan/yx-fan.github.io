@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Push Notifications on Yuxin Fan</title>
+    <link>https://yx-fan.github.io/tags/push-notifications/</link>
+    <description>Recent content in Push Notifications on Yuxin Fan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yx-fan.github.io/tags/push-notifications/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Push Notification Microservice</title>
+      <link>https://yx-fan.github.io/projects/push-notification-microservice-project/</link>
+      <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/projects/push-notification-microservice-project/</guid>
+      <description>A gRPC-based push notification microservice.</description>
+    </item>
+  </channel>
+</rss>

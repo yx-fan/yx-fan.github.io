@@ -2,6 +2,15 @@
 title: "Push Notification Microservice"
 date: 2024-10-05
 summary: "A gRPC-based push notification microservice."
+tags:
+  [
+    "gRPC",
+    "Microservices",
+    "Node.js",
+    "TypeScript",
+    "Docker",
+    "Push Notifications",
+  ]
 image: "/images/Microservice.png" # 项目图片路径
 ---
 

@@ -2,7 +2,7 @@
 title: "Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution"
 date: 2024-10-06
 summary: "Learn how I built a message queue microservice using gRPC and RabbitMQ, with support for direct and fanout publish/subscribe models."
-tags: ["gRPC", "RabbitMQ", "Microservices", "Docker", "Node.js"]
+tags: ["gRPC", "RabbitMQ", "Microservices", "Docker", "Node.js", "TypeScript"]
 image: "/images/Microservice.png"
 ---
 
