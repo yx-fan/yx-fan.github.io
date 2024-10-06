@@ -2,16 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://yx-fan.github.io/tags/authentication/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/automation/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/blockchain/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/cluster/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/decentralized/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://yx-fan.github.io/tags/docker/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/tags/grpc/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://yx-fan.github.io/tags/jwt/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://yx-fan.github.io/projects/msg-queue-microservice-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/tags/microservices/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/mongodb/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/projects/mongodb-infra-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/projects/</loc>
@@ -23,10 +47,22 @@
     <loc>https://yx-fan.github.io/tags/rabbitmq/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://yx-fan.github.io/tags/replica-set/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/restapi/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://yx-fan.github.io/tags/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/tags/typescript/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/web3/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/projects/web3-auth-core-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/</loc>

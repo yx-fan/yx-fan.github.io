@@ -16,7 +16,14 @@
       <description>Learn how I built a message queue microservice using gRPC and RabbitMQ, with support for direct and fanout publish/subscribe models.</description>
     </item>
     <item>
-      <title>Push Notification Microservice</title>
+      <title>MongoDB Cluster Setup: Automated Deployment for High Availability and Scalability</title>
+      <link>https://yx-fan.github.io/projects/mongodb-infra-project/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/projects/mongodb-infra-project/</guid>
+      <description>Automating the deployment of a highly available, sharded MongoDB cluster using Docker and shell scripts.</description>
+    </item>
+    <item>
+      <title>Push Notification Microservice: Scalable Multi-Platform Notification System</title>
       <link>https://yx-fan.github.io/projects/push-notification-microservice-project/</link>
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
       <guid>https://yx-fan.github.io/projects/push-notification-microservice-project/</guid>

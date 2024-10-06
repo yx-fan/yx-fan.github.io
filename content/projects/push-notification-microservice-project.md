@@ -1,5 +1,5 @@
 ---
-title: "Push Notification Microservice"
+title: "Push Notification Microservice: Scalable Multi-Platform Notification System"
 date: 2024-10-05
 summary: "A gRPC-based push notification microservice."
 tags:
@@ -13,8 +13,6 @@ tags:
   ]
 image: "/images/Microservice.png" # 项目图片路径
 ---
-
-# Push Notification Microservice
 
 ## Overview
 

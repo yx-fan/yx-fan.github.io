@@ -1,41 +1,41 @@
 .tag-list {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: wrap; /* 确保标签在适当位置换行 */
+    justify-content: flex-start; /* 标签从左到右排列 */
     padding: 0;
-    margin: 20px 0;
+    margin: 50px 300px; /* 在页面两边增加 margin，避免靠近边界 */
     list-style: none;
-    gap: 15px;
-  }
-  
-  .tag-list li {
+    gap: 20px; /* 增大 gap，使标签之间的间距更大 */
+}
+
+.tag-list li {
     background-color: #f0f0f0;
-    padding: 10px 15px;
-    border-radius: 20px;
+    padding: 12px 20px;
+    border-radius: 25px;
     font-size: 1rem;
     font-weight: 600;
     color: #007bff;
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .tag-list li:hover {
+    margin-bottom: 15px; /* 每个 tag 之间添加 margin */
+}
+
+.tag-list li:hover {
     background-color: #007bff;
     color: #fff;
-  }
-  
-  .tag-list a {
+}
+
+.tag-list a {
     text-decoration: none;
     color: inherit;
     transition: color 0.3s ease;
-  }
-  
-  .tag-list a:hover {
+}
+
+.tag-list a:hover {
     color: #fff;
-  }
-  
-  .tag-list span {
+}
+
+.tag-list span {
     font-size: 0.9rem;
     color: #666;
     margin-left: 5px;
-  }
-  
+}
