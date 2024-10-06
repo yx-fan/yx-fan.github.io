@@ -2,13 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://yx-fan.github.io/projects/</loc>
-    <lastmod>2024-10-05T00:00:00+00:00</lastmod>
+    <loc>https://yx-fan.github.io/tags/docker/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/projects/push-notification-microservice-project/</loc>
-    <lastmod>2024-10-05T00:00:00+00:00</lastmod>
+    <loc>https://yx-fan.github.io/tags/grpc/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/projects/msg-queue-microservice-project/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/microservices/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/projects/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/node.js/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/rabbitmq/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/</loc>
+    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/projects/push-notification-microservice-project/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/projects/chat/</loc>
@@ -17,7 +38,5 @@
     <loc>https://yx-fan.github.io/about/</loc>
   </url><url>
     <loc>https://yx-fan.github.io/categories/</loc>
-  </url><url>
-    <loc>https://yx-fan.github.io/tags/</loc>
   </url>
 </urlset>

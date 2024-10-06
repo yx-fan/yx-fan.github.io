@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Yuxin Fan</title>
+    <link>https://yx-fan.github.io/tags/docker/</link>
+    <description>Recent content in Docker on Yuxin Fan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yx-fan.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution</title>
+      <link>https://yx-fan.github.io/projects/msg-queue-microservice-project/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/projects/msg-queue-microservice-project/</guid>
+      <description>Learn how I built a message queue microservice using gRPC and RabbitMQ, with support for direct and fanout publish/subscribe models.</description>
+    </item>
+  </channel>
+</rss>

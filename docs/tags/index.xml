@@ -6,6 +6,42 @@
     <description>Recent content in Tags on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 06 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://yx-fan.github.io/tags/docker/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GRPC</title>
+      <link>https://yx-fan.github.io/tags/grpc/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/grpc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Microservices</title>
+      <link>https://yx-fan.github.io/tags/microservices/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/microservices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Node.js</title>
+      <link>https://yx-fan.github.io/tags/node.js/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/node.js/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://yx-fan.github.io/tags/rabbitmq/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/rabbitmq/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
