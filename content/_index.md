@@ -11,6 +11,8 @@ My strong background in finance, supported by certifications like CFA and FRM, e
 
 By combining my skills in full-stack development and financial strategy, I create impactful solutions that address complex challenges in both technology and finance. My ability to bridge these domains allows me to design systems that are not only functional and scalable but also aligned with strategic goals for sustainable growth.
 
-[View My Projects]({{< relref "projects" >}}) | [About Me]({{< relref "about" >}}) | [Contact Me](mailto:fan.yuxin@outlook.com)
+[🔍 View My Projects]({{< relref "projects" >}}) | [👤 About Me]({{< relref "about" >}}) | [🏷️ Explore By Tags]({{< relref "tags" >}})
+
+[✉️ Contact Me](mailto:fan.yuxin@outlook.com)
 
 ---

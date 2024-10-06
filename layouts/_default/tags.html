@@ -1,0 +1,21 @@
+{{ define "main" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }}</title>
+  <!-- 引入自定义CSS -->
+  <link rel="stylesheet" href="{{ "css/tag-list.css" | absURL }}">
+</head>
+<body>
+  <section>
+    <ul class="tag-list">
+      {{ range .Site.Taxonomies.tags }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span>({{ len .Pages }})</span></li>
+      {{ end }}
+    </ul>
+  </section>
+</body>
+</html>
+{{ end }}
