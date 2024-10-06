@@ -2,7 +2,7 @@
 title: "Push Notification Microservice"
 date: 2024-10-05
 summary: "A gRPC-based push notification microservice."
-image: "/images/chat-app-screenshot.png" # 项目图片路径
+image: "/images/Microservice.png" # 项目图片路径
 ---
 
 # Push Notification Microservice
