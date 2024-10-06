@@ -37,6 +37,19 @@
   margin-bottom: 15px;
 }
 
+/* 标题链接的样式：移除下划线，设置为粗体蓝色 */
+.project-card h2 a {
+  color: #007bff;
+  text-decoration: none; /* 去掉下划线 */
+  font-weight: bold;
+}
+
+/* 标题链接的hover效果：在鼠标悬停时显示下划线 */
+.project-card h2 a:hover {
+  color: #0056b3; /* 悬停时更深的蓝色 */
+  text-decoration: underline; /* 悬停时显示下划线 */
+}
+
 .project-card p {
   font-size: 1.1em; /* 摘要字体大小 */
 }
