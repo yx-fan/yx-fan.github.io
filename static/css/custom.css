@@ -9,11 +9,11 @@
 }
 
 .project-card {
-  background-color: #f9f9f9; /* 柔和的灰白色背景 */
-  border: 1px solid #ccc; /* 灰色边框 */
+  background-color: #fff;
+  border: 1px solid #ddd;
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 黑色阴影 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   text-align: center;
   flex-basis: calc(30% - 20px); /* 调整为30%，每行能放3个 */
   max-width: calc(30% - 20px); /* 保证最大宽度和 flex-basis 一致 */
@@ -27,7 +27,7 @@
 .project-image {
   width: 100%;
   height: 250px; /* 固定图片高度 */
-  object-fit: cover; /* 确保图片不失真，保持原始颜色 */
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 20px; /* 增加图片和文本之间的间距 */
 }
@@ -35,39 +35,38 @@
 .project-card h2 {
   font-size: 1.8em; /* 标题字体大小 */
   margin-bottom: 15px;
-  color: #333; /* 黑色标题 */
 }
 
-/* 标题链接的样式：移除下划线，设置为黑色 */
+/* 标题链接的样式：移除下划线，设置为粗体蓝色 */
 .project-card h2 a {
-  color: #333; /* 深灰/黑色 */
+  color: #007bff;
   text-decoration: none; /* 去掉下划线 */
-  font-weight: bold;
+  font-weight: normal;
+  font-family: 'Georgia', 'Times New Roman', serif;
 }
 
 /* 标题链接的hover效果：在鼠标悬停时显示下划线 */
 .project-card h2 a:hover {
-  color: #000; /* 悬停时为纯黑色 */
+  color: #0056b3; /* 悬停时更深的蓝色 */
   text-decoration: underline; /* 悬停时显示下划线 */
 }
 
 .project-card p {
   font-size: 1.1em; /* 摘要字体大小 */
-  color: #555; /* 灰色文字 */
 }
 
 .read-more {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 20px;
-  background-color: #000; /* 黑色按钮 */
-  color: white; /* 白色按钮文字 */
+  background-color: #007bff;
+  color: white;
   text-decoration: none;
   border-radius: 8px;
 }
 
 .read-more:hover {
-  background-color: #333; /* 悬停时按钮为深灰色 */
+  background-color: #0056b3;
 }
 
 /* 响应式布局：当屏幕宽度小于 1200px 时，每行显示 2 个卡片 */
