@@ -1,55 +1,72 @@
 .project-grid {
   display: flex;
-  flex-wrap: wrap; /* 使卡片自动换行 */
-  justify-content: center; /* 水平居中对齐 */
+  flex-wrap: wrap;
+  justify-content: space-between; /* 确保卡片均匀分布 */
   padding: 40px;
-  max-width: 1400px; /* 让网格更宽一些 */
+  max-width: 1400px;
   margin: 0 auto;
+  gap: 20px; /* 增加项目之间的间距 */
 }
 
 .project-card {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 30px; /* 增加内边距 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 加深阴影效果 */
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   text-align: center;
-  flex-basis: calc(33.33% - 40px); /* 每个卡片占1/3宽度，减去外边距 */
-  max-width: calc(33.33% - 40px); /* 保证最大宽度和 flex-basis 一致 */
+  flex-basis: calc(30% - 20px); /* 调整为30%，每行能放3个 */
+  max-width: calc(30% - 20px); /* 保证最大宽度和 flex-basis 一致 */
   min-height: 400px; /* 保证卡片的最小高度 */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 20px; /* 增加卡片之间的间距 */
+  margin: 10px; /* 卡片之间的间距 */
 }
 
 .project-image {
   width: 100%;
-  height: 250px; /* 增加图片高度 */
+  height: 250px; /* 固定图片高度 */
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 20px; /* 增加图片和文本之间的间距 */
 }
 
 .project-card h2 {
-  font-size: 1.8em; /* 增加标题的字体大小 */
+  font-size: 1.8em; /* 标题字体大小 */
   margin-bottom: 15px;
 }
 
 .project-card p {
-  font-size: 1.1em; /* 增加摘要文字的字体大小 */
+  font-size: 1.1em; /* 摘要字体大小 */
 }
 
 .read-more {
   display: inline-block;
   margin-top: 20px;
-  padding: 12px 20px; /* 增加按钮的大小 */
+  padding: 12px 20px;
   background-color: #007bff;
   color: white;
   text-decoration: none;
-  border-radius: 8px; /* 圆角更大 */
+  border-radius: 8px;
 }
 
 .read-more:hover {
   background-color: #0056b3;
+}
+
+/* 响应式布局：当屏幕宽度小于 1200px 时，每行显示 2 个卡片 */
+@media (max-width: 1200px) {
+  .project-card {
+    flex-basis: calc(45% - 20px); /* 每行显示 2 个卡片 */
+    max-width: calc(45% - 20px);
+  }
+}
+
+/* 响应式布局：当屏幕宽度小于 800px 时，每行显示 1 个卡片 */
+@media (max-width: 800px) {
+  .project-card {
+    flex-basis: calc(100% - 20px); /* 每行显示 1 个卡片 */
+    max-width: calc(100% - 20px);
+  }
 }
