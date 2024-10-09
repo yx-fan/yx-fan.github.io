@@ -1,5 +1,6 @@
 ---
 title: "Welcome to My Personal Website"
+layout: "index"
 description: "A brief introduction to who I am and what I do."
 ---
 
