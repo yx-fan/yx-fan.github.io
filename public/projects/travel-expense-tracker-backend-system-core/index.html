@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Travel Expense Tracker Backend System | Yuxin Fan</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="A modular backend system for managing travel expenses, built with Node.js and Express, featuring microservices, message queues, and integration with third-party APIs.">
+    <meta name="generator" content="Hugo 0.135.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KY4X96MYQ"></script>
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'G-4KY4X96MYQ');
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/">
+    
+
+    <meta property="og:url" content="https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/">
+  <meta property="og:site_name" content="Yuxin Fan">
+  <meta property="og:title" content="Travel Expense Tracker Backend System">
+  <meta property="og:description" content="A modular backend system for managing travel expenses, built with Node.js and Express, featuring microservices, message queues, and integration with third-party APIs.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-10-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-10T00:00:00+00:00">
+    <meta property="article:tag" content="Nodejs">
+    <meta property="article:tag" content="Express.js">
+    <meta property="article:tag" content="MongoDB">
+    <meta property="article:tag" content="RabbitMQ">
+    <meta property="article:tag" content="OCR">
+    <meta property="article:tag" content="RESTAPI">
+
+  <meta itemprop="name" content="Travel Expense Tracker Backend System">
+  <meta itemprop="description" content="A modular backend system for managing travel expenses, built with Node.js and Express, featuring microservices, message queues, and integration with third-party APIs.">
+  <meta itemprop="datePublished" content="2024-10-10T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-10T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1200">
+  <meta itemprop="keywords" content="Nodejs,Express.js,MongoDB,RabbitMQ,OCR,RESTAPI,System Design,JWT,AWS">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Travel Expense Tracker Backend System">
+  <meta name="twitter:description" content="A modular backend system for managing travel expenses, built with Node.js and Express, featuring microservices, message queues, and integration with third-party APIs.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Yuxin Fan
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/resume.pdf" title="Resume page">
+              Resume
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        My Projects
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Travel Expense Tracker Backend System</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2024-10-10T00:00:00Z">October 10, 2024</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="overview">Overview</h2>
+<p>The <strong>Travel Expense Tracker Backend System</strong> is a robust backend infrastructure designed to handle the complexities of managing travel expenses. The system architecture emphasizes <strong>modularity</strong>, <strong>scalability</strong>, and <strong>performance optimization</strong>. Built on <strong>Node.js</strong> and <strong>Express</strong>, it is designed to efficiently manage large volumes of user and expense data while ensuring a clean, maintainable structure.</p>
+<p><img src="/images/Travel-expense-architecture.png" alt="System Architecture"></p>
+<hr>
+<h2 id="system-design-principles">System Design Principles</h2>
+<h3 id="1-modularity-and-separation-of-concerns">1. Modularity and Separation of Concerns</h3>
+<p>The system follows a <strong>modular architecture</strong> that separates core functionalities into distinct, reusable components. This modularity is achieved by dividing the system into multiple services, each responsible for specific operations:</p>
+<ul>
+<li><strong>User Management Service</strong>: Handles user registration, authentication, and profile updates.</li>
+<li><strong>Trip Service</strong>: Manages all operations related to trip creation, updating, and deletion.</li>
+<li><strong>Expense Service</strong>: Handles expense-related actions, such as adding and modifying expenses, and ties them to their respective trips.</li>
+<li><strong>Notification Service</strong>: Manages in-app notifications, allowing the system to send alerts to users without impacting other services.</li>
+</ul>
+<p>This <strong>Separation of Concerns</strong> ensures that each service focuses on a single responsibility, making the system easier to maintain and extend over time. For example, changes in the notification service won’t affect the trip or expense services, allowing for independent scaling and updates.</p>
+<h3 id="2-scalability-and-performance-optimization">2. Scalability and Performance Optimization</h3>
+<p>The system is designed with scalability in mind, ensuring that it can handle increasing numbers of users and data without degradation in performance. The following strategies are implemented to achieve this:</p>
+<ul>
+<li>
+<p><strong>Asynchronous Task Processing</strong>: By using <strong>RabbitMQ</strong> as a message queue system, the backend offloads resource-heavy tasks like receipt OCR processing to a background service. This ensures that the main application remains responsive while long-running tasks are handled asynchronously.</p>
+</li>
+<li>
+<p><strong>Database Efficiency</strong>: <strong>MongoDB</strong> is used as the database due to its flexible schema design and ability to handle large-scale data efficiently. Indexing and schema design (as seen in the <code>Expense</code> and <code>Trip</code> models) ensure that queries are optimized for performance, even when dealing with a high volume of expense and trip data.</p>
+</li>
+<li>
+<p><strong>Load Distribution</strong>: Using cloud infrastructure (e.g., <strong>AWS</strong>), the system is designed to scale horizontally. As demand increases, additional instances of the backend can be deployed, distributing load across multiple servers to maintain responsiveness.</p>
+</li>
+</ul>
+<h3 id="3-api-design-and-integration">3. API Design and Integration</h3>
+<p>The backend exposes a well-structured <strong>RESTful API</strong> that allows the frontend (both iOS and Android) to interact with the system seamlessly. The API design follows a <strong>resource-based</strong> approach, where each endpoint corresponds to a specific resource (e.g., <code>/api/v1/expenses</code>, <code>/api/v1/trips</code>).</p>
+<p>Key API design principles include:</p>
+<ul>
+<li><strong>Consistency</strong>: All APIs follow consistent naming conventions and response structures, making them intuitive for developers and easy to document using <strong>Swagger</strong>.</li>
+<li><strong>Security</strong>: <strong>JWT</strong> (JSON Web Tokens) is used for secure user authentication, ensuring that only authorized users can access sensitive data. Middleware is employed to validate tokens and ensure that unauthorized access is blocked at the gateway.</li>
+<li><strong>Scalability</strong>: The API is designed to handle high volumes of requests efficiently, with endpoints optimized for both read-heavy and write-heavy operations.</li>
+</ul>
+<h3 id="4-middleware-and-cross-cutting-concerns">4. Middleware and Cross-Cutting Concerns</h3>
+<p>Middleware plays a vital role in ensuring the backend is both secure and performant. The system integrates various middleware components to handle cross-cutting concerns:</p>
+<ul>
+<li><strong>Error Handling</strong>: A global error handler catches exceptions and returns standardized error responses, ensuring that the system can recover gracefully from unexpected failures.</li>
+<li><strong>Authentication Middleware</strong>: <strong>Passport-JWT</strong> is used to manage user sessions and ensure that protected routes can only be accessed by authenticated users.</li>
+<li><strong>File Upload Management</strong>: <strong>Multer</strong> is used for handling file uploads (e.g., receipt images), allowing users to upload multiple files in a secure and efficient manner. This is especially important given the large size of receipt images that need to be processed by the OCR service.</li>
+</ul>
+<hr>
+<h2 id="performance-bottleneck-optimizing-ocr-request-handling-with-rabbitmq">Performance Bottleneck: Optimizing OCR Request Handling with RabbitMQ</h2>
+<p>One of the significant challenges faced during the development of the Travel Expense Tracker system was handling <strong>large volumes of OCR requests</strong> efficiently. As the system allows users to upload multiple receipts, the process of converting these images into structured data (such as merchant name, date, and amount) using OCR can be resource-intensive and time-consuming.</p>
+<h3 id="problem">Problem</h3>
+<p>Initially, the backend was designed to process OCR requests synchronously—meaning that every time a user uploaded a receipt, the system would immediately attempt to process the image and extract data. This led to several issues:</p>
+<ul>
+<li><strong>Increased Latency</strong>: As the number of users increased, so did the number of simultaneous OCR requests. Processing these requests in real time led to increased latency, causing delays in response times for users.</li>
+<li><strong>Server Overload</strong>: The high computational load of OCR processing put a strain on the backend, especially when multiple users uploaded large images simultaneously. This not only slowed down the system but also increased the risk of server crashes.</li>
+</ul>
+<h3 id="solution-asynchronous-processing-with-rabbitmq">Solution: Asynchronous Processing with RabbitMQ</h3>
+<p>To address this bottleneck, we implemented <strong>RabbitMQ</strong> for <strong>asynchronous task processing</strong>. The core idea is to decouple the OCR processing from the main request flow. Instead of processing OCR requests synchronously, we offload them to a <strong>background worker</strong> using RabbitMQ. Here’s how it works:</p>
+<ol>
+<li><strong>Receipt Upload</strong>: When a user uploads a receipt, the backend immediately accepts the request and saves the receipt image, returning a success response to the user.</li>
+<li><strong>Message Queue</strong>: The system then places a message on a RabbitMQ queue, indicating that an OCR task needs to be performed. This allows the main application to continue handling other user requests without being blocked by the OCR task.</li>
+<li><strong>Background Worker</strong>: A separate background worker consumes messages from the queue and processes the OCR tasks asynchronously. This worker can be scaled horizontally to handle large volumes of OCR requests.</li>
+<li><strong>Notification</strong>: Once the OCR task is complete, the worker updates the database and triggers a notification to inform the user that their receipt has been processed.</li>
+</ol>
+<h3 id="benefits">Benefits</h3>
+<ul>
+<li><strong>Improved Performance</strong>: By moving OCR tasks to the background, the system remains responsive to user actions, as it no longer has to wait for the OCR process to complete.</li>
+<li><strong>Scalability</strong>: RabbitMQ allows us to scale the background worker independently. As the number of OCR requests increases, we can add more workers to process tasks in parallel.</li>
+<li><strong>Reduced Server Load</strong>: By offloading resource-heavy tasks to background workers, the main backend servers experience reduced load, improving the overall stability and performance of the system.</li>
+</ul>
+<hr>
+<h2 id="key-technologies">Key Technologies</h2>
+<p>The following technologies are central to the Travel Expense Tracker Backend System:</p>
+<ul>
+<li><strong>Node.js</strong>: The backend is built on Node.js, providing a lightweight and efficient environment for handling multiple concurrent requests.</li>
+<li><strong>Express</strong>: The web framework used for routing and API management, known for its minimalistic approach and flexibility.</li>
+<li><strong>Mongoose &amp; MongoDB</strong>: For schema-based modeling of the data, ensuring flexibility in handling complex data relationships such as users, trips, and expenses.</li>
+<li><strong>JWT (JSON Web Token)</strong>: Secure authentication to protect user data and ensure safe API access.</li>
+<li><strong>RabbitMQ</strong>: As a message broker, RabbitMQ handles asynchronous tasks, decoupling time-intensive processes from the core system and improving overall performance.</li>
+</ul>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <strong>Travel Expense Tracker Backend System</strong> leverages modern design principles, including modularity, scalability, and performance optimization. By employing well-defined APIs, asynchronous task handling with RabbitMQ, and robust middleware, the system is designed to handle the challenges of managing travel expenses at scale, ensuring a seamless user experience across platforms.</p>
+<p>If you’re interested in the technical implementation, feel free to check out the project on <a href="https://github.com/yx-fan/TravelExpenseTrackerServer">GitHub</a>. This project is open-source and contributions are welcome.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/nodejs/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Nodejs</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/express.js/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Express.js</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/mongodb/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">MongoDB</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/rabbitmq/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">RabbitMQ</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/ocr/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">OCR</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/restapi/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">RESTAPI</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/system-design/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">System Design</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/jwt/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">JWT</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/aws/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AWS</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/projects/chat-platform-system-design-core-project/">CoolChat Platform System Design: Scalable and Secure Chat Architecture</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/projects/web3-auth-core-project/">Web3 Wallet Authentication System: A Decentralized Approach</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/projects/msg-queue-microservice-project/">Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/projects/mongodb-infra-project/">MongoDB Cluster Setup: Automated Deployment for High Availability and Scalability</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://yx-fan.github.io/" >
+    &copy;  Yuxin Fan 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

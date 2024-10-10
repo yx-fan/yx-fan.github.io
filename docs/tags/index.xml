@@ -6,8 +6,71 @@
     <description>Recent content in Tags on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS</title>
+      <link>https://yx-fan.github.io/tags/aws/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Express.js</title>
+      <link>https://yx-fan.github.io/tags/express.js/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/express.js/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JWT</title>
+      <link>https://yx-fan.github.io/tags/jwt/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/jwt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MongoDB</title>
+      <link>https://yx-fan.github.io/tags/mongodb/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nodejs</title>
+      <link>https://yx-fan.github.io/tags/nodejs/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OCR</title>
+      <link>https://yx-fan.github.io/tags/ocr/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/ocr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://yx-fan.github.io/tags/rabbitmq/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/rabbitmq/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RESTAPI</title>
+      <link>https://yx-fan.github.io/tags/restapi/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/restapi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System Design</title>
+      <link>https://yx-fan.github.io/tags/system-design/</link>
+      <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/system-design/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Authentication</title>
       <link>https://yx-fan.github.io/tags/authentication/</link>
@@ -44,6 +107,13 @@
       <description></description>
     </item>
     <item>
+      <title>Distribution</title>
+      <link>https://yx-fan.github.io/tags/distribution/</link>
+      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/distribution/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Docker</title>
       <link>https://yx-fan.github.io/tags/docker/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
@@ -58,13 +128,6 @@
       <description></description>
     </item>
     <item>
-      <title>JWT</title>
-      <link>https://yx-fan.github.io/tags/jwt/</link>
-      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/jwt/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Microservices</title>
       <link>https://yx-fan.github.io/tags/microservices/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
@@ -72,24 +135,10 @@
       <description></description>
     </item>
     <item>
-      <title>MongoDB</title>
-      <link>https://yx-fan.github.io/tags/mongodb/</link>
-      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/mongodb/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Node.js</title>
       <link>https://yx-fan.github.io/tags/node.js/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
       <guid>https://yx-fan.github.io/tags/node.js/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RabbitMQ</title>
-      <link>https://yx-fan.github.io/tags/rabbitmq/</link>
-      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/rabbitmq/</guid>
       <description></description>
     </item>
     <item>
@@ -111,20 +160,6 @@
       <link>https://yx-fan.github.io/tags/replica-set/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
       <guid>https://yx-fan.github.io/tags/replica-set/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RESTAPI</title>
-      <link>https://yx-fan.github.io/tags/restapi/</link>
-      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/restapi/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>System Design</title>
-      <link>https://yx-fan.github.io/tags/system-design/</link>
-      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/system-design/</guid>
       <description></description>
     </item>
     <item>

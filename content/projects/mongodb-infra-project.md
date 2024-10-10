@@ -2,7 +2,8 @@
 title: "MongoDB Cluster Setup: Automated Deployment for High Availability and Scalability"
 date: 2024-10-06
 summary: "Automating the deployment of a highly available, sharded MongoDB cluster using Docker and shell scripts."
-tags: ["MongoDB", "Docker", "Cluster", "Replica Set", "Automation"]
+tags:
+  ["MongoDB", "Docker", "Cluster", "Replica Set", "Automation", "Distribution"]
 image: "/images/Infra.png"
 ---
 
