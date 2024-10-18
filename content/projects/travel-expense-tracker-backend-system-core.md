@@ -5,7 +5,7 @@ draft: false
 summary: "A modular backend system for managing travel expenses, built with Node.js and Express, featuring microservices, message queues, and integration with third-party APIs."
 tags:
   [
-    "Nodejs",
+    "Node.js",
     "Express.js",
     "MongoDB",
     "RabbitMQ",

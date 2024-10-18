@@ -6,8 +6,15 @@
     <description>Recent content in AWS on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>One-to-One Chat Architecture and Implementation</title>
+      <link>https://yx-fan.github.io/projects/chat-one-to-one-core/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/projects/chat-one-to-one-core/</guid>
+      <description>An in-depth look into the one-to-one chat architecture and its implementation for handling text and media messages.</description>
+    </item>
     <item>
       <title>Travel Expense Tracker Backend System</title>
       <link>https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/</link>
