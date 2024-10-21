@@ -2,40 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://yx-fan.github.io/tags/chat/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/projects/chat-group-core/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/grpc/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/message-queue/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/mongodb/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/projects/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/node.js/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/real-time-messaging/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/system-design/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/web-socket/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/web3/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/</loc>
+    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://yx-fan.github.io/tags/aws/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/chat/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/tags/mongodb/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/projects/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/tags/node.js/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://yx-fan.github.io/projects/chat-one-to-one-core/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/tags/real-time-messaging/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/tags/system-design/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/tags/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/tags/web-socket/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/tags/web3/</loc>
-    <lastmod>2024-10-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/tags/express.js/</loc>
@@ -80,9 +89,6 @@
     <loc>https://yx-fan.github.io/tags/docker/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/grpc/</loc>
-    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://yx-fan.github.io/projects/msg-queue-microservice-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
@@ -109,9 +115,6 @@
   </url><url>
     <loc>https://yx-fan.github.io/tags/push-notifications/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/projects/chat/</loc>
-    <lastmod>2024-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/about/</loc>
   </url><url>

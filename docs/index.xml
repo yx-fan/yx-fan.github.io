@@ -6,8 +6,15 @@
     <description>Recent content in Welcome to My Personal Website on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Group Chat Architecture and Implementation</title>
+      <link>https://yx-fan.github.io/projects/chat-group-core/</link>
+      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/projects/chat-group-core/</guid>
+      <description>An in-depth exploration of the architecture and implementation of a group chat system, covering group creation, subscription, real-time messaging, and gRPC-based communication between microservices.</description>
+    </item>
     <item>
       <title>One-to-One Chat Architecture and Implementation</title>
       <link>https://yx-fan.github.io/projects/chat-one-to-one-core/</link>
@@ -56,13 +63,6 @@
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
       <guid>https://yx-fan.github.io/projects/push-notification-microservice-project/</guid>
       <description>A gRPC-based push notification microservice.</description>
-    </item>
-    <item>
-      <title>Chat Application</title>
-      <link>https://yx-fan.github.io/projects/chat/</link>
-      <pubDate>Fri, 04 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/projects/chat/</guid>
-      <description>A Web3 chat platform that supports decentralized authentication and real-time group messaging.</description>
     </item>
   </channel>
 </rss>

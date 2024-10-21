@@ -6,8 +6,15 @@
     <description>Recent content in Chat on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/tags/chat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Group Chat Architecture and Implementation</title>
+      <link>https://yx-fan.github.io/projects/chat-group-core/</link>
+      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/projects/chat-group-core/</guid>
+      <description>An in-depth exploration of the architecture and implementation of a group chat system, covering group creation, subscription, real-time messaging, and gRPC-based communication between microservices.</description>
+    </item>
     <item>
       <title>One-to-One Chat Architecture and Implementation</title>
       <link>https://yx-fan.github.io/projects/chat-one-to-one-core/</link>

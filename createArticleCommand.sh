@@ -1,0 +1,1 @@
+hugo new projects/chat-group-core.md

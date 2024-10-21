@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Group Chat Architecture and Implementation | Yuxin Fan</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="An in-depth exploration of the architecture and implementation of a group chat system, covering group creation, subscription, real-time messaging, and gRPC-based communication between microservices.">
+    <meta name="generator" content="Hugo 0.135.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KY4X96MYQ"></script>
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'G-4KY4X96MYQ');
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://yx-fan.github.io/projects/chat-group-core/">
+    
+
+    <meta property="og:url" content="https://yx-fan.github.io/projects/chat-group-core/">
+  <meta property="og:site_name" content="Yuxin Fan">
+  <meta property="og:title" content="Group Chat Architecture and Implementation">
+  <meta property="og:description" content="An in-depth exploration of the architecture and implementation of a group chat system, covering group creation, subscription, real-time messaging, and gRPC-based communication between microservices.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2024-10-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-10-20T00:00:00+00:00">
+    <meta property="article:tag" content="Chat">
+    <meta property="article:tag" content="System Design">
+    <meta property="article:tag" content="Real-Time Messaging">
+    <meta property="article:tag" content="Node.js">
+    <meta property="article:tag" content="MongoDB">
+    <meta property="article:tag" content="Message Queue">
+
+  <meta itemprop="name" content="Group Chat Architecture and Implementation">
+  <meta itemprop="description" content="An in-depth exploration of the architecture and implementation of a group chat system, covering group creation, subscription, real-time messaging, and gRPC-based communication between microservices.">
+  <meta itemprop="datePublished" content="2024-10-20T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-20T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1122">
+  <meta itemprop="keywords" content="Chat,System Design,Real-Time Messaging,Node.js,MongoDB,Message Queue,Web Socket,Web3,GRPC">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Group Chat Architecture and Implementation">
+  <meta name="twitter:description" content="An in-depth exploration of the architecture and implementation of a group chat system, covering group creation, subscription, real-time messaging, and gRPC-based communication between microservices.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Yuxin Fan
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/resume.pdf" title="Resume page">
+              Resume
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        My Projects
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Group Chat Architecture and Implementation</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2024-10-20T00:00:00Z">October 20, 2024</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>In this article, I’ll walk through the architecture and implementation details of a <strong>Group Chat System</strong>. This system allows users to create groups, send and receive messages in real-time, and ensures message delivery even when users are offline. The architecture leverages <strong>message queues</strong> and <strong>gRPC-based microservices</strong> for efficient, reliable communication between the backend services, ensuring seamless interactions. Below, I’ll explore both the group creation process and the messaging flow using detailed sequence charts to illustrate each step.</p>
+<hr>
+<h2 id="1-group-creation-and-subscription">1. Group Creation and Subscription</h2>
+<p>This section explores how users create groups and subscribe to receive group messages. The flow covers creating a group, notifying group members, and managing online and offline statuses for group message delivery.</p>
+<h3 id="sequence-flow">Sequence Flow</h3>
+<p>Here’s the step-by-step sequence for creating a group and subscribing members:</p>
+<ol>
+<li>
+<p><strong>Group Creation via API</strong><br>
+User A sends a POST request to create a group. This request is processed by the backend, which stores group details in the database. The user&rsquo;s JWT token is verified before creating the group. A dedicated function is used to handle group creation notifications to ensure group members are informed.</p>
+</li>
+<li>
+<p><strong>notify_create_group Event</strong><br>
+Once the group is successfully created via the API, the <strong>notify_create_group</strong> event is sent from the client to the backend. This event signals the backend to notify the relevant group members that the group has been created. A backend function processes this request and sends an <strong>a_group_created</strong> message to the relevant group members directly via their WebSocket connection.</p>
+<ul>
+<li><strong>Direct Message Sending</strong>: The backend sends notifications directly to the front-ends of the group members via WebSockets, bypassing the message queue system.</li>
+</ul>
+</li>
+<li>
+<p><strong>Member Subscription</strong><br>
+After receiving the notification, each group member subscribes to the group topic using the <strong>subscribe_to_group</strong> event. This event is processed by a function designed to ensure that the member is successfully subscribed to the group&rsquo;s messages.</p>
+</li>
+<li>
+<p><strong>Handling Offline Members</strong><br>
+If a member is offline during group creation, the notification is stored, and they will receive it upon reconnection. The system ensures that group members are subscribed as soon as they reconnect.</p>
+</li>
+</ol>
+<hr>
+<h2 id="2-group-chat-for-text-messages">2. Group Chat for Text Messages</h2>
+<p>Once a group is created and members are subscribed, the system enables real-time messaging between group members. The flow includes sending, receiving, and acknowledging group messages, and handling offline members.</p>
+<h3 id="sequence-flow-1">Sequence Flow</h3>
+<ol>
+<li>
+<p><strong>User Authentication</strong><br>
+Users authenticate via JWT tokens to establish a secure WebSocket connection. A function is responsible for handling the connection, verifying user credentials, and connecting them to the group chat system.</p>
+</li>
+<li>
+<p><strong>send_group_message Event</strong><br>
+Users send messages to the group via the <strong>send_group_message</strong> event. A backend function validates, encrypts, and stores the message in the database. After saving the message, the system uses a message queue to publish it to the group topic.</p>
+</li>
+<li>
+<p><strong>Message Delivery</strong><br>
+Once the message is published to the group topic, it is delivered to all online group members in real-time. For offline users, the message is stored for delivery when they reconnect. Each group member acknowledges receiving the message using the <strong>acknowledge_group_message</strong> event.</p>
+<ul>
+<li><strong>acknowledge_group_message Event</strong>: After receiving a message, each member sends an acknowledgment back to the server. A backend function processes these acknowledgments, updating the message&rsquo;s status to &ldquo;read.&rdquo;</li>
+</ul>
+</li>
+<li>
+<p><strong>Error Handling and Rollback</strong><br>
+If an error occurs during the message-sending process, the system emits an error event to the sender. If the message has been stored but not fully processed, a rollback mechanism is used to revert any changes to the message status in the database.</p>
+</li>
+</ol>
+<hr>
+<h2 id="3-group-chat-for-non-text-messages-media">3. Group Chat for Non-Text Messages (Media)</h2>
+<p>For sending media (such as images or videos) in a group chat, the process involves uploading files to cloud storage before sending the message.</p>
+<h3 id="sequence-flow-2">Sequence Flow</h3>
+<ol>
+<li>
+<p><strong>Request Pre-signed URL</strong><br>
+Users request a pre-signed URL for media uploads from the backend. This request is processed by a backend function that generates an upload URL for AWS S3 and returns it to the user.</p>
+</li>
+<li>
+<p><strong>Upload Media to Cloud</strong><br>
+Users upload media files to AWS S3 using the pre-signed URL. Once the upload is complete, they send the media URL to the group via the <strong>send_group_message</strong> event. The media URL is treated like other message content and stored in the database.</p>
+</li>
+<li>
+<p><strong>Media Message Delivery</strong><br>
+After the media message is sent and stored, it is delivered to the group members in real-time. Online members receive the media URL immediately, while offline members will receive it when they reconnect.</p>
+</li>
+<li>
+<p><strong>Handling Errors</strong><br>
+If an error occurs during the media upload or message sending process, an error event is emitted to the user, and the message status is rolled back if necessary.</p>
+</li>
+</ol>
+<hr>
+<h2 id="4-data-model-design">4. Data Model Design</h2>
+<p>The system&rsquo;s data model is designed to store information about groups, messages, and their statuses efficiently. Here’s a breakdown of the key models used:</p>
+<ol>
+<li>
+<p><strong>Group Model</strong></p>
+<ul>
+<li>The <strong>Group</strong> model defines the structure of a chat group, including its name, description, members, and metadata (such as who created the group and when). Each group can have multiple members, and member information is stored with a reference to a <code>UserProfile</code>. A group also tracks who the current owner is, allowing for ownership transfers.</li>
+<li><strong>Members</strong>: The list of members is stored as an array within the group schema. Each member contains the user ID (referencing the <code>UserProfile</code>) and a <code>joinedAt</code> timestamp, indicating when the member joined the group.</li>
+</ul>
+</li>
+<li>
+<p><strong>GroupMessage Model</strong></p>
+<ul>
+<li>The <strong>GroupMessage</strong> model stores individual messages sent within a group. Each message is associated with a group and a sender (both referencing the respective <code>Group</code> and <code>UserProfile</code> models). Messages can either be text-based or media-based, with fields for both text content and media URLs.</li>
+<li><strong>Types of Messages</strong>: The message type is defined with an enum that supports &rsquo;text&rsquo;, &lsquo;image&rsquo;, &lsquo;video&rsquo;, and &lsquo;audio&rsquo;. The model also tracks when the message was created and last updated.</li>
+</ul>
+</li>
+<li>
+<p><strong>GroupMessageStatus Model</strong></p>
+<ul>
+<li>The <strong>GroupMessageStatus</strong> model is designed to track the delivery and read statuses of messages for each group member. This allows the system to know which users have received and read each message. It references both the <code>GroupMessage</code> and <code>UserProfile</code> models to associate status updates with specific messages and users.</li>
+<li><strong>Delivered and Read Flags</strong>: The model includes <code>delivered</code> and <code>read</code> boolean flags to track whether a message has been delivered and/or read by the user. The <code>updatedAt</code> field allows the system to keep track of when these statuses were last modified.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>This architecture outlines how group chat works for both text and media messages in a real-time, secure environment. By leveraging <strong>WebSocket connections</strong>, <strong>gRPC-based microservices</strong>, and <strong>message queues</strong>, the system efficiently handles message delivery and ensures reliability for both online and offline users. The sequence charts illustrate the key WebSocket events like <strong>notify_create_group</strong>, <strong>send_group_message</strong>, <strong>subscribe_to_group</strong>, and <strong>acknowledge_group_message</strong>, which form the backbone of the group chat&rsquo;s functionality. The data model design ensures that group information, messages, and statuses are stored efficiently, providing the necessary structure to support real-time communication.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/chat/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Chat</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/system-design/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">System Design</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/real-time-messaging/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Real-Time Messaging</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/node.js/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Node.js</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/mongodb/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">MongoDB</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/message-queue/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Message Queue</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/web-socket/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Web Socket</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/web3/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Web3</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/grpc/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GRPC</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/projects/chat-one-to-one-core/">One-to-One Chat Architecture and Implementation</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/projects/chat-platform-system-design-core-project/">CoolChat Platform System Design: Scalable and Secure Chat Architecture</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/projects/travel-expense-tracker-backend-system-core/">Travel Expense Tracker Backend System</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/projects/msg-queue-microservice-project/">Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/projects/web3-auth-core-project/">Web3 Wallet Authentication System: A Decentralized Approach</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/projects/push-notification-microservice-project/">Push Notification Microservice: Scalable Multi-Platform Notification System</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/projects/mongodb-infra-project/">MongoDB Cluster Setup: Automated Deployment for High Availability and Scalability</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://yx-fan.github.io/" >
+    &copy;  Yuxin Fan 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
