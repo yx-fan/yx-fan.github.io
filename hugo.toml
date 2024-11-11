@@ -29,3 +29,13 @@ theme = "ananke"
   url = "/resume.pdf"
   weight = 5
 
+[Params]
+  Social = [
+    { name = "LinkedIn", url = "https://linkedin.com/in/yuxinfan" }
+  ]
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+ignoreLogs = ["warning-goldmark-raw-html"]

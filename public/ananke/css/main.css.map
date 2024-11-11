@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/Users/yuxinfan/GitHub/yx-fan.github.io",
+	"sourceRoot": "/Users/yuxinfan/projects/yx-fan.github.io",
 	"sources": [
 		"ananke/css/main.css"
 	],

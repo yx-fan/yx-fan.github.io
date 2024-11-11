@@ -2,122 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://yx-fan.github.io/tags/chat/</loc>
+    <loc>http://localhost:1313/tags/chat/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/projects/chat-group-core/</loc>
+    <loc>http://localhost:1313/projects/chat-group-core/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/grpc/</loc>
+    <loc>http://localhost:1313/tags/grpc/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/message-queue/</loc>
+    <loc>http://localhost:1313/tags/message-queue/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/mongodb/</loc>
+    <loc>http://localhost:1313/tags/mongodb/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/projects/</loc>
+    <loc>http://localhost:1313/projects/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/node.js/</loc>
+    <loc>http://localhost:1313/tags/node.js/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/real-time-messaging/</loc>
+    <loc>http://localhost:1313/tags/real-time-messaging/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/system-design/</loc>
+    <loc>http://localhost:1313/tags/system-design/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/web-socket/</loc>
+    <loc>http://localhost:1313/tags/web-socket/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/web3/</loc>
+    <loc>http://localhost:1313/tags/web3/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/aws/</loc>
+    <loc>http://localhost:1313/tags/aws/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/projects/chat-one-to-one-core/</loc>
+    <loc>http://localhost:1313/projects/chat-one-to-one-core/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/express.js/</loc>
+    <loc>http://localhost:1313/tags/express.js/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/jwt/</loc>
+    <loc>http://localhost:1313/tags/jwt/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/ocr/</loc>
+    <loc>http://localhost:1313/tags/ocr/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/rabbitmq/</loc>
+    <loc>http://localhost:1313/tags/rabbitmq/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/restapi/</loc>
+    <loc>http://localhost:1313/tags/restapi/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/</loc>
+    <loc>http://localhost:1313/projects/travel-expense-tracker-backend-system-core/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/authentication/</loc>
+    <loc>http://localhost:1313/tags/authentication/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/automation/</loc>
+    <loc>http://localhost:1313/tags/automation/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/blockchain/</loc>
+    <loc>http://localhost:1313/tags/blockchain/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/cluster/</loc>
+    <loc>http://localhost:1313/tags/cluster/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/projects/chat-platform-system-design-core-project/</loc>
+    <loc>http://localhost:1313/projects/chat-platform-system-design-core-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/decentralized/</loc>
+    <loc>http://localhost:1313/tags/decentralized/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/distribution/</loc>
+    <loc>http://localhost:1313/tags/distribution/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/docker/</loc>
+    <loc>http://localhost:1313/tags/docker/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/projects/msg-queue-microservice-project/</loc>
+    <loc>http://localhost:1313/projects/msg-queue-microservice-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/microservices/</loc>
+    <loc>http://localhost:1313/tags/microservices/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/projects/mongodb-infra-project/</loc>
+    <loc>http://localhost:1313/projects/mongodb-infra-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/redis/</loc>
+    <loc>http://localhost:1313/tags/redis/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/replica-set/</loc>
+    <loc>http://localhost:1313/tags/replica-set/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/typescript/</loc>
+    <loc>http://localhost:1313/tags/typescript/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/projects/web3-auth-core-project/</loc>
+    <loc>http://localhost:1313/projects/web3-auth-core-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/projects/push-notification-microservice-project/</loc>
+    <loc>http://localhost:1313/projects/push-notification-microservice-project/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/push-notifications/</loc>
+    <loc>http://localhost:1313/tags/push-notifications/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>https://yx-fan.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

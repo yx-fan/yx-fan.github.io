@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>System Design on Yuxin Fan</title>
-    <link>https://yx-fan.github.io/tags/system-design/</link>
+    <link>http://localhost:1313/tags/system-design/</link>
     <description>Recent content in System Design on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://yx-fan.github.io/tags/system-design/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/system-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Group Chat Architecture and Implementation</title>
-      <link>https://yx-fan.github.io/projects/chat-group-core/</link>
+      <link>http://localhost:1313/projects/chat-group-core/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/projects/chat-group-core/</guid>
+      <guid>http://localhost:1313/projects/chat-group-core/</guid>
       <description>An in-depth exploration of the architecture and implementation of a group chat system, covering group creation, subscription, real-time messaging, and gRPC-based communication between microservices.</description>
     </item>
     <item>
       <title>One-to-One Chat Architecture and Implementation</title>
-      <link>https://yx-fan.github.io/projects/chat-one-to-one-core/</link>
+      <link>http://localhost:1313/projects/chat-one-to-one-core/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/projects/chat-one-to-one-core/</guid>
+      <guid>http://localhost:1313/projects/chat-one-to-one-core/</guid>
       <description>An in-depth look into the one-to-one chat architecture and its implementation for handling text and media messages.</description>
     </item>
     <item>
       <title>Travel Expense Tracker Backend System</title>
-      <link>https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/</link>
+      <link>http://localhost:1313/projects/travel-expense-tracker-backend-system-core/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/</guid>
+      <guid>http://localhost:1313/projects/travel-expense-tracker-backend-system-core/</guid>
       <description>A modular backend system for managing travel expenses, built with Node.js and Express, featuring microservices, message queues, and integration with third-party APIs.</description>
     </item>
     <item>
       <title>CoolChat Platform System Design: Scalable and Secure Chat Architecture</title>
-      <link>https://yx-fan.github.io/projects/chat-platform-system-design-core-project/</link>
+      <link>http://localhost:1313/projects/chat-platform-system-design-core-project/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/projects/chat-platform-system-design-core-project/</guid>
+      <guid>http://localhost:1313/projects/chat-platform-system-design-core-project/</guid>
       <description>A scalable, real-time chat platform leveraging Web3 authentication, microservices architecture, and message queuing for high concurrency and performance.</description>
     </item>
   </channel>
