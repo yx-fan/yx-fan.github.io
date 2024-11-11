@@ -6,7 +6,7 @@ This is a personal website that I created to showcase my projects and skills. It
 
 ## Website
 
-You can view the website at [https://yx-fang.github.io](https://yx-fang.github.io).
+You can view the website at [https://yx-fan.github.io](https://yx-fan.github.io).
 
 ## Prerequisites
 
