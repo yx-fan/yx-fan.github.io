@@ -2,199 +2,199 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Yuxin Fan</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://yx-fan.github.io/tags/</link>
     <description>Recent content in Tags on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yx-fan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chat</title>
-      <link>http://localhost:1313/tags/chat/</link>
+      <link>https://yx-fan.github.io/tags/chat/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/chat/</guid>
+      <guid>https://yx-fan.github.io/tags/chat/</guid>
       <description></description>
     </item>
     <item>
       <title>GRPC</title>
-      <link>http://localhost:1313/tags/grpc/</link>
+      <link>https://yx-fan.github.io/tags/grpc/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/grpc/</guid>
+      <guid>https://yx-fan.github.io/tags/grpc/</guid>
       <description></description>
     </item>
     <item>
       <title>Message Queue</title>
-      <link>http://localhost:1313/tags/message-queue/</link>
+      <link>https://yx-fan.github.io/tags/message-queue/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/message-queue/</guid>
+      <guid>https://yx-fan.github.io/tags/message-queue/</guid>
       <description></description>
     </item>
     <item>
       <title>MongoDB</title>
-      <link>http://localhost:1313/tags/mongodb/</link>
+      <link>https://yx-fan.github.io/tags/mongodb/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mongodb/</guid>
+      <guid>https://yx-fan.github.io/tags/mongodb/</guid>
       <description></description>
     </item>
     <item>
       <title>Node.js</title>
-      <link>http://localhost:1313/tags/node.js/</link>
+      <link>https://yx-fan.github.io/tags/node.js/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/node.js/</guid>
+      <guid>https://yx-fan.github.io/tags/node.js/</guid>
       <description></description>
     </item>
     <item>
       <title>Real-Time Messaging</title>
-      <link>http://localhost:1313/tags/real-time-messaging/</link>
+      <link>https://yx-fan.github.io/tags/real-time-messaging/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/real-time-messaging/</guid>
+      <guid>https://yx-fan.github.io/tags/real-time-messaging/</guid>
       <description></description>
     </item>
     <item>
       <title>System Design</title>
-      <link>http://localhost:1313/tags/system-design/</link>
+      <link>https://yx-fan.github.io/tags/system-design/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/system-design/</guid>
+      <guid>https://yx-fan.github.io/tags/system-design/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Socket</title>
-      <link>http://localhost:1313/tags/web-socket/</link>
+      <link>https://yx-fan.github.io/tags/web-socket/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-socket/</guid>
+      <guid>https://yx-fan.github.io/tags/web-socket/</guid>
       <description></description>
     </item>
     <item>
       <title>Web3</title>
-      <link>http://localhost:1313/tags/web3/</link>
+      <link>https://yx-fan.github.io/tags/web3/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web3/</guid>
+      <guid>https://yx-fan.github.io/tags/web3/</guid>
       <description></description>
     </item>
     <item>
       <title>AWS</title>
-      <link>http://localhost:1313/tags/aws/</link>
+      <link>https://yx-fan.github.io/tags/aws/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/aws/</guid>
+      <guid>https://yx-fan.github.io/tags/aws/</guid>
       <description></description>
     </item>
     <item>
       <title>Express.js</title>
-      <link>http://localhost:1313/tags/express.js/</link>
+      <link>https://yx-fan.github.io/tags/express.js/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/express.js/</guid>
+      <guid>https://yx-fan.github.io/tags/express.js/</guid>
       <description></description>
     </item>
     <item>
       <title>JWT</title>
-      <link>http://localhost:1313/tags/jwt/</link>
+      <link>https://yx-fan.github.io/tags/jwt/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/jwt/</guid>
+      <guid>https://yx-fan.github.io/tags/jwt/</guid>
       <description></description>
     </item>
     <item>
       <title>OCR</title>
-      <link>http://localhost:1313/tags/ocr/</link>
+      <link>https://yx-fan.github.io/tags/ocr/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ocr/</guid>
+      <guid>https://yx-fan.github.io/tags/ocr/</guid>
       <description></description>
     </item>
     <item>
       <title>RabbitMQ</title>
-      <link>http://localhost:1313/tags/rabbitmq/</link>
+      <link>https://yx-fan.github.io/tags/rabbitmq/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rabbitmq/</guid>
+      <guid>https://yx-fan.github.io/tags/rabbitmq/</guid>
       <description></description>
     </item>
     <item>
       <title>RESTAPI</title>
-      <link>http://localhost:1313/tags/restapi/</link>
+      <link>https://yx-fan.github.io/tags/restapi/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/restapi/</guid>
+      <guid>https://yx-fan.github.io/tags/restapi/</guid>
       <description></description>
     </item>
     <item>
       <title>Authentication</title>
-      <link>http://localhost:1313/tags/authentication/</link>
+      <link>https://yx-fan.github.io/tags/authentication/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/authentication/</guid>
+      <guid>https://yx-fan.github.io/tags/authentication/</guid>
       <description></description>
     </item>
     <item>
       <title>Automation</title>
-      <link>http://localhost:1313/tags/automation/</link>
+      <link>https://yx-fan.github.io/tags/automation/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/automation/</guid>
+      <guid>https://yx-fan.github.io/tags/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>Blockchain</title>
-      <link>http://localhost:1313/tags/blockchain/</link>
+      <link>https://yx-fan.github.io/tags/blockchain/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/blockchain/</guid>
+      <guid>https://yx-fan.github.io/tags/blockchain/</guid>
       <description></description>
     </item>
     <item>
       <title>Cluster</title>
-      <link>http://localhost:1313/tags/cluster/</link>
+      <link>https://yx-fan.github.io/tags/cluster/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cluster/</guid>
+      <guid>https://yx-fan.github.io/tags/cluster/</guid>
       <description></description>
     </item>
     <item>
       <title>Decentralized</title>
-      <link>http://localhost:1313/tags/decentralized/</link>
+      <link>https://yx-fan.github.io/tags/decentralized/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/decentralized/</guid>
+      <guid>https://yx-fan.github.io/tags/decentralized/</guid>
       <description></description>
     </item>
     <item>
       <title>Distribution</title>
-      <link>http://localhost:1313/tags/distribution/</link>
+      <link>https://yx-fan.github.io/tags/distribution/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/distribution/</guid>
+      <guid>https://yx-fan.github.io/tags/distribution/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/tags/docker/</link>
+      <link>https://yx-fan.github.io/tags/docker/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/docker/</guid>
+      <guid>https://yx-fan.github.io/tags/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Microservices</title>
-      <link>http://localhost:1313/tags/microservices/</link>
+      <link>https://yx-fan.github.io/tags/microservices/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/microservices/</guid>
+      <guid>https://yx-fan.github.io/tags/microservices/</guid>
       <description></description>
     </item>
     <item>
       <title>Redis</title>
-      <link>http://localhost:1313/tags/redis/</link>
+      <link>https://yx-fan.github.io/tags/redis/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/redis/</guid>
+      <guid>https://yx-fan.github.io/tags/redis/</guid>
       <description></description>
     </item>
     <item>
       <title>Replica Set</title>
-      <link>http://localhost:1313/tags/replica-set/</link>
+      <link>https://yx-fan.github.io/tags/replica-set/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/replica-set/</guid>
+      <guid>https://yx-fan.github.io/tags/replica-set/</guid>
       <description></description>
     </item>
     <item>
       <title>TypeScript</title>
-      <link>http://localhost:1313/tags/typescript/</link>
+      <link>https://yx-fan.github.io/tags/typescript/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/typescript/</guid>
+      <guid>https://yx-fan.github.io/tags/typescript/</guid>
       <description></description>
     </item>
     <item>
       <title>Push Notifications</title>
-      <link>http://localhost:1313/tags/push-notifications/</link>
+      <link>https://yx-fan.github.io/tags/push-notifications/</link>
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/push-notifications/</guid>
+      <guid>https://yx-fan.github.io/tags/push-notifications/</guid>
       <description></description>
     </item>
   </channel>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Yuxin Fan</title>
-    <link>http://localhost:1313/tags/docker/</link>
+    <link>https://yx-fan.github.io/tags/docker/</link>
     <description>Recent content in Docker on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yx-fan.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution</title>
-      <link>http://localhost:1313/projects/msg-queue-microservice-project/</link>
+      <link>https://yx-fan.github.io/projects/msg-queue-microservice-project/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/msg-queue-microservice-project/</guid>
+      <guid>https://yx-fan.github.io/projects/msg-queue-microservice-project/</guid>
       <description>Learn how I built a message queue microservice using gRPC and RabbitMQ, with support for direct and fanout publish/subscribe models.</description>
     </item>
     <item>
       <title>MongoDB Cluster Setup: Automated Deployment for High Availability and Scalability</title>
-      <link>http://localhost:1313/projects/mongodb-infra-project/</link>
+      <link>https://yx-fan.github.io/projects/mongodb-infra-project/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/mongodb-infra-project/</guid>
+      <guid>https://yx-fan.github.io/projects/mongodb-infra-project/</guid>
       <description>Automating the deployment of a highly available, sharded MongoDB cluster using Docker and shell scripts.</description>
     </item>
     <item>
       <title>Push Notification Microservice: Scalable Multi-Platform Notification System</title>
-      <link>http://localhost:1313/projects/push-notification-microservice-project/</link>
+      <link>https://yx-fan.github.io/projects/push-notification-microservice-project/</link>
       <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/push-notification-microservice-project/</guid>
+      <guid>https://yx-fan.github.io/projects/push-notification-microservice-project/</guid>
       <description>A gRPC-based push notification microservice.</description>
     </item>
   </channel>

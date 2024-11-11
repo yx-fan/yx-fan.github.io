@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RabbitMQ on Yuxin Fan</title>
-    <link>http://localhost:1313/tags/rabbitmq/</link>
+    <link>https://yx-fan.github.io/tags/rabbitmq/</link>
     <description>Recent content in RabbitMQ on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yx-fan.github.io/tags/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Travel Expense Tracker Backend System</title>
-      <link>http://localhost:1313/projects/travel-expense-tracker-backend-system-core/</link>
+      <link>https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/</link>
       <pubDate>Thu, 10 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/travel-expense-tracker-backend-system-core/</guid>
+      <guid>https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/</guid>
       <description>A modular backend system for managing travel expenses, built with Node.js and Express, featuring microservices, message queues, and integration with third-party APIs.</description>
     </item>
     <item>
       <title>CoolChat Platform System Design: Scalable and Secure Chat Architecture</title>
-      <link>http://localhost:1313/projects/chat-platform-system-design-core-project/</link>
+      <link>https://yx-fan.github.io/projects/chat-platform-system-design-core-project/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/chat-platform-system-design-core-project/</guid>
+      <guid>https://yx-fan.github.io/projects/chat-platform-system-design-core-project/</guid>
       <description>A scalable, real-time chat platform leveraging Web3 authentication, microservices architecture, and message queuing for high concurrency and performance.</description>
     </item>
     <item>
       <title>Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution</title>
-      <link>http://localhost:1313/projects/msg-queue-microservice-project/</link>
+      <link>https://yx-fan.github.io/projects/msg-queue-microservice-project/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/msg-queue-microservice-project/</guid>
+      <guid>https://yx-fan.github.io/projects/msg-queue-microservice-project/</guid>
       <description>Learn how I built a message queue microservice using gRPC and RabbitMQ, with support for direct and fanout publish/subscribe models.</description>
     </item>
   </channel>
