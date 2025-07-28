@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline | Yuxin Fan</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="A production-ready system that clusters semantically similar texts and summarizes key themes using LLMs. Combines transformer embeddings, UMAP, HDBSCAN, and keyword extraction techniques.">
+    <meta name="generator" content="Hugo 0.132.2">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KY4X96MYQ"></script>
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   gtag('config', 'G-4KY4X96MYQ');
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://yx-fan.github.io/projects/cluster-based-summarization-system/">
+    
+
+    <meta property="og:url" content="https://yx-fan.github.io/projects/cluster-based-summarization-system/">
+  <meta property="og:site_name" content="Yuxin Fan">
+  <meta property="og:title" content="Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline">
+  <meta property="og:description" content="A production-ready system that clusters semantically similar texts and summarizes key themes using LLMs. Combines transformer embeddings, UMAP, HDBSCAN, and keyword extraction techniques.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-07-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-28T00:00:00+00:00">
+    <meta property="article:tag" content="Text Clustering">
+    <meta property="article:tag" content="LLM">
+    <meta property="article:tag" content="HDBSCAN">
+    <meta property="article:tag" content="NLP">
+    <meta property="article:tag" content="Unsupervised Learning">
+    <meta property="article:tag" content="Sentence Transformers">
+
+  <meta itemprop="name" content="Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline">
+  <meta itemprop="description" content="A production-ready system that clusters semantically similar texts and summarizes key themes using LLMs. Combines transformer embeddings, UMAP, HDBSCAN, and keyword extraction techniques.">
+  <meta itemprop="datePublished" content="2025-07-28T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-07-28T00:00:00+00:00">
+  <meta itemprop="wordCount" content="733">
+  <meta itemprop="keywords" content="Text Clustering,LLM,HDBSCAN,NLP,Unsupervised Learning,Sentence Transformers,UMAP,Keyword Extraction">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline">
+  <meta name="twitter:description" content="A production-ready system that clusters semantically similar texts and summarizes key themes using LLMs. Combines transformer embeddings, UMAP, HDBSCAN, and keyword extraction techniques.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Yuxin Fan
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/resume.pdf" title="Resume page">
+              Resume
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        My Projects
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline</h1>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2025-07-28T00:00:00Z">July 28, 2025</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="1-overview">1. Overview</h3>
+<p>The Cluster-Based Summarization System is designed to analyze and summarize large volumes of user-generated text, such as warranty descriptions, customer feedback, or support tickets. The system uses state-of-the-art NLP techniques to:</p>
+<ul>
+<li>Cluster semantically similar entries without supervision.</li>
+<li>Extract meaningful keywords from each cluster.</li>
+<li>Summarize recurring themes using LLMs.</li>
+</ul>
+<p>This allows technical and business teams to discover insights and root causes at scale—without manual review.</p>
+<hr>
+<h3 id="2-architecture-overview">2. Architecture Overview</h3>
+<p><img src="/images/cluster-based-summarization-system-architecture.svg" alt="Cluster-Based_Summarization_System_Architecture"></p>
+<hr>
+<h3 id="3-technology-stack">3. Technology Stack</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Tool</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Embedding</strong></td>
+<td>Sentence Transformers (<code>all-MiniLM</code>, <code>e5-base</code>, etc.)</td>
+<td>Captures deep semantic similarity</td>
+</tr>
+<tr>
+<td><strong>Dimensionality Reduction</strong></td>
+<td>UMAP</td>
+<td>Preserves local structure for better clustering</td>
+</tr>
+<tr>
+<td><strong>Clustering</strong></td>
+<td>HDBSCAN</td>
+<td>Automatically detects number of clusters and noise</td>
+</tr>
+<tr>
+<td><strong>Keyword Extraction</strong></td>
+<td>TF-IDF + KeyBERT</td>
+<td>Combines frequency-based and embedding-based signals</td>
+</tr>
+<tr>
+<td><strong>Summarization</strong></td>
+<td>LLM</td>
+<td>Generates natural language summaries per cluster</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="4-clustering-approach">4. Clustering Approach</h3>
+<h4 id="41-umap-for-dimensionality-reduction">4.1 UMAP for Dimensionality Reduction</h4>
+<p>Transformer embeddings are high-dimensional (384–1024D). UMAP is used to project them to ~5 dimensions for clustering. It preserves semantic neighborhoods better than PCA or t-SNE and is highly configurable (e.g., <code>n_neighbors</code>, <code>min_dist</code>).</p>
+<h4 id="42-hdbscan-for-density-based-clustering">4.2 HDBSCAN for Density-Based Clustering</h4>
+<p>HDBSCAN offers major advantages:</p>
+<ul>
+<li>No need to predefine <code>k</code>.</li>
+<li>Robust to noise/outliers.</li>
+<li>Supports soft clustering (probability per cluster).</li>
+</ul>
+<p>Common parameters tuned include:</p>
+<ul>
+<li><code>min_cluster_size</code>: minimum samples to form a cluster</li>
+<li><code>min_samples</code>: how conservative the algorithm is with labeling core points</li>
+</ul>
+<hr>
+<h3 id="5-keyword-extraction">5. Keyword Extraction</h3>
+<p>To interpret clusters:</p>
+<ul>
+<li><strong>TF-IDF</strong> highlights high-frequency, low-global-frequency terms.</li>
+<li><strong>KeyBERT</strong> identifies phrases semantically close to the cluster embedding centroid.</li>
+<li>Keywords from both methods are merged to provide both statistical and semantic anchors.</li>
+</ul>
+<p>These keywords also prime the LLM to better understand each cluster’s context during summarization.</p>
+<hr>
+<h3 id="6-summarization-pipeline">6. Summarization Pipeline</h3>
+<p>A prompt is constructed for each cluster using:</p>
+<ol>
+<li><strong>Top Keywords</strong> (from TF-IDF + KeyBERT)</li>
+<li><strong>Representative Samples</strong> (30 texts per cluster)
+<ul>
+<li>Selected using a hybrid strategy:
+<ul>
+<li>Highest keyword density</li>
+<li>Longest and shortest entries</li>
+<li>Random sampling for diversity</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>These elements are formatted into a bullet-point prompt to avoid “wall of text” issues and ensure clarity for the LLM.</p>
+<p><strong>Output Fields per Cluster</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>summary</code></td>
+<td>LLM-generated cluster summary</td>
+</tr>
+<tr>
+<td><code>sample_ids</code></td>
+<td>IDs of representative entries</td>
+</tr>
+<tr>
+<td><code>cluster_size</code></td>
+<td>Total number of entries in the cluster</td>
+</tr>
+<tr>
+<td><code>tfidf_keywords</code></td>
+<td>Top statistical keywords</td>
+</tr>
+<tr>
+<td><code>keybert_keywords</code></td>
+<td>Top semantic phrases</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="7-evaluation--tuning">7. Evaluation &amp; Tuning</h3>
+<p>To ensure meaningful clustering, we evaluate the output using both qualitative and quantitative metrics:</p>
+<ul>
+<li><strong>Silhouette Score</strong>: Measures cohesion and separation of clusters. Higher scores indicate better-defined clusters.</li>
+<li><strong>Number of Clusters</strong>: Helps track how granular or coarse the clustering is.</li>
+<li><strong>Outlier Percentage</strong>: Monitors the proportion of data points classified as noise.</li>
+</ul>
+<p>A grid search is used to iterate over combinations of <code>n_neighbors</code>, <code>min_cluster_size</code>, and <code>min_samples</code>, optimizing for silhouette score and interpretability.</p>
+<p>Example log output:</p>
+<pre tabindex="0"><code class="language-n_neighbors=10," data-lang="n_neighbors=10,">n_clusters=12, silhouette=0.45, outlier_pct=12%
+</code></pre><blockquote>
+<p>💡 In production settings, text embeddings are often high-dimensional and noisy. A silhouette score between <strong>0.30–0.50</strong> can still yield highly useful results when paired with meaningful summaries and cluster interpretation.</p>
+</blockquote>
+<hr>
+<h3 id="8-visualization">8. Visualization</h3>
+<p>To validate the quality of clustering and understand the data structure, we project the embedding vectors into 2D space using UMAP for visualization. Each point represents a text entry, and colors correspond to cluster assignments.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> umap
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>umap_2d <span style="color:#f92672">=</span> umap<span style="color:#f92672">.</span>UMAP(n_components<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>fit_transform(embeddings)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>scatter(umap_2d[:, <span style="color:#ae81ff">0</span>], umap_2d[:, <span style="color:#ae81ff">1</span>], c<span style="color:#f92672">=</span>labels, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Spectral&#39;</span>, s<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;UMAP 2D Projection of Text Clusters&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#34;UMAP-1&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#34;UMAP-2&#34;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>colorbar()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p>This plot helps assess whether clusters are well-separated and how many points were labeled as noise (outliers).</p>
+<hr>
+<h3 id="9-output-schema">9. Output Schema</h3>
+<p>Each cluster produces a structured summary output with the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>summary</code></td>
+<td>Abstract generated using LLM</td>
+</tr>
+<tr>
+<td><code>sample_ids</code></td>
+<td>IDs of representative samples</td>
+</tr>
+<tr>
+<td><code>cluster_size</code></td>
+<td>Number of entries in the cluster</td>
+</tr>
+<tr>
+<td><code>tfidf_keywords</code></td>
+<td>Top keywords extracted via TF-IDF</td>
+</tr>
+<tr>
+<td><code>keybert_keywords</code></td>
+<td>Top phrases from KeyBERT</td>
+</tr>
+</tbody>
+</table>
+<p>These results can be consumed by downstream pipelines, integrated into dashboards, or exported for reporting.</p>
+<hr>
+<h3 id="10-future-extensions">10. Future Extensions</h3>
+<p>This system is modular and extensible. Possible future improvements include:</p>
+<ul>
+<li><strong>Topic Labeling</strong>: Auto-generate descriptive titles for each cluster using rules or LLMs.</li>
+<li><strong>Multilingual Support</strong>: Incorporate models like <code>distiluse-base-multilingual</code> to support non-English datasets.</li>
+<li><strong>Feedback Loop</strong>: Allow human reviewers to accept, reject, or refine summaries and feed corrections back into the pipeline.</li>
+<li><strong>Time-Based Drift Detection</strong>: Compare clustering results over time to detect shifting trends or emerging issues.</li>
+</ul>
+<hr>
+<h3 id="11-conclusion">11. Conclusion</h3>
+<p>The Cluster-Based Summarization System demonstrates a practical and scalable approach to understanding large-scale unstructured text data. By combining unsupervised clustering with LLM-powered summarization, it helps teams identify patterns, failure modes, or customer concerns efficiently.</p>
+<p>Its design emphasizes:</p>
+<ul>
+<li><strong>Interpretability</strong> via keywords and summaries</li>
+<li><strong>Scalability</strong> via vectorization and density-based clustering</li>
+<li><strong>Flexibility</strong> with customizable prompts and modular stages</li>
+</ul>
+<p>This solution is production-ready and adaptable across domains like customer service, product feedback, and internal QA.</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/text-clustering/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Text Clustering</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/llm/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">LLM</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/hdbscan/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">HDBSCAN</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/nlp/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">NLP</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/unsupervised-learning/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Unsupervised Learning</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/sentence-transformers/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Sentence Transformers</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/umap/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">UMAP</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/keyword-extraction/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Keyword Extraction</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://yx-fan.github.io/" >
+    &copy;  Yuxin Fan 2025 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
