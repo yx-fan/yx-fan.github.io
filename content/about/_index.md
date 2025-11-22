@@ -5,17 +5,8 @@ layout: "timeline"
 
 # About Yuxin Fan
 
-Full-Stack Developer with Financial Expertise, skilled in building scalable backend systems, blockchain solutions, and optimizing costs through data-driven methods. With a strong financial background (CFA, FRM), I deliver impactful solutions that align technology with business strategy, driving success across both finance and technology sectors.
+I am a **Full-Stack Developer with Financial Expertise**, specializing in building scalable and secure backend systems while leveraging deep financial knowledge to drive business success. My unique combination of technical skills and financial acumen allows me to deliver solutions that are both technically sound and strategically aligned with business objectives.
 
-## Education
+With a strong background in finance supported by professional certifications (CFA, FRM, CIIA), I bring a data-driven approach to software development. My experience spans from architecting Web3 platforms and microservices to conducting financial analysis and M&A due diligence, enabling me to bridge the gap between technology and business strategy.
 
-- Master of Science in Computer and Information Technology, University of Pennsylvania
-- Master of Business Administration in Operations and Business Analytics, Case Western Reserve University
-- Master of Science in Finance (Big Data Track), Case Western Reserve University
-- Bachelor of Science in Finance, Guangdong University of Foreign Studies
-- Bachelor of Business Administration in Accounting, Guangdong University of Foreign Studies
-
-## Experience
-
-- Senior Software Engineer, Aukfa Inc.
-- Business Analytics Manager, Tencent
+I am passionate about creating impactful solutions that address complex challenges in both technology and finance, ensuring sustainable growth and operational excellence.

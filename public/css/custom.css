@@ -1,86 +1,221 @@
-.project-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly; /* 改为space-evenly，确保卡片均匀分布 */
-  padding: 40px;
-  max-width: 1400px;
+/* Projects Page Enhanced Styles */
+
+.projects-page-container {
+  max-width: 1200px;
   margin: 0 auto;
-  gap: 20px; /* 增加项目之间的间距 */
+  padding: 2rem 2rem 4rem;
 }
 
-.project-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+/* Description Section */
+.projects-description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  flex-basis: 30%; /* 将宽度改为32%，确保每行3个卡片 */
-  max-width: 30%; /* 保证最大宽度与flex-basis一致 */
-  min-height: 380px; /* 减小最小高度，避免过高导致布局不对齐 */
+  line-height: 1.7;
+}
+
+.projects-description p {
+  margin: 0;
+  text-align: center;
+}
+
+.projects-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2.5rem;
+  padding: 0;
+}
+
+/* Project Card */
+/* Project Card with background image */
+.project-card {
+  background-color: #f9fafb;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 10px; /* 卡片之间的间距 */
+  height: 100%;
+  min-height: 420px;
+  position: relative;
 }
 
-.project-image {
-  width: 100%;
-  height: 250px; /* 固定图片高度 */
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 20px; /* 增加图片和文本之间的间距 */
+/* Cards without images */
+.project-card:not([style*="background-image"]) {
+  background-color: #fff;
+}
+
+/* Image overlay - low opacity background for readability */
+.project-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.88) 100%);
+  backdrop-filter: blur(0.5px);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-image-overlay {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.80) 100%);
+  backdrop-filter: blur(1px);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  border-color: #d1d5db;
+}
+
+.project-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left;
+  position: relative;
+  z-index: 2;
 }
 
 .project-card h2 {
-  font-size: 1.4em; /* 标题字体大小 */
-  margin-bottom: 15px;
+  font-size: 1.3rem;
+  margin-bottom: 0.875rem;
+  line-height: 1.4;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-weight: 600;
 }
 
-/* 标题链接的样式：移除下划线，设置为粗体蓝色 */
 .project-card h2 a {
-  color: #007bff;
-  text-decoration: none; /* 去掉下划线 */
-  font-weight: normal;
-  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #1f2937;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: block;
 }
 
-/* 标题链接的hover效果：在鼠标悬停时显示下划线 */
 .project-card h2 a:hover {
-  color: #0056b3; /* 悬停时更深的蓝色 */
-  text-decoration: underline; /* 悬停时显示下划线 */
+  color: #5b7fa8;
 }
 
-.project-card p {
-  font-size: 1.1em; /* 摘要字体大小 */
+.project-summary {
+  font-size: 0.9375rem;
+  color: #4b5563;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-.read-more {
+/* Project Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.project-tag {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 20px;
-  background-color: #007bff;
+  padding: 0.375rem 0.75rem;
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.project-tag:hover {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+}
+
+/* Read More Button */
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding: 0.625rem 1.25rem;
+  background: #5b7fa8;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+  width: fit-content;
 }
 
 .read-more:hover {
-  background-color: #0056b3;
+  background: #4a6fa5;
+  transform: translateX(2px);
 }
 
-/* 响应式布局：当屏幕宽度小于 1200px 时，每行显示 2 个卡片 */
+.read-more .arrow {
+  transition: transform 0.2s ease;
+  font-size: 1rem;
+}
+
+.read-more:hover .arrow {
+  transform: translateX(2px);
+}
+
+/* Responsive Design */
 @media (max-width: 1200px) {
-  .project-card {
-    flex-basis: calc(45% - 20px); /* 每行显示 2 个卡片 */
-    max-width: calc(45% - 20px);
+  .project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
   }
 }
 
-/* 响应式布局：当屏幕宽度小于 800px 时，每行显示 1 个卡片 */
-@media (max-width: 800px) {
+@media (max-width: 768px) {
+  .projects-page-container {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .projects-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .projects-stats {
+    margin-bottom: 3rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
   .project-card {
-    flex-basis: calc(100% - 20px); /* 每行显示 1 个卡片 */
-    max-width: calc(100% - 20px);
+    min-height: 350px;
+  }
+
+  .project-content {
+    padding: 1.5rem;
   }
 }

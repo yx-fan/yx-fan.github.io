@@ -7,7 +7,7 @@
     <title>Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline | Yuxin Fan</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="A production-ready system that clusters semantically similar texts and summarizes key themes using LLMs. Combines transformer embeddings, UMAP, HDBSCAN, and keyword extraction techniques.">
-    <meta name="generator" content="Hugo 0.132.2">
+    <meta name="generator" content="Hugo 0.143.0">
     
     
     
@@ -21,6 +21,28 @@
 
 
 
+    
+    
+    <link rel="stylesheet" href="https://yx-fan.github.io/css/shared.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script>
+      
+      const firebaseConfig = {
+        apiKey: "AIzaSyDkOKW_GzV0dBjgGLYE6ASMYB1WLLrjD4M",
+        authDomain: "yx-fan-website.firebaseapp.com",
+        databaseURL: "https://yx-fan-website-default-rtdb.firebaseio.com",
+        projectId: "yx-fan-website",
+        storageBucket: "yx-fan-website.firebasestorage.app",
+        messagingSenderId: "76941092208",
+        appId: "1:76941092208:web:8cd643195ef05a6dd09bb5",
+        measurementId: "G-XDZ9H5W5QX"
+      };
+      
+      
+      firebase.initializeApp(firebaseConfig);
+    </script>
     
     
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KY4X96MYQ"></script>
@@ -118,7 +140,7 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/resume.pdf" title="Resume page">
+            <a class="hover-white no-underline white-90" href="https://www.linkedin.com/in/fanyuxin/" title="Resume page">
               Resume
             </a>
           </li>
@@ -156,12 +178,22 @@
 
 
 
+  
+
+
+
+  
+
+
+
+
 
 
 
   <div id="sharing" class="mt3 ananke-socials">
     
   </div>
+
 
 
       <h1 class="f1 athelas mt3 mb1">Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline</h1>
@@ -188,40 +220,40 @@
 <hr>
 <h3 id="3-technology-stack">3. Technology Stack</h3>
 <table>
-<thead>
-<tr>
-<th>Step</th>
-<th>Tool</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Embedding</strong></td>
-<td>Sentence Transformers (<code>all-MiniLM</code>, <code>e5-base</code>, etc.)</td>
-<td>Captures deep semantic similarity</td>
-</tr>
-<tr>
-<td><strong>Dimensionality Reduction</strong></td>
-<td>UMAP</td>
-<td>Preserves local structure for better clustering</td>
-</tr>
-<tr>
-<td><strong>Clustering</strong></td>
-<td>HDBSCAN</td>
-<td>Automatically detects number of clusters and noise</td>
-</tr>
-<tr>
-<td><strong>Keyword Extraction</strong></td>
-<td>TF-IDF + KeyBERT</td>
-<td>Combines frequency-based and embedding-based signals</td>
-</tr>
-<tr>
-<td><strong>Summarization</strong></td>
-<td>LLM</td>
-<td>Generates natural language summaries per cluster</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Step</th>
+          <th>Tool</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Embedding</strong></td>
+          <td>Sentence Transformers (<code>all-MiniLM</code>, <code>e5-base</code>, etc.)</td>
+          <td>Captures deep semantic similarity</td>
+      </tr>
+      <tr>
+          <td><strong>Dimensionality Reduction</strong></td>
+          <td>UMAP</td>
+          <td>Preserves local structure for better clustering</td>
+      </tr>
+      <tr>
+          <td><strong>Clustering</strong></td>
+          <td>HDBSCAN</td>
+          <td>Automatically detects number of clusters and noise</td>
+      </tr>
+      <tr>
+          <td><strong>Keyword Extraction</strong></td>
+          <td>TF-IDF + KeyBERT</td>
+          <td>Combines frequency-based and embedding-based signals</td>
+      </tr>
+      <tr>
+          <td><strong>Summarization</strong></td>
+          <td>LLM</td>
+          <td>Generates natural language summaries per cluster</td>
+      </tr>
+  </tbody>
 </table>
 <hr>
 <h3 id="4-clustering-approach">4. Clustering Approach</h3>
@@ -268,34 +300,34 @@
 <p>These elements are formatted into a bullet-point prompt to avoid “wall of text” issues and ensure clarity for the LLM.</p>
 <p><strong>Output Fields per Cluster</strong>:</p>
 <table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>summary</code></td>
-<td>LLM-generated cluster summary</td>
-</tr>
-<tr>
-<td><code>sample_ids</code></td>
-<td>IDs of representative entries</td>
-</tr>
-<tr>
-<td><code>cluster_size</code></td>
-<td>Total number of entries in the cluster</td>
-</tr>
-<tr>
-<td><code>tfidf_keywords</code></td>
-<td>Top statistical keywords</td>
-</tr>
-<tr>
-<td><code>keybert_keywords</code></td>
-<td>Top semantic phrases</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Field</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>summary</code></td>
+          <td>LLM-generated cluster summary</td>
+      </tr>
+      <tr>
+          <td><code>sample_ids</code></td>
+          <td>IDs of representative entries</td>
+      </tr>
+      <tr>
+          <td><code>cluster_size</code></td>
+          <td>Total number of entries in the cluster</td>
+      </tr>
+      <tr>
+          <td><code>tfidf_keywords</code></td>
+          <td>Top statistical keywords</td>
+      </tr>
+      <tr>
+          <td><code>keybert_keywords</code></td>
+          <td>Top semantic phrases</td>
+      </tr>
+  </tbody>
 </table>
 <hr>
 <h3 id="7-evaluation--tuning">7. Evaluation &amp; Tuning</h3>
@@ -309,8 +341,7 @@
 <p>Example log output:</p>
 <pre tabindex="0"><code class="language-n_neighbors=10," data-lang="n_neighbors=10,">n_clusters=12, silhouette=0.45, outlier_pct=12%
 </code></pre><blockquote>
-<p>💡 In production settings, text embeddings are often high-dimensional and noisy. A silhouette score between <strong>0.30–0.50</strong> can still yield highly useful results when paired with meaningful summaries and cluster interpretation.</p>
-</blockquote>
+<p>💡 In production settings, text embeddings are often high-dimensional and noisy. A silhouette score between <strong>0.30–0.50</strong> can still yield highly useful results when paired with meaningful summaries and cluster interpretation.</p></blockquote>
 <hr>
 <h3 id="8-visualization">8. Visualization</h3>
 <p>To validate the quality of clustering and understand the data structure, we project the embedding vectors into 2D space using UMAP for visualization. Each point represents a text entry, and colors correspond to cluster assignments.</p>
@@ -329,34 +360,34 @@
 <h3 id="9-output-schema">9. Output Schema</h3>
 <p>Each cluster produces a structured summary output with the following fields:</p>
 <table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>summary</code></td>
-<td>Abstract generated using LLM</td>
-</tr>
-<tr>
-<td><code>sample_ids</code></td>
-<td>IDs of representative samples</td>
-</tr>
-<tr>
-<td><code>cluster_size</code></td>
-<td>Number of entries in the cluster</td>
-</tr>
-<tr>
-<td><code>tfidf_keywords</code></td>
-<td>Top keywords extracted via TF-IDF</td>
-</tr>
-<tr>
-<td><code>keybert_keywords</code></td>
-<td>Top phrases from KeyBERT</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Field</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>summary</code></td>
+          <td>Abstract generated using LLM</td>
+      </tr>
+      <tr>
+          <td><code>sample_ids</code></td>
+          <td>IDs of representative samples</td>
+      </tr>
+      <tr>
+          <td><code>cluster_size</code></td>
+          <td>Number of entries in the cluster</td>
+      </tr>
+      <tr>
+          <td><code>tfidf_keywords</code></td>
+          <td>Top keywords extracted via TF-IDF</td>
+      </tr>
+      <tr>
+          <td><code>keybert_keywords</code></td>
+          <td>Top phrases from KeyBERT</td>
+      </tr>
+  </tbody>
 </table>
 <p>These results can be consumed by downstream pipelines, integrated into dashboards, or exported for reporting.</p>
 <hr>
@@ -444,3 +475,4 @@
 
   </body>
 </html>
+

@@ -26,9 +26,9 @@ theme = "ananke"
   weight = 4
 [[menu.main]]
   name = "Resume"
-  url = "/resume.pdf"
+  url = "https://www.linkedin.com/in/fanyuxin/"
   weight = 5
-[Params]
+[params]
   Social = [
     { name = "LinkedIn", url = "https://linkedin.com/in/yuxinfan" }
   ]

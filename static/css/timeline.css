@@ -1,4 +1,4 @@
-/* 时间轴的总体样式 */
+/* Overall timeline styles */
 .timeline {
     position: relative;
     max-width: 800px;
@@ -18,7 +18,7 @@
     z-index: 1;
   }
   
-  /* 时间轴项的样式 */
+  /* Timeline item styles */
   .timeline-item {
     padding: 20px 40px;
     background-color: inherit;
@@ -26,7 +26,7 @@
     box-sizing: border-box;
   }
   
-  /* 交替对齐时间轴项 */
+  /* Alternate alignment for timeline items */
   .timeline-item:nth-child(odd) {
     position: relative;
     left: 0;
@@ -37,7 +37,7 @@
     left: 50%;
   }
   
-  /* 蓝色圆圈的样式 */
+  /* Blue circle styles */
   .timeline-circle-left {
     position: absolute;
     top: 20px;
@@ -64,13 +64,14 @@
     z-index: 2;
   }
   
-  /* 时间日期的样式 */
+  /* Timeline date styles */
   .timeline-item .timeline-date {
     position: absolute;
     top: 12px;
     width: 120px;
     text-align: right;
     left: -160px;
+    font-weight: 600;
   }
   
   .timeline-item:nth-child(even) .timeline-date {
@@ -78,7 +79,7 @@
     text-align: left;
   }
   
-  /* 内容的样式 */
+  /* Content styles */
   .timeline-item .timeline-content h3 {
     margin: 0;
     font-size: 1.25em;
@@ -96,31 +97,31 @@
     margin-bottom: 40px;
   }
 
-  /* 时间轴小点的样式 */
+  /* Small circle styles for timeline */
 .small-circle-left, .small-circle-right {
     position: absolute;
-    top: 55px; /* 相对于大点的垂直位置 */
+    top: 55px; /* Vertical position relative to the large circle */
     width: 15px;
     height: 15px;
     background-color: white;
-    border: 2px solid #FF9800; /* 小点的颜色 */
+    border: 2px solid #FF9800; /* Small circle color */
     border-radius: 50%;
     z-index: 1;
 }
 
-/* 左侧的小点 */
+/* Left side small circle */
 .small-circle-left {
     left: 100%;
     transform: translateX(-50%);
 }
 
-/* 右侧的小点 */
+/* Right side small circle */
 .small-circle-right {
     left: 0;
     transform: translateX(-50%);
 }
   
-  /* 响应式样式 */
+  /* Responsive styles */
   @media screen and (max-width: 768px) {
     .timeline::after {
       left: 60px;

@@ -7,7 +7,7 @@
     <title>My Projects | Yuxin Fan</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="">
-    <meta name="generator" content="Hugo 0.132.2">
+    <meta name="generator" content="Hugo 0.143.0">
     
     
     
@@ -21,6 +21,28 @@
 
 
 
+    
+    
+    <link rel="stylesheet" href="https://yx-fan.github.io/css/shared.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script>
+      
+      const firebaseConfig = {
+        apiKey: "AIzaSyDkOKW_GzV0dBjgGLYE6ASMYB1WLLrjD4M",
+        authDomain: "yx-fan-website.firebaseapp.com",
+        databaseURL: "https://yx-fan-website-default-rtdb.firebaseio.com",
+        projectId: "yx-fan-website",
+        storageBucket: "yx-fan-website.firebasestorage.app",
+        messagingSenderId: "76941092208",
+        appId: "1:76941092208:web:8cd643195ef05a6dd09bb5",
+        measurementId: "G-XDZ9H5W5QX"
+      };
+      
+      
+      firebase.initializeApp(firebaseConfig);
+    </script>
     
     
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KY4X96MYQ"></script>
@@ -65,6 +87,9 @@
   <meta name="twitter:description" content="Here are some of the projects I’ve worked on:">
 
 	
+  
+  <link rel="stylesheet" href="https://yx-fan.github.io/css/custom.css">
+
   </head>
 
   <body class="ma0 avenir bg-near-white">
@@ -111,7 +136,7 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/resume.pdf" title="Resume page">
+            <a class="hover-white no-underline white-90" href="https://www.linkedin.com/in/fanyuxin/" title="Resume page">
               Resume
             </a>
           </li>
@@ -128,7 +153,12 @@
 </nav>
 
       <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+        
+        
+        
+          
+        
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title header-title-gradient">
           My Projects
         </h1>
         
@@ -137,99 +167,261 @@
   </header>
 
 
+<style>
+ 
+.header-title-gradient {
+  background: linear-gradient(135deg, #5b7fa8 0%, #6b8db8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+</style>
+
+
     <main class="pb7" role="main">
       
-  <head>
+  <div class="projects-page-container">
     
-    <link rel="stylesheet" href="https://yx-fan.github.io/css/custom.css">
+      <div class="projects-description"><p>Here are some of the projects I&rsquo;ve worked on:</p>
+</div>
+    
+    <div class="projects-stats">
+      <div class="stat-item">
+        <span class="stat-number">9</span>
+        <span class="stat-label">Projects</span>
+      </div>
+    </div>
 
     
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KY4X96MYQ"></script>
-<script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
-
-   gtag('config', 'G-4KY4X96MYQ');
-</script>
-  </head>
-
-  
-  <div class="project-grid">
-    
-      <div class="project-card">
-        <img src="https://yx-fan.github.io//images/Cluster_Summary_Architecture.png" alt="Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline" class="project-image">
-        <h2><a href="https://yx-fan.github.io/projects/cluster-based-summarization-system/">Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline</a></h2>
-        
-        <p>A production-ready system that clusters semantically similar texts and summarizes key themes using LLMs. Combines transformer embeddings, UMAP, HDBSCAN, and keyword extraction techniques.</p>
-        <a href="https://yx-fan.github.io/projects/cluster-based-summarization-system/" class="read-more">Read more</a>
-      </div>
-    
-      <div class="project-card">
-        <img src="https://yx-fan.github.io//images/System_Design.png" alt="Group Chat Architecture and Implementation" class="project-image">
-        <h2><a href="https://yx-fan.github.io/projects/chat-group-core/">Group Chat Architecture and Implementation</a></h2>
-        
-        <p>An in-depth exploration of the architecture and implementation of a group chat system, covering group creation, subscription, real-time messaging, and gRPC-based communication between microservices.</p>
-        <a href="https://yx-fan.github.io/projects/chat-group-core/" class="read-more">Read more</a>
-      </div>
-    
-      <div class="project-card">
-        <img src="https://yx-fan.github.io//images/System_Design.png" alt="One-to-One Chat Architecture and Implementation" class="project-image">
-        <h2><a href="https://yx-fan.github.io/projects/chat-one-to-one-core/">One-to-One Chat Architecture and Implementation</a></h2>
-        
-        <p>An in-depth look into the one-to-one chat architecture and its implementation for handling text and media messages.</p>
-        <a href="https://yx-fan.github.io/projects/chat-one-to-one-core/" class="read-more">Read more</a>
-      </div>
-    
-      <div class="project-card">
-        <img src="https://yx-fan.github.io//images/TravelExpense.png" alt="Travel Expense Tracker Backend System" class="project-image">
-        <h2><a href="https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/">Travel Expense Tracker Backend System</a></h2>
-        
-        <p>A modular backend system for managing travel expenses, built with Node.js and Express, featuring microservices, message queues, and integration with third-party APIs.</p>
-        <a href="https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/" class="read-more">Read more</a>
-      </div>
-    
-      <div class="project-card">
-        <img src="https://yx-fan.github.io//images/System_Design.png" alt="CoolChat Platform System Design: Scalable and Secure Chat Architecture" class="project-image">
-        <h2><a href="https://yx-fan.github.io/projects/chat-platform-system-design-core-project/">CoolChat Platform System Design: Scalable and Secure Chat Architecture</a></h2>
-        
-        <p>A scalable, real-time chat platform leveraging Web3 authentication, microservices architecture, and message queuing for high concurrency and performance.</p>
-        <a href="https://yx-fan.github.io/projects/chat-platform-system-design-core-project/" class="read-more">Read more</a>
-      </div>
-    
-      <div class="project-card">
-        <img src="https://yx-fan.github.io//images/Microservice.png" alt="Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution" class="project-image">
-        <h2><a href="https://yx-fan.github.io/projects/msg-queue-microservice-project/">Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution</a></h2>
-        
-        <p>Learn how I built a message queue microservice using gRPC and RabbitMQ, with support for direct and fanout publish/subscribe models.</p>
-        <a href="https://yx-fan.github.io/projects/msg-queue-microservice-project/" class="read-more">Read more</a>
-      </div>
-    
-      <div class="project-card">
-        <img src="https://yx-fan.github.io//images/Infra.png" alt="MongoDB Cluster Setup: Automated Deployment for High Availability and Scalability" class="project-image">
-        <h2><a href="https://yx-fan.github.io/projects/mongodb-infra-project/">MongoDB Cluster Setup: Automated Deployment for High Availability and Scalability</a></h2>
-        
-        <p>Automating the deployment of a highly available, sharded MongoDB cluster using Docker and shell scripts.</p>
-        <a href="https://yx-fan.github.io/projects/mongodb-infra-project/" class="read-more">Read more</a>
-      </div>
-    
-      <div class="project-card">
-        <img src="https://yx-fan.github.io//images/Web3.png" alt="Web3 Wallet Authentication System: A Decentralized Approach" class="project-image">
-        <h2><a href="https://yx-fan.github.io/projects/web3-auth-core-project/">Web3 Wallet Authentication System: A Decentralized Approach</a></h2>
-        
-        <p>An innovative Web3 wallet-based authentication system, ensuring secure access to chat applications without traditional password-based login methods.</p>
-        <a href="https://yx-fan.github.io/projects/web3-auth-core-project/" class="read-more">Read more</a>
-      </div>
-    
-      <div class="project-card">
-        <img src="https://yx-fan.github.io//images/Microservice.png" alt="Push Notification Microservice: Scalable Multi-Platform Notification System" class="project-image">
-        <h2><a href="https://yx-fan.github.io/projects/push-notification-microservice-project/">Push Notification Microservice: Scalable Multi-Platform Notification System</a></h2>
-        
-        <p>A gRPC-based push notification microservice.</p>
-        <a href="https://yx-fan.github.io/projects/push-notification-microservice-project/" class="read-more">Read more</a>
-      </div>
-    
+    <div class="project-grid">
+      
+        <div class="project-card" style="background-image: url('https://yx-fan.github.io/images/Cluster_Summary_Architecture.png');">
+          
+            <div class="project-image-overlay"></div>
+          
+          <div class="project-content">
+            <h2><a href="https://yx-fan.github.io/projects/cluster-based-summarization-system/">Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline</a></h2>
+            <p class="project-summary">A production-ready system that clusters semantically similar texts and summarizes key themes using LLMs. Combines transformer embeddings, UMAP, HDBSCAN, and keyword extraction techniques.</p>
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">Text Clustering</span>
+                
+                  <span class="project-tag">LLM</span>
+                
+                  <span class="project-tag">HDBSCAN</span>
+                
+              </div>
+            
+            <a href="https://yx-fan.github.io/projects/cluster-based-summarization-system/" class="read-more">
+              <span>Read more</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="project-card" style="background-image: url('https://yx-fan.github.io/images/System_Design.png');">
+          
+            <div class="project-image-overlay"></div>
+          
+          <div class="project-content">
+            <h2><a href="https://yx-fan.github.io/projects/chat-group-core/">Group Chat Architecture and Implementation</a></h2>
+            <p class="project-summary">An in-depth exploration of the architecture and implementation of a group chat system, covering group creation, subscription, real-time messaging, and gRPC-based communication between microservices.</p>
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">chat</span>
+                
+                  <span class="project-tag">System Design</span>
+                
+                  <span class="project-tag">Real-time Messaging</span>
+                
+              </div>
+            
+            <a href="https://yx-fan.github.io/projects/chat-group-core/" class="read-more">
+              <span>Read more</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="project-card" style="background-image: url('https://yx-fan.github.io/images/System_Design.png');">
+          
+            <div class="project-image-overlay"></div>
+          
+          <div class="project-content">
+            <h2><a href="https://yx-fan.github.io/projects/chat-one-to-one-core/">One-to-One Chat Architecture and Implementation</a></h2>
+            <p class="project-summary">An in-depth look into the one-to-one chat architecture and its implementation for handling text and media messages.</p>
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">chat</span>
+                
+                  <span class="project-tag">System Design</span>
+                
+                  <span class="project-tag">Real-time Messaging</span>
+                
+              </div>
+            
+            <a href="https://yx-fan.github.io/projects/chat-one-to-one-core/" class="read-more">
+              <span>Read more</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="project-card" style="background-image: url('https://yx-fan.github.io/images/TravelExpense.png');">
+          
+            <div class="project-image-overlay"></div>
+          
+          <div class="project-content">
+            <h2><a href="https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/">Travel Expense Tracker Backend System</a></h2>
+            <p class="project-summary">A modular backend system for managing travel expenses, built with Node.js and Express, featuring microservices, message queues, and integration with third-party APIs.</p>
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">Node.js</span>
+                
+                  <span class="project-tag">Express.js</span>
+                
+                  <span class="project-tag">MongoDB</span>
+                
+              </div>
+            
+            <a href="https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/" class="read-more">
+              <span>Read more</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="project-card" style="background-image: url('https://yx-fan.github.io/images/System_Design.png');">
+          
+            <div class="project-image-overlay"></div>
+          
+          <div class="project-content">
+            <h2><a href="https://yx-fan.github.io/projects/chat-platform-system-design-core-project/">CoolChat Platform System Design: Scalable and Secure Chat Architecture</a></h2>
+            <p class="project-summary">A scalable, real-time chat platform leveraging Web3 authentication, microservices architecture, and message queuing for high concurrency and performance.</p>
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">System Design</span>
+                
+                  <span class="project-tag">Web3</span>
+                
+                  <span class="project-tag">Real-time Messaging</span>
+                
+              </div>
+            
+            <a href="https://yx-fan.github.io/projects/chat-platform-system-design-core-project/" class="read-more">
+              <span>Read more</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="project-card" style="background-image: url('https://yx-fan.github.io/images/Microservice.png');">
+          
+            <div class="project-image-overlay"></div>
+          
+          <div class="project-content">
+            <h2><a href="https://yx-fan.github.io/projects/msg-queue-microservice-project/">Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution</a></h2>
+            <p class="project-summary">Learn how I built a message queue microservice using gRPC and RabbitMQ, with support for direct and fanout publish/subscribe models.</p>
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">gRPC</span>
+                
+                  <span class="project-tag">RabbitMQ</span>
+                
+                  <span class="project-tag">Microservices</span>
+                
+              </div>
+            
+            <a href="https://yx-fan.github.io/projects/msg-queue-microservice-project/" class="read-more">
+              <span>Read more</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="project-card" style="background-image: url('https://yx-fan.github.io/images/Infra.png');">
+          
+            <div class="project-image-overlay"></div>
+          
+          <div class="project-content">
+            <h2><a href="https://yx-fan.github.io/projects/mongodb-infra-project/">MongoDB Cluster Setup: Automated Deployment for High Availability and Scalability</a></h2>
+            <p class="project-summary">Automating the deployment of a highly available, sharded MongoDB cluster using Docker and shell scripts.</p>
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">MongoDB</span>
+                
+                  <span class="project-tag">Docker</span>
+                
+                  <span class="project-tag">Cluster</span>
+                
+              </div>
+            
+            <a href="https://yx-fan.github.io/projects/mongodb-infra-project/" class="read-more">
+              <span>Read more</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="project-card" style="background-image: url('https://yx-fan.github.io/images/Web3.png');">
+          
+            <div class="project-image-overlay"></div>
+          
+          <div class="project-content">
+            <h2><a href="https://yx-fan.github.io/projects/web3-auth-core-project/">Web3 Wallet Authentication System: A Decentralized Approach</a></h2>
+            <p class="project-summary">An innovative Web3 wallet-based authentication system, ensuring secure access to chat applications without traditional password-based login methods.</p>
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">Web3</span>
+                
+                  <span class="project-tag">Authentication</span>
+                
+                  <span class="project-tag">JWT</span>
+                
+              </div>
+            
+            <a href="https://yx-fan.github.io/projects/web3-auth-core-project/" class="read-more">
+              <span>Read more</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      
+        <div class="project-card" style="background-image: url('https://yx-fan.github.io/images/Microservice.png');">
+          
+            <div class="project-image-overlay"></div>
+          
+          <div class="project-content">
+            <h2><a href="https://yx-fan.github.io/projects/push-notification-microservice-project/">Push Notification Microservice: Scalable Multi-Platform Notification System</a></h2>
+            <p class="project-summary">A gRPC-based push notification microservice.</p>
+            
+              <div class="project-tags">
+                
+                  <span class="project-tag">gRPC</span>
+                
+                  <span class="project-tag">Microservices</span>
+                
+                  <span class="project-tag">Node.js</span>
+                
+              </div>
+            
+            <a href="https://yx-fan.github.io/projects/push-notification-microservice-project/" class="read-more">
+              <span>Read more</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      
+    </div>
   </div>
 
     </main>
@@ -248,3 +440,4 @@
 
   </body>
 </html>
+

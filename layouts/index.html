@@ -1,0 +1,96 @@
+{{ define "head" }}
+  <link rel="stylesheet" href="{{ "css/home.css" | absURL }}">
+{{ end }}
+
+{{ define "main" }}
+  <div class="home-page-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <h1 class="hero-title">Hi, I'm <span class="gradient-text">Yuxin Fan</span></h1>
+      
+      <!-- Certifications Badge -->
+      <div class="certifications-badge">
+        <span class="cert-item">MBA</span>
+        <span class="cert-separator">|</span>
+        <span class="cert-item">CFA</span>
+        <span class="cert-separator">|</span>
+        <span class="cert-item">FRM</span>
+        <span class="cert-separator">|</span>
+        <span class="cert-item">CIIA</span>
+      </div>
+
+      <!-- Introduction Text -->
+      <div class="intro-content">
+        <p class="intro-text">
+          I am a <strong>Full-Stack Developer with Financial Expertise</strong>, specializing in building scalable and secure backend systems while leveraging deep financial knowledge to drive business success. My experience includes developing robust IT architectures, designing blockchain-based solutions, and optimizing systems for performance and cost efficiency.
+        </p>
+        <p class="intro-text">
+          My strong background in finance, supported by certifications like CFA and FRM, enables me to deliver data-driven insights that optimize operational efficiency. I bring a unique blend of technical innovation and financial acumen, ensuring that my solutions are both technically sound and aligned with business objectives.
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <a href="{{ relref . "projects" }}" class="action-btn primary">
+          <span class="btn-icon">🔍</span>
+          <span>View My Projects</span>
+        </a>
+        <a href="{{ relref . "about" }}" class="action-btn secondary">
+          <span class="btn-icon">👤</span>
+          <span>About Me</span>
+        </a>
+        <a href="{{ relref . "tags" }}" class="action-btn secondary">
+          <span class="btn-icon">🏷️</span>
+          <span>Explore By Tags</span>
+        </a>
+      </div>
+
+      <!-- Contact Link -->
+      <div class="contact-section">
+        <a href="mailto:fan.yuxin@outlook.com" class="contact-link">
+          <span class="contact-icon">✉️</span>
+          <span>Contact Me</span>
+        </a>
+      </div>
+
+      <!-- Like Button -->
+      {{ partial "like-button.html" . }}
+    </section>
+
+    <!-- Recent Projects Section (if any) -->
+    {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
+    {{ range ($mainSections) }}
+      {{ $section_name := . }}
+      {{ $section := where $.Site.RegularPages "Section" "in" $section_name }}
+      {{ $section_count := len $section }}
+      {{ if ge $section_count 1 }}
+        <section class="recent-section">
+          <div class="recent-container">
+            {{ with $.Site.GetPage "section" $section_name }}
+              <h2 class="recent-title">
+                {{ $.Param "recent_copy" | default (i18n "recentTitle" .) }}
+              </h2>
+            {{ end }}
+            
+            {{ $n_posts := $.Param "recent_posts_number" | default 3 }}
+            <div class="recent-items">
+              {{ range (first $n_posts $section) }}
+                <div class="recent-item">
+                  {{ .Render "summary-with-image" }}
+                </div>
+              {{ end }}
+            </div>
+
+            {{ if gt $section_count $n_posts }}
+              <div class="view-all">
+                <a href="{{ relref $ $section_name }}" class="view-all-link">
+                  View All {{ $section_name | title }} →
+                </a>
+              </div>
+            {{ end }}
+          </div>
+        </section>
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}

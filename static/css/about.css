@@ -1,0 +1,301 @@
+/* About Page Enhanced Styles */
+
+.about-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 20px;
+    margin-bottom: 4rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.about-intro {
+    text-align: center;
+}
+
+.about-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.about-intro p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Certifications Section */
+.certifications-section {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Section title styles are now in shared.css */
+
+.cert-badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.cert-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.cert-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cert-icon {
+    font-size: 2.5rem;
+}
+
+.cert-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 2rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-category {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skill-category h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #5b7fa8 0%, #6b8db8 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-tag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(91, 127, 168, 0.4);
+}
+
+/* Timeline Section Enhancements */
+.timeline-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.timeline-header {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.timeline-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #5b7fa8 0%, #6b8db8 100%);
+    border-radius: 2px;
+}
+
+/* Enhanced Timeline Styles - Add animation without overriding base styles */
+/* Note: Base timeline-item styles are in timeline.css */
+.timeline-section .timeline-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.timeline-section .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-section .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-section .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-section .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-section .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+.timeline-section .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+.timeline-section .timeline-item:nth-child(7) { animation-delay: 0.7s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #5b7fa8 0%, #6b8db8 100%);
+    border-radius: 10px 10px 0 0;
+}
+
+.timeline-section .timeline-item:hover .timeline-content {
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-section .timeline-item:nth-child(even):hover .timeline-content {
+    transform: translateX(-5px);
+}
+
+.timeline-content h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.timeline-content h4 {
+    color: #5b7fa8;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.timeline-content p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.timeline-date {
+    font-weight: 600;
+    color: #5b7fa8;
+    font-size: 0.95rem;
+}
+
+/* Enhanced Timeline Circle */
+.timeline-circle-left,
+.timeline-circle-right {
+    background: linear-gradient(135deg, #5b7fa8 0%, #6b8db8 100%);
+    border: 4px solid white;
+    box-shadow: 0 0 0 4px rgba(91, 127, 168, 0.2), 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.timeline-section .timeline-item:hover .timeline-circle-left,
+.timeline-section .timeline-item:hover .timeline-circle-right {
+    transform: translateX(-50%) scale(1.2);
+    box-shadow: 0 0 0 6px rgba(91, 127, 168, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 2rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-intro h1 {
+        font-size: 2rem;
+    }
+
+    .about-intro p {
+        font-size: 1rem;
+    }
+
+    .cert-badges {
+        gap: 1rem;
+    }
+
+    .cert-badge {
+        min-width: 100px;
+        padding: 1rem 1.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .timeline-header {
+        font-size: 2rem;
+    }
+
+    .timeline-section {
+        padding: 2rem 1rem;
+    }
+}
+

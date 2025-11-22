@@ -15,7 +15,7 @@ tags:
     "JWT",
     "AWS",
   ]
-image: "/images/TravelExpense.png" # 项目图片路径
+image: "/images/TravelExpense.png"
 ---
 
 ## Overview

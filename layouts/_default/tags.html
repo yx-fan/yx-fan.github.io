@@ -1,21 +1,103 @@
-{{ define "main" }}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ .Title }}</title>
-  <!-- 引入自定义CSS -->
+{{ define "head" }}
+  <!-- Use custom CSS for tag list -->
   <link rel="stylesheet" href="{{ "css/tag-list.css" | absURL }}">
-</head>
-<body>
-  <section>
-    <ul class="tag-list">
-      {{ range .Site.Taxonomies.tags }}
-        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> <span>({{ len .Pages }})</span></li>
-      {{ end }}
-    </ul>
-  </section>
-</body>
-</html>
+{{ end }}
+
+{{ define "main" }}
+  <div class="tags-page-container">
+    <p class="tags-subtitle">Discover content organized by topics and technologies</p>
+    <div class="tags-stats">
+      <div class="stat-item">
+        <span class="stat-number">{{ len .Site.Taxonomies.tags }}</span>
+        <span class="stat-label">Tags</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">{{ len .Site.RegularPages }}</span>
+        <span class="stat-label">Articles</span>
+      </div>
+    </div>
+
+    <!-- Search/Filter Section -->
+    <div class="tags-search-container">
+      <input type="text" id="tagSearch" class="tag-search-input" placeholder="Search tags..." autocomplete="off">
+      <div class="search-icon">🔍</div>
+    </div>
+
+    <!-- Tags Cloud -->
+    <section class="tags-section">
+      <div class="tag-cloud" id="tagCloud">
+        {{ $maxCount := 0 }}
+        {{ $minCount := 999999 }}
+        {{ range .Site.Taxonomies.tags }}
+          {{ $count := len .Pages }}
+          {{ if gt $count $maxCount }}{{ $maxCount = $count }}{{ end }}
+          {{ if lt $count $minCount }}{{ $minCount = $count }}{{ end }}
+        {{ end }}
+        
+        {{ range .Site.Taxonomies.tags }}
+          {{ $count := len .Pages }}
+          {{ $size := div (sub $count $minCount) (sub $maxCount $minCount | default 1) }}
+          {{ $size = add (mul $size 0.6) 0.8 }}
+          {{ $tagClass := printf "tag-item tag-size-%d" (cond (gt $count 2) (cond (gt $count 4) 3 2) 1) }}
+          
+          <a href="{{ .Page.Permalink }}" class="{{ $tagClass }}" data-tag-name="{{ lower .Page.Title }}" style="--tag-size: {{ $size }}">
+            <span class="tag-name">{{ .Page.Title }}</span>
+            <span class="tag-count">{{ $count }}</span>
+          </a>
+        {{ end }}
+      </div>
+      
+      <!-- No results message -->
+      <div class="no-results" id="noResults" style="display: none;">
+        <p>No tags found matching your search.</p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    (function() {
+      'use strict';
+      
+      const searchInput = document.getElementById('tagSearch');
+      const tagCloud = document.getElementById('tagCloud');
+      const noResults = document.getElementById('noResults');
+      const tagItems = tagCloud.querySelectorAll('.tag-item');
+      
+      // Search functionality
+      searchInput.addEventListener('input', function(e) {
+        const searchTerm = e.target.value.toLowerCase().trim();
+        let visibleCount = 0;
+        
+        tagItems.forEach(function(tag) {
+          const tagName = tag.getAttribute('data-tag-name');
+          if (tagName.includes(searchTerm)) {
+            tag.style.display = 'inline-block';
+            visibleCount++;
+          } else {
+            tag.style.display = 'none';
+          }
+        });
+        
+        // Show/hide no results message
+        if (visibleCount === 0 && searchTerm !== '') {
+          noResults.style.display = 'block';
+          tagCloud.style.display = 'none';
+        } else {
+          noResults.style.display = 'none';
+          tagCloud.style.display = 'flex';
+        }
+      });
+      
+      // Add animation on load
+      tagItems.forEach(function(tag, index) {
+        tag.style.opacity = '0';
+        tag.style.transform = 'translateY(20px)';
+        setTimeout(function() {
+          tag.style.transition = 'all 0.4s ease';
+          tag.style.opacity = '1';
+          tag.style.transform = 'translateY(0)';
+        }, index * 30);
+      });
+    })();
+  </script>
 {{ end }}

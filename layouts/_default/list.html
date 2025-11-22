@@ -1,22 +1,44 @@
+{{ define "head" }}
+  <!-- Use custom CSS for project list -->
+  <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}">
+{{ end }}
+
 {{ define "main" }}
-  <head>
-    <!-- 引入自定义样式 -->
-    <link rel="stylesheet" href="{{ "css/custom.css" | absURL }}">
-
-    <!-- 引用 Google Analytics -->
-    {{ partial "google_analytics.html" . }}
-  </head>
-
-  <!-- 项目展示的网格布局 -->
-  <div class="project-grid">
-    {{ range .Pages }}
-      <div class="project-card">
-        <img src="{{ .Site.BaseURL }}{{ .Params.image }}" alt="{{ .Title }}" class="project-image">
-        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        <!-- 只显示项目的摘要而不是整个内容 -->
-        <p>{{ .Summary }}</p>
-        <a href="{{ .Permalink }}" class="read-more">Read more</a>
-      </div>
+  <div class="projects-page-container">
+    {{ if .Content }}
+      <div class="projects-description">{{ .Content }}</div>
     {{ end }}
+    <div class="projects-stats">
+      <div class="stat-item">
+        <span class="stat-number">{{ len .Pages }}</span>
+        <span class="stat-label">Projects</span>
+      </div>
+    </div>
+
+    <!-- Project grid layout -->
+    <div class="project-grid">
+      {{ range .Pages }}
+        <div class="project-card" {{ if .Params.image }}style="background-image: url('{{ .Params.image | absURL }}');"{{ end }}>
+          {{ if .Params.image }}
+            <div class="project-image-overlay"></div>
+          {{ end }}
+          <div class="project-content">
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <p class="project-summary">{{ .Summary }}</p>
+            {{ if .Params.tags }}
+              <div class="project-tags">
+                {{ range first 3 .Params.tags }}
+                  <span class="project-tag">{{ . }}</span>
+                {{ end }}
+              </div>
+            {{ end }}
+            <a href="{{ .Permalink }}" class="read-more">
+              <span>Read more</span>
+              <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
   </div>
 {{ end }}

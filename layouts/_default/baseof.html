@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode | default site.Language.Lang  }}" {{- with partialCached "func/GetLanguageDirection" "GetLanguageDirection" }} dir="{{ . }}" {{- end }}>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    {{/* NOTE: the Site's title, and if a page title, that is set too */}}
+    <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+    {{ hugo.Generator }}
+    {{/* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */}}
+    {{ $production := eq (getenv "HUGO_ENV") "production" | or (eq site.Params.env "production") }}
+    {{ $public := not .Params.private }}
+    {{ if and $production $public }}
+      <meta name="robots" content="index, follow">
+    {{ else }}
+      <meta name="robots" content="noindex, nofollow">
+    {{ end }}
+    {{ with .Params.author | default .Site.Params.author }}
+      <meta name="author" content = "
+        {{- if reflect.IsSlice . -}}
+          {{ delimit . ", " | plainify }}
+        {{- else -}}
+          {{ . | plainify }}
+        {{- end -}}
+      ">
+    {{ end }}
+
+    {{ partial "site-style.html" . }}
+    {{ partial "site-scripts.html" . }}
+    {{/* Shared styles for common components */}}
+    <link rel="stylesheet" href="{{ "css/shared.css" | absURL }}">
+    {{/* Firebase SDK - Compatibility version for static sites */}}
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDkOKW_GzV0dBjgGLYE6ASMYB1WLLrjD4M",
+        authDomain: "yx-fan-website.firebaseapp.com",
+        databaseURL: "https://yx-fan-website-default-rtdb.firebaseio.com",
+        projectId: "yx-fan-website",
+        storageBucket: "yx-fan-website.firebasestorage.app",
+        messagingSenderId: "76941092208",
+        appId: "1:76941092208:web:8cd643195ef05a6dd09bb5",
+        measurementId: "G-XDZ9H5W5QX"
+      };
+      
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    {{/* Use custom Google Analytics, remove duplicate Hugo built-in reference */}}
+    {{ partial "google_analytics.html" . }}
+
+    {{ block "favicon" . }}
+      {{ partialCached "site-favicon.html" . }}
+    {{ end }}
+
+    {{ if .OutputFormats.Get "RSS" }}
+    {{ with .OutputFormats.Get "RSS" }}
+      <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+      <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+      {{ end }}
+    {{ end }}
+
+    {{ if .Params.canonicalUrl }}
+      <link rel="canonical" href="{{ .Params.canonicalUrl }}">
+    {{ else }}
+      <link rel="canonical" href="{{ .Permalink }}">
+    {{ end }}
+
+    {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/gohugoio/hugo/tree/master/tpl/tplimpl/embedded/templates */}}
+    {{- template "_internal/opengraph.html" . -}}
+    {{- template "_internal/schema.html" . -}}
+    {{- template "_internal/twitter_cards.html" . -}}
+
+    {{/* Removed Hugo built-in google_analytics template reference to avoid duplication with custom one */}}
+	{{ block "head" . }}{{ partial "head-additions.html" . }}{{ end }}
+  </head>
+
+  <body class="ma0 {{ $.Param "body_classes"  | default "avenir bg-near-white"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+
+    {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
+    <main class="pb7" role="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
+  </body>
+</html>
+

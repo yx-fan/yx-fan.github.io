@@ -1,12 +1,93 @@
-    {{ define "main" }}
-    <head>
-        <!-- Include timeline-specific custom styles -->
-        <link rel="stylesheet" href="{{ "css/timeline.css" | absURL }}">
-    </head>
+{{ define "head" }}
+    <!-- Include timeline-specific custom styles -->
+    <link rel="stylesheet" href="{{ "css/timeline.css" | absURL }}">
+    <link rel="stylesheet" href="{{ "css/about.css" | absURL }}">
+{{ end }}
+
+{{ define "main" }}
+    <!-- Hero Introduction Section -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <div class="about-intro">
+                {{/* Remove the h1 title from content since it's now in header */}}
+                {{ $content := .Content }}
+                {{ $content = replaceRE `(?s)<h1[^>]*>.*?</h1>\s*` "" $content }}
+                {{ $content | safeHTML }}
+            </div>
+            
+            <!-- Certifications Badges -->
+            <div class="certifications-section">
+                <h3 class="section-title">Professional Certifications</h3>
+                <div class="cert-badges">
+                    <div class="cert-badge">
+                        <span class="cert-icon">🎓</span>
+                        <span class="cert-name">MBA</span>
+                    </div>
+                    <div class="cert-badge">
+                        <span class="cert-icon">📊</span>
+                        <span class="cert-name">CFA</span>
+                    </div>
+                    <div class="cert-badge">
+                        <span class="cert-icon">📈</span>
+                        <span class="cert-name">FRM</span>
+                    </div>
+                    <div class="cert-badge">
+                        <span class="cert-icon">💼</span>
+                        <span class="cert-name">CIIA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <h3 class="section-title">Core Competencies</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Backend Development</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">gRPC</span>
+                            <span class="skill-tag">REST API</span>
+                            <span class="skill-tag">Microservices</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Data & Infrastructure</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">RabbitMQ</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Blockchain & Web3</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Web3</span>
+                            <span class="skill-tag">Blockchain</span>
+                            <span class="skill-tag">Smart Contracts</span>
+                            <span class="skill-tag">Wallet Auth</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Financial Analysis</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Financial Modeling</span>
+                            <span class="skill-tag">M&A Due Diligence</span>
+                            <span class="skill-tag">Risk Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Experience Timeline Section -->
-    <section id="about">
-        <h2>Main Experience Timeline (Sort by start date in descending order)</h2>
+    <section id="about" class="timeline-section">
+        <h2 class="timeline-header">Professional Journey</h2>
         <div class="timeline">
         <!-- Timeline Item: Aukfa -->
         <div class="timeline-item">
@@ -100,4 +181,4 @@
 
         </div>
     </section>
-    {{ end }}
+{{ end }}

@@ -11,7 +11,7 @@ tags:
     "Docker",
     "Push Notifications",
   ]
-image: "/images/Microservice.png" # 项目图片路径
+image: "/images/Microservice.png"
 ---
 
 ## Overview

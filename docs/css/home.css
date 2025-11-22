@@ -1,0 +1,238 @@
+/* Home Page Styles */
+
+.home-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 3rem 0;
+  margin-bottom: 4rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Enhanced gradient for hero title name - brighter and more visible */
+.hero-title .gradient-text {
+  background: linear-gradient(135deg, #6b8db8 0%, #8ba8c7 50%, #a5bdd4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  font-weight: 700;
+}
+
+
+/* Certifications Badge */
+.certifications-badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.cert-item {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #5b7fa8;
+  padding: 0.5rem 1rem;
+  background: rgba(91, 127, 168, 0.1);
+  border-radius: 20px;
+}
+
+.cert-separator {
+  color: #999;
+  font-weight: 300;
+}
+
+/* Introduction Content */
+.intro-content {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: left;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.intro-text strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.action-btn.primary {
+  background: linear-gradient(135deg, #5b7fa8 0%, #6b8db8 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(91, 127, 168, 0.3);
+}
+
+.action-btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(91, 127, 168, 0.4);
+}
+
+.action-btn.secondary {
+  background: white;
+  color: #5b7fa8;
+  border-color: #5b7fa8;
+}
+
+.action-btn.secondary:hover {
+  background: #5b7fa8;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+/* Contact Section */
+.contact-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #5b7fa8;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+}
+
+/* Recent Section */
+.recent-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.recent-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.recent-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.recent-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.recent-item {
+  width: 100%;
+}
+
+.view-all {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.view-all-link {
+  display: inline-block;
+  color: #5b7fa8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.view-all-link:hover {
+  color: #6b8db8;
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-page-container {
+    padding: 2rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .certifications-badge {
+    gap: 0.75rem;
+  }
+
+  .cert-item {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .intro-content {
+    text-align: center;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .action-btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
