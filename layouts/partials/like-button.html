@@ -294,12 +294,13 @@
           // Create particle effect
           createParticles(15);
           
-          // Track in Google Analytics
+          // Track in Google Analytics with enhanced data
           if (typeof gtag !== 'undefined') {
             gtag('event', 'page_like', {
               'event_category': 'engagement',
               'event_label': 'homepage',
               'value': newValue,
+              'like_count': newValue,
               'non_interaction': false
             });
           } else if (typeof window.dataLayer !== 'undefined') {
@@ -308,7 +309,8 @@
               'event': 'page_like',
               'event_category': 'engagement',
               'event_label': 'homepage',
-              'value': newValue
+              'value': newValue,
+              'like_count': newValue
             });
           }
           

@@ -51,7 +51,149 @@
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
 
-   gtag('config', 'G-4KY4X96MYQ');
+   
+   gtag('config', 'G-4KY4X96MYQ', {
+     
+     page_type: 'projects',
+     
+     content_category: 'projects',
+     
+     custom_map: {
+       'dimension1': 'page_type',
+       'dimension2': 'content_category'
+     }
+   });
+</script>
+
+<script>
+
+(function() {
+  'use strict';
+  
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    const projectCards = document.querySelectorAll('.project-card a[href]');
+    projectCards.forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        const projectTitle = this.closest('.project-card')?.querySelector('h2 a')?.textContent || 'Unknown';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'project_click', {
+            'event_category': 'engagement',
+            'event_label': projectTitle,
+            'value': 1
+          });
+        }
+      });
+    });
+    
+    
+    const tagItems = document.querySelectorAll('.tag-item');
+    tagItems.forEach(function(tag) {
+      tag.addEventListener('click', function(e) {
+        const tagName = this.querySelector('.tag-name')?.textContent || 'Unknown';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'tag_click', {
+            'event_category': 'navigation',
+            'event_label': tagName,
+            'value': 1
+          });
+        }
+      });
+    });
+    
+    
+    const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="' + window.location.hostname + '"])');
+    externalLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        const linkUrl = this.href;
+        const linkText = this.textContent.trim() || linkUrl;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'external_link_click', {
+            'event_category': 'outbound',
+            'event_label': linkText,
+            'transport_type': 'beacon',
+            'event_callback': function() {
+              
+            }
+          });
+        }
+      });
+    });
+    
+    
+    const tagSearchInput = document.getElementById('tagSearch');
+    if (tagSearchInput) {
+      let searchTimeout;
+      tagSearchInput.addEventListener('input', function(e) {
+        clearTimeout(searchTimeout);
+        const searchTerm = e.target.value.trim();
+        if (searchTerm.length > 2) {
+          searchTimeout = setTimeout(function() {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'tag_search', {
+                'event_category': 'search',
+                'search_term': searchTerm,
+                'value': 1
+              });
+            }
+          }, 1000); 
+        }
+      });
+    }
+    
+    
+    let scrollDepthTracked = {
+      25: false,
+      50: false,
+      75: false,
+      100: false
+    };
+    
+    function trackScrollDepth() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+      
+      [25, 50, 75, 100].forEach(function(threshold) {
+        if (scrollPercent >= threshold && !scrollDepthTracked[threshold]) {
+          scrollDepthTracked[threshold] = true;
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'scroll_depth', {
+              'event_category': 'engagement',
+              'event_label': threshold + '%',
+              'value': threshold
+            });
+          }
+        }
+      });
+    }
+    
+    
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+      }
+      scrollTimeout = window.requestAnimationFrame(trackScrollDepth);
+    });
+    
+    
+    let timeOnPageTracked = false;
+    setTimeout(function() {
+      if (!timeOnPageTracked) {
+        timeOnPageTracked = true;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'time_on_page', {
+            'event_category': 'engagement',
+            'event_label': '30_seconds',
+            'value': 30
+          });
+        }
+      }
+    }, 30000);
+  });
+})();
 </script>
 
     
