@@ -5,7 +5,7 @@ layout: "timeline"
 
 # About Yuxin Fan
 
-I am a **Full-Stack Developer with Financial Expertise**, specializing in building scalable and secure backend systems while leveraging deep financial knowledge to drive business success. My unique combination of technical skills and financial acumen allows me to deliver solutions that are both technically sound and strategically aligned with business objectives.
+I am a **Software Engineer & Tech Consultant with Financial Expertise**, specializing in building scalable and secure systems while leveraging deep financial knowledge to drive business success. My unique combination of technical skills and financial acumen allows me to deliver solutions that are both technically sound and strategically aligned with business objectives.
 
 With a strong background in finance supported by professional certifications (CFA, FRM, CIIA), I bring a data-driven approach to software development. My experience spans from architecting Web3 platforms and microservices to conducting financial analysis and M&A due diligence, enabling me to bridge the gap between technology and business strategy.
 
