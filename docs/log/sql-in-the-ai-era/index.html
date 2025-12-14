@@ -54,7 +54,7 @@
    
    gtag('config', 'G-4KY4X96MYQ', {
      
-     page_type: 'content',
+     page_type: 'log',
      
      content_category: 'log',
      
@@ -192,6 +192,89 @@
         }
       }
     }, 30000);
+    
+    
+    const logEntries = document.querySelectorAll('.log-entry a[href]');
+    logEntries.forEach(function(entry) {
+      entry.addEventListener('click', function(e) {
+        const logTitle = this.textContent.trim() || 'Unknown';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'log_entry_click', {
+            'event_category': 'engagement',
+            'event_label': logTitle,
+            'value': 1
+          });
+        }
+      });
+    });
+    
+    
+    const tickerCards = document.querySelectorAll('.ticker-card a[href]');
+    tickerCards.forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        const tickerTitle = this.querySelector('.ticker-title')?.textContent?.trim() || 'Unknown';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'ticker_card_click', {
+            'event_category': 'engagement',
+            'event_label': tickerTitle,
+            'value': 1
+          });
+        }
+      });
+    });
+    
+    
+    const tickerTrack = document.getElementById('tickerTrack');
+    if (tickerTrack) {
+      let dragStartTime = null;
+      let dragDistance = 0;
+      let lastX = 0;
+      
+      tickerTrack.addEventListener('mousedown', function(e) {
+        dragStartTime = Date.now();
+        lastX = e.pageX;
+        dragDistance = 0;
+      });
+      
+      document.addEventListener('mousemove', function(e) {
+        if (dragStartTime !== null) {
+          dragDistance += Math.abs(e.pageX - lastX);
+          lastX = e.pageX;
+        }
+      });
+      
+      document.addEventListener('mouseup', function() {
+        if (dragStartTime !== null && dragDistance > 50) {
+          const dragDuration = Date.now() - dragStartTime;
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'ticker_drag', {
+              'event_category': 'interaction',
+              'event_label': 'ticker_scroll',
+              'value': Math.round(dragDistance / 100), 
+              'custom_parameter': {
+                'duration_ms': dragDuration
+              }
+            });
+          }
+        }
+        dragStartTime = null;
+        dragDistance = 0;
+      });
+    }
+    
+    
+    const viewAllLogLink = document.querySelector('.ticker-view-all');
+    if (viewAllLogLink) {
+      viewAllLogLink.addEventListener('click', function(e) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'view_all_log_click', {
+            'event_category': 'navigation',
+            'event_label': 'homepage_to_log',
+            'value': 1
+          });
+        }
+      });
+    }
   });
 })();
 </script>

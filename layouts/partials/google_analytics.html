@@ -8,7 +8,7 @@
    // Enhanced GA4 configuration with custom parameters
    gtag('config', 'G-4KY4X96MYQ', {
      // Page type classification
-     page_type: '{{ if .IsHome }}homepage{{ else if eq .Section "projects" }}projects{{ else if eq .Section "about" }}about{{ else if eq .Section "tags" }}tags{{ else }}content{{ end }}',
+     page_type: '{{ if .IsHome }}homepage{{ else if eq .Section "projects" }}projects{{ else if eq .Section "about" }}about{{ else if eq .Section "tags" }}tags{{ else if eq .Section "log" }}log{{ else }}content{{ end }}',
      // Content category
      content_category: '{{ .Section | default "general" }}',
      // Custom dimensions
@@ -146,6 +146,89 @@
         }
       }
     }, 30000);
+    
+    // Track log entry clicks (on log list page)
+    const logEntries = document.querySelectorAll('.log-entry a[href]');
+    logEntries.forEach(function(entry) {
+      entry.addEventListener('click', function(e) {
+        const logTitle = this.textContent.trim() || 'Unknown';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'log_entry_click', {
+            'event_category': 'engagement',
+            'event_label': logTitle,
+            'value': 1
+          });
+        }
+      });
+    });
+    
+    // Track ticker card clicks (on homepage)
+    const tickerCards = document.querySelectorAll('.ticker-card a[href]');
+    tickerCards.forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        const tickerTitle = this.querySelector('.ticker-title')?.textContent?.trim() || 'Unknown';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'ticker_card_click', {
+            'event_category': 'engagement',
+            'event_label': tickerTitle,
+            'value': 1
+          });
+        }
+      });
+    });
+    
+    // Track ticker drag interactions (on homepage)
+    const tickerTrack = document.getElementById('tickerTrack');
+    if (tickerTrack) {
+      let dragStartTime = null;
+      let dragDistance = 0;
+      let lastX = 0;
+      
+      tickerTrack.addEventListener('mousedown', function(e) {
+        dragStartTime = Date.now();
+        lastX = e.pageX;
+        dragDistance = 0;
+      });
+      
+      document.addEventListener('mousemove', function(e) {
+        if (dragStartTime !== null) {
+          dragDistance += Math.abs(e.pageX - lastX);
+          lastX = e.pageX;
+        }
+      });
+      
+      document.addEventListener('mouseup', function() {
+        if (dragStartTime !== null && dragDistance > 50) {
+          const dragDuration = Date.now() - dragStartTime;
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'ticker_drag', {
+              'event_category': 'interaction',
+              'event_label': 'ticker_scroll',
+              'value': Math.round(dragDistance / 100), // Distance in "units"
+              'custom_parameter': {
+                'duration_ms': dragDuration
+              }
+            });
+          }
+        }
+        dragStartTime = null;
+        dragDistance = 0;
+      });
+    }
+    
+    // Track "View All Log" link clicks
+    const viewAllLogLink = document.querySelector('.ticker-view-all');
+    if (viewAllLogLink) {
+      viewAllLogLink.addEventListener('click', function(e) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'view_all_log_click', {
+            'event_category': 'navigation',
+            'event_label': 'homepage_to_log',
+            'value': 1
+          });
+        }
+      });
+    }
   });
 })();
 </script>
