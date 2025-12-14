@@ -34,6 +34,7 @@ theme = "ananke"
   weight = 6
 [params]
   mainSections = ["log", "projects"]
+  siteCreatedYear = 2024
   Social = [
     { name = "LinkedIn", url = "https://linkedin.com/in/yuxinfan" }
   ]
