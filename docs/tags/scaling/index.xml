@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scaling on Yuxin Fan</title>
+    <link>https://yx-fan.github.io/tags/scaling/</link>
+    <description>Recent content in Scaling on Yuxin Fan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yx-fan.github.io/tags/scaling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scaling Node.js — Worker Threads &amp; Cluster Mode</title>
+      <link>https://yx-fan.github.io/log/scaling-nodejs-worker-threads-cluster/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/scaling-nodejs-worker-threads-cluster/</guid>
+      <description>Node.js runs one event loop per process—only one CPU core is used. To scale, use Cluster for multi-process or Worker Threads for multi-thread. Both enable parallelism, but in different ways.</description>
+    </item>
+  </channel>
+</rss>

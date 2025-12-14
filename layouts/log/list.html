@@ -1,0 +1,111 @@
+{{ define "head" }}
+  <link rel="stylesheet" href="{{ "css/log.css" | absURL }}">
+{{ end }}
+
+{{ define "main" }}
+  <div class="log-page-container">
+    {{ if .Content }}
+      <div class="log-description">{{ .Content }}</div>
+    {{ end }}
+
+    <!-- Group logs by quarter -->
+    <div class="log-entries">
+      {{ range (.Pages.GroupByDate "2006") }}
+        {{ $year := .Key }}
+        {{ $q1 := slice }}
+        {{ $q2 := slice }}
+        {{ $q3 := slice }}
+        {{ $q4 := slice }}
+        {{ range .Pages }}
+          {{ $month := int (.Date.Format "1") }}
+          {{ if le $month 3 }}
+            {{ $q1 = $q1 | append . }}
+          {{ else if le $month 6 }}
+            {{ $q2 = $q2 | append . }}
+          {{ else if le $month 9 }}
+            {{ $q3 = $q3 | append . }}
+          {{ else }}
+            {{ $q4 = $q4 | append . }}
+          {{ end }}
+        {{ end }}
+        
+        {{ if gt (len $q4) 0 }}
+          {{ $sortedQ4 := sort $q4 "Date" }}
+          <div class="log-quarter">
+            <h2 class="log-quarter-title">{{ $year }} Q4</h2>
+            <div class="log-quarter-entries">
+              {{ range $sortedQ4 }}
+                <article class="log-entry">
+                  <h3 class="log-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  </h3>
+                  {{ if .Summary }}
+                    <p class="log-summary">{{ .Summary }}</p>
+                  {{ end }}
+                </article>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+        
+        {{ if gt (len $q3) 0 }}
+          {{ $sortedQ3 := sort $q3 "Date" }}
+          <div class="log-quarter">
+            <h2 class="log-quarter-title">{{ $year }} Q3</h2>
+            <div class="log-quarter-entries">
+              {{ range $sortedQ3 }}
+                <article class="log-entry">
+                  <h3 class="log-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  </h3>
+                  {{ if .Summary }}
+                    <p class="log-summary">{{ .Summary }}</p>
+                  {{ end }}
+                </article>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+        
+        {{ if gt (len $q2) 0 }}
+          {{ $sortedQ2 := sort $q2 "Date" }}
+          <div class="log-quarter">
+            <h2 class="log-quarter-title">{{ $year }} Q2</h2>
+            <div class="log-quarter-entries">
+              {{ range $sortedQ2 }}
+                <article class="log-entry">
+                  <h3 class="log-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  </h3>
+                  {{ if .Summary }}
+                    <p class="log-summary">{{ .Summary }}</p>
+                  {{ end }}
+                </article>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+        
+        {{ if gt (len $q1) 0 }}
+          {{ $sortedQ1 := sort $q1 "Date" }}
+          <div class="log-quarter">
+            <h2 class="log-quarter-title">{{ $year }} Q1</h2>
+            <div class="log-quarter-entries">
+              {{ range $sortedQ1 }}
+                <article class="log-entry">
+                  <h3 class="log-title">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  </h3>
+                  {{ if .Summary }}
+                    <p class="log-summary">{{ .Summary }}</p>
+                  {{ end }}
+                </article>
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
+

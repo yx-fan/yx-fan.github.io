@@ -1,0 +1,30 @@
+{{ define "head" }}
+  <link rel="stylesheet" href="{{ "css/log.css" | absURL }}">
+{{ end }}
+
+{{ define "main" }}
+  <div class="log-single-container">
+    <article class="log-single">
+      <!-- Minimal header -->
+      <header class="log-single-header">
+        <div class="log-single-meta">
+          <time class="log-single-date" datetime="{{ .Date.Format "2006-01-02" }}">
+            {{ .Date.Format "January 2006" }}
+          </time>
+        </div>
+        <h1 class="log-single-title">{{ .Title }}</h1>
+      </header>
+
+      <!-- Lightweight content -->
+      <div class="log-single-content">
+        {{ .Content }}
+      </div>
+
+      <!-- Minimal footer -->
+      <footer class="log-single-footer">
+        <a href="{{ .Parent.Permalink }}" class="log-back-link">← Back to Log</a>
+      </footer>
+    </article>
+  </div>
+{{ end }}
+

@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Async / Await Explained — What Actually Happens Under the Hood | Yuxin Fan</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="async/await doesn&rsquo;t make code run in parallel. It&rsquo;s syntactic sugar over Promises that makes asynchronous logic read like synchronous flow, working by pausing and resuming execution through the event loop.">
+    <meta name="generator" content="Hugo 0.143.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    <link rel="stylesheet" href="https://yx-fan.github.io/css/shared.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script>
+      
+      const firebaseConfig = {
+        apiKey: "AIzaSyDkOKW_GzV0dBjgGLYE6ASMYB1WLLrjD4M",
+        authDomain: "yx-fan-website.firebaseapp.com",
+        databaseURL: "https://yx-fan-website-default-rtdb.firebaseio.com",
+        projectId: "yx-fan-website",
+        storageBucket: "yx-fan-website.firebasestorage.app",
+        messagingSenderId: "76941092208",
+        appId: "1:76941092208:web:8cd643195ef05a6dd09bb5",
+        measurementId: "G-XDZ9H5W5QX"
+      };
+      
+      
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KY4X96MYQ"></script>
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   
+   gtag('config', 'G-4KY4X96MYQ', {
+     
+     page_type: 'content',
+     
+     content_category: 'log',
+     
+     custom_map: {
+       'dimension1': 'page_type',
+       'dimension2': 'content_category'
+     }
+   });
+</script>
+
+<script>
+
+(function() {
+  'use strict';
+  
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    const projectCards = document.querySelectorAll('.project-card a[href]');
+    projectCards.forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        const projectTitle = this.closest('.project-card')?.querySelector('h2 a')?.textContent || 'Unknown';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'project_click', {
+            'event_category': 'engagement',
+            'event_label': projectTitle,
+            'value': 1
+          });
+        }
+      });
+    });
+    
+    
+    const tagItems = document.querySelectorAll('.tag-item');
+    tagItems.forEach(function(tag) {
+      tag.addEventListener('click', function(e) {
+        const tagName = this.querySelector('.tag-name')?.textContent || 'Unknown';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'tag_click', {
+            'event_category': 'navigation',
+            'event_label': tagName,
+            'value': 1
+          });
+        }
+      });
+    });
+    
+    
+    const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="' + window.location.hostname + '"])');
+    externalLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        const linkUrl = this.href;
+        const linkText = this.textContent.trim() || linkUrl;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'external_link_click', {
+            'event_category': 'outbound',
+            'event_label': linkText,
+            'transport_type': 'beacon',
+            'event_callback': function() {
+              
+            }
+          });
+        }
+      });
+    });
+    
+    
+    const tagSearchInput = document.getElementById('tagSearch');
+    if (tagSearchInput) {
+      let searchTimeout;
+      tagSearchInput.addEventListener('input', function(e) {
+        clearTimeout(searchTimeout);
+        const searchTerm = e.target.value.trim();
+        if (searchTerm.length > 2) {
+          searchTimeout = setTimeout(function() {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'tag_search', {
+                'event_category': 'search',
+                'search_term': searchTerm,
+                'value': 1
+              });
+            }
+          }, 1000); 
+        }
+      });
+    }
+    
+    
+    let scrollDepthTracked = {
+      25: false,
+      50: false,
+      75: false,
+      100: false
+    };
+    
+    function trackScrollDepth() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+      
+      [25, 50, 75, 100].forEach(function(threshold) {
+        if (scrollPercent >= threshold && !scrollDepthTracked[threshold]) {
+          scrollDepthTracked[threshold] = true;
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'scroll_depth', {
+              'event_category': 'engagement',
+              'event_label': threshold + '%',
+              'value': threshold
+            });
+          }
+        }
+      });
+    }
+    
+    
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+      }
+      scrollTimeout = window.requestAnimationFrame(trackScrollDepth);
+    });
+    
+    
+    let timeOnPageTracked = false;
+    setTimeout(function() {
+      if (!timeOnPageTracked) {
+        timeOnPageTracked = true;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'time_on_page', {
+            'event_category': 'engagement',
+            'event_label': '30_seconds',
+            'value': 30
+          });
+        }
+      }
+    }, 30000);
+  });
+})();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://yx-fan.github.io/log/async-await-explained/">
+    
+
+    <meta property="og:url" content="https://yx-fan.github.io/log/async-await-explained/">
+  <meta property="og:site_name" content="Yuxin Fan">
+  <meta property="og:title" content="Async / Await Explained — What Actually Happens Under the Hood">
+  <meta property="og:description" content="async/await doesn’t make code run in parallel. It’s syntactic sugar over Promises that makes asynchronous logic read like synchronous flow, working by pausing and resuming execution through the event loop.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="log">
+    <meta property="article:published_time" content="2025-09-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-15T00:00:00+00:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="AsyncAwait">
+    <meta property="article:tag" content="EventLoop">
+    <meta property="article:tag" content="Promise">
+
+  <meta itemprop="name" content="Async / Await Explained — What Actually Happens Under the Hood">
+  <meta itemprop="description" content="async/await doesn’t make code run in parallel. It’s syntactic sugar over Promises that makes asynchronous logic read like synchronous flow, working by pausing and resuming execution through the event loop.">
+  <meta itemprop="datePublished" content="2025-09-15T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-09-15T00:00:00+00:00">
+  <meta itemprop="wordCount" content="484">
+  <meta itemprop="keywords" content="JavaScript,AsyncAwait,EventLoop,Promise">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Async / Await Explained — What Actually Happens Under the Hood">
+  <meta name="twitter:description" content="async/await doesn’t make code run in parallel. It’s syntactic sugar over Promises that makes asynchronous logic read like synchronous flow, working by pausing and resuming execution through the event loop.">
+
+	
+  <link rel="stylesheet" href="https://yx-fan.github.io/css/log.css">
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Yuxin Fan
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/log/" title="Log page">
+              Log
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://www.linkedin.com/in/fanyuxin/" title="Resume page">
+              Resume
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+      
+<div class="like-button-compact-container" id="likeContainerCompact">
+  <button class="like-button-compact" id="likeButtonCompact" aria-label="Like this page">
+    <span class="like-icon-compact">❤️</span>
+    <span class="like-count-compact" id="likeCountCompact">0</span>
+  </button>
+  <div class="like-particles-compact" id="likeParticlesCompact"></div>
+</div>
+
+<style>
+.like-button-compact-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.like-button-compact {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.like-button-compact:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.like-button-compact:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.like-button-compact.clicked {
+  background: rgba(255, 107, 157, 0.2);
+  border-color: rgba(255, 107, 157, 0.4);
+}
+
+.like-icon-compact {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.like-button-compact.clicked .like-icon-compact {
+  animation: heartBeatCompact 0.6s ease-in-out;
+}
+
+@keyframes heartBeatCompact {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.3) rotate(-5deg); }
+  50% { transform: scale(1.2) rotate(5deg); }
+  75% { transform: scale(1.3) rotate(-3deg); }
+}
+
+.like-count-compact {
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.like-particles-compact {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle-compact {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ff6b9d;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFloatCompact 1.5s ease-out forwards;
+  box-shadow: 0 0 4px rgba(255, 107, 157, 0.8);
+}
+
+.particle-compact:nth-child(odd) {
+  background: #ffd93d;
+  box-shadow: 0 0 4px rgba(255, 217, 61, 0.8);
+}
+
+.particle-compact:nth-child(3n) {
+  background: #6bcf7f;
+  box-shadow: 0 0 4px rgba(107, 207, 127, 0.8);
+}
+
+@keyframes particleFloatCompact {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-80px) translateX(calc(var(--random-x) * 1px)) scale(0) rotate(720deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .like-button-compact {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .like-icon-compact {
+    font-size: 0.875rem;
+  }
+  
+  .like-count-compact {
+    font-size: 0.75rem;
+  }
+}
+</style>
+
+<script>
+(function() {
+  'use strict';
+  
+  const likeButton = document.getElementById('likeButtonCompact');
+  const likeCount = document.getElementById('likeCountCompact');
+  const likeParticles = document.getElementById('likeParticlesCompact');
+  
+  if (typeof firebase === 'undefined') {
+    console.error('Firebase is not loaded');
+    return;
+  }
+  
+  const database = firebase.database();
+  const likesRef = database.ref('likes/homepage');
+  let currentCount = 0;
+  let isUpdating = false;
+  let skipListenerUpdate = false;
+  
+  const RATE_LIMIT_MS = 1000;
+  const LAST_CLICK_KEY = 'lastLikeClickCompact';
+  
+  function canClick() {
+    const lastClick = localStorage.getItem(LAST_CLICK_KEY);
+    if (!lastClick) return true;
+    const timeSinceLastClick = Date.now() - parseInt(lastClick, 10);
+    return timeSinceLastClick >= RATE_LIMIT_MS;
+  }
+  
+  function recordClick() {
+    localStorage.setItem(LAST_CLICK_KEY, Date.now().toString());
+  }
+  
+  likesRef.once('value', (snapshot) => {
+    const count = snapshot.val();
+    currentCount = count || 0;
+    likeCount.textContent = currentCount.toLocaleString();
+  }, (error) => {
+    console.error('Error loading likes:', error);
+    likeCount.textContent = '0';
+  });
+  
+  likesRef.on('value', (snapshot) => {
+    if (skipListenerUpdate) {
+      return;
+    }
+    const count = snapshot.val();
+    if (count !== null && count !== undefined) {
+      currentCount = count;
+      likeCount.textContent = currentCount.toLocaleString();
+    }
+  }, (error) => {
+    console.error('Error listening to likes:', error);
+  });
+  
+  function createParticles(count = 10) {
+    for (let i = 0; i < count; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle-compact';
+      
+      const angle = (Math.PI * 2 * i) / count;
+      const distance = 15 + Math.random() * 15;
+      const x = Math.cos(angle) * distance;
+      const y = Math.sin(angle) * distance;
+      const randomX = (Math.random() - 0.5) * 60;
+      
+      particle.style.left = `calc(50% + ${x}px)`;
+      particle.style.top = `calc(50% + ${y}px)`;
+      particle.style.animationDelay = `${Math.random() * 0.2}s`;
+      particle.style.setProperty('--random-x', randomX);
+      
+      likeParticles.appendChild(particle);
+      
+      setTimeout(() => {
+        particle.remove();
+      }, 1500);
+    }
+  }
+  
+  likeButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    if (isUpdating) {
+      return;
+    }
+    
+    isUpdating = true;
+    skipListenerUpdate = true;
+    
+    this.classList.add('clicked');
+    
+    if (!canClick()) {
+      return;
+    }
+    
+    recordClick();
+    
+    likesRef.once('value', (snapshot) => {
+      const currentValue = snapshot.val() || 0;
+      const newValue = currentValue + 1;
+      
+      likesRef.set(newValue)
+        .then(() => {
+          currentCount = newValue;
+          likeCount.textContent = newValue.toLocaleString();
+          
+          setTimeout(() => {
+            skipListenerUpdate = false;
+          }, 100);
+          
+          createParticles(10);
+          
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_like', {
+              'event_category': 'engagement',
+              'event_label': 'homepage',
+              'value': newValue,
+              'like_count': newValue,
+              'non_interaction': false
+            });
+          } else if (typeof window.dataLayer !== 'undefined') {
+            window.dataLayer.push({
+              'event': 'page_like',
+              'event_category': 'engagement',
+              'event_label': 'homepage',
+              'value': newValue,
+              'like_count': newValue
+            });
+          }
+          
+          setTimeout(() => {
+            this.classList.remove('clicked');
+            isUpdating = false;
+          }, 600);
+        })
+        .catch((error) => {
+          console.error('Error updating likes:', error);
+          isUpdating = false;
+          skipListenerUpdate = false;
+          this.classList.remove('clicked');
+        });
+    }, (error) => {
+      console.error('Error reading current value:', error);
+      isUpdating = false;
+      skipListenerUpdate = false;
+      this.classList.remove('clicked');
+    });
+  });
+})();
+</script>
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        
+        
+        
+          
+        
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title header-title-gradient">
+          Log
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+<style>
+ 
+.header-title-gradient {
+  background: linear-gradient(135deg, #5b7fa8 0%, #6b8db8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+</style>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="log-single-container">
+    <article class="log-single">
+      
+      <header class="log-single-header">
+        <div class="log-single-meta">
+          <time class="log-single-date" datetime="2025-09-15">
+            September 2025
+          </time>
+        </div>
+        <h1 class="log-single-title">Async / Await Explained — What Actually Happens Under the Hood</h1>
+      </header>
+
+      
+      <div class="log-single-content">
+        <p><code>async/await</code> doesn&rsquo;t make code &ldquo;run in parallel.&rdquo; It&rsquo;s syntactic sugar over Promises that makes asynchronous logic read like synchronous flow. Behind the scenes, it works by pausing and resuming execution through the event loop.</p>
+<p>The first thing to understand is that <code>async</code> functions always return a Promise. <code>await</code> only works inside an <code>async</code> function and pauses it until the Promise resolves. The rest of the function is scheduled as a continuation—a microtask—in the event loop. When I say &ldquo;pause,&rdquo; I mean it&rsquo;s logical, not physical. The thread never actually stops.</p>
+<p>Here&rsquo;s what actually happens when you use <code>await</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">fetchData</span>();
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">data</span>);
+</span></span></code></pre></div><p>First, <code>fetchData()</code> executes and returns a Promise. Then this function suspends, giving control back to the event loop. When the Promise resolves, the callback—in this case, the <code>console.log</code>—is queued as a microtask. After current tasks finish, the event loop resumes this function. The program keeps running other tasks while waiting. That&rsquo;s the key: the waiting happens without blocking.</p>
+<p>The relationship with the event loop is crucial. JavaScript has two main queues: macro-tasks for things like timers, I/O, and messages, and micro-tasks for Promise continuations and <code>await</code> callbacks. After each macro-task completes, all pending micro-tasks run before the next cycle begins. This means <code>await</code> callbacks always run before timers or I/O callbacks in the next tick. It&rsquo;s a predictable ordering that makes async code more reliable.</p>
+<p>Sometimes <code>await</code> is meaningless. If the awaited value isn&rsquo;t a Promise, it&rsquo;s wrapped in <code>Promise.resolve()</code> instantly. Synchronous functions don&rsquo;t &ldquo;pause&rdquo; anything. For example, <code>await add(1, 2)</code> executes immediately—there&rsquo;s no waiting, just extra overhead.</p>
+<p>The question is when <code>await</code> actually matters:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Operation Type</th>
+          <th>Should Await?</th>
+          <th>Reason</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>File / Network / DB I/O</td>
+          <td>✅ Yes</td>
+          <td>Async I/O, needs event loop resume</td>
+      </tr>
+      <tr>
+          <td>CPU-bound calculation</td>
+          <td>❌ No</td>
+          <td>Blocks anyway</td>
+      </tr>
+      <tr>
+          <td>Simulated async (delay, Promise)</td>
+          <td>⚙️ Optional</td>
+          <td>For flow control</td>
+      </tr>
+      <tr>
+          <td>UI / timer coordination</td>
+          <td>⚙️ Sometimes</td>
+          <td>To yield event loop control</td>
+      </tr>
+  </tbody>
+</table>
+<p>There are common misunderstandings about <code>await</code>. People think <code>await</code> makes code run faster, but it doesn&rsquo;t—it only waits smarter. Some think <code>await</code> creates threads, but there are no threads, just scheduling. The real power of <code>await</code> is improving readability and sequencing. It makes asynchronous code look synchronous, which reduces cognitive load and makes it easier to reason about execution order.</p>
+<p>The flow is straightforward: call an async function, execute until the first <code>await</code>, register the Promise, yield to the event loop, wait for the Promise to resolve, resume the continuation, and finish the function. It&rsquo;s a dance between the function and the event loop, with the event loop orchestrating when things happen.</p>
+<p>The mental model I keep coming back to is this: <code>await</code> doesn&rsquo;t block the CPU—it just says, &ldquo;I&rsquo;ll come back when my data&rsquo;s ready.&rdquo; The CPU keeps working on other things, and when your data arrives, you get notified and continue where you left off. It&rsquo;s efficient because you&rsquo;re not wasting cycles waiting for things you can&rsquo;t control.</p>
+
+      </div>
+
+      
+      <footer class="log-single-footer">
+        <a href="https://yx-fan.github.io/log/" class="log-back-link">← Back to Log</a>
+      </footer>
+    </article>
+  </div>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://yx-fan.github.io/" >
+    &copy;  Yuxin Fan 2025 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
+

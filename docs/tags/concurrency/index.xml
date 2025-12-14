@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Concurrency on Yuxin Fan</title>
+    <link>https://yx-fan.github.io/tags/concurrency/</link>
+    <description>Recent content in Concurrency on Yuxin Fan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yx-fan.github.io/tags/concurrency/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Node.js Achieves High Concurrency on a Single CPU Core</title>
+      <link>https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/</link>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/</guid>
+      <description>Node.js achieves high concurrency not by multi-threading, but through its event-driven, non-blocking I/O model. It efficiently overlaps I/O waiting time across requests, allowing a single thread to handle thousands of connections.</description>
+    </item>
+  </channel>
+</rss>

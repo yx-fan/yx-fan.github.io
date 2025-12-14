@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on Yuxin Fan</title>
+    <link>https://yx-fan.github.io/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on Yuxin Fan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yx-fan.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Build a Modern DevOps Infrastructure Repository</title>
+      <link>https://yx-fan.github.io/log/modern-devops-infrastructure-repository/</link>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/modern-devops-infrastructure-repository/</guid>
+      <description>A clean, layered, and cloud-native foundation for managing infrastructure both locally and in the cloud. Separates provisioning, orchestration, persistence, and automation into modular layers.</description>
+    </item>
+  </channel>
+</rss>

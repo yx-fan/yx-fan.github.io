@@ -6,8 +6,22 @@
     <description>Recent content in System Design on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/tags/system-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Node.js Achieves High Concurrency on a Single CPU Core</title>
+      <link>https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/</link>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/</guid>
+      <description>Node.js achieves high concurrency not by multi-threading, but through its event-driven, non-blocking I/O model. It efficiently overlaps I/O waiting time across requests, allowing a single thread to handle thousands of connections.</description>
+    </item>
+    <item>
+      <title>Why OpenSearch Shouldn&#39;t Be Used as a Primary Database</title>
+      <link>https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/</link>
+      <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/</guid>
+      <description>OpenSearch is built for search, not for storage. Its architecture prioritizes high-performance retrieval and aggregation, not transactional integrity or consistency.</description>
+    </item>
     <item>
       <title>Group Chat Architecture and Implementation</title>
       <link>https://yx-fan.github.io/projects/chat-group-core/</link>

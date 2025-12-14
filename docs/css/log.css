@@ -1,0 +1,232 @@
+/* Log Page - Ultra Lightweight Styles */
+
+.log-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.log-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 3rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Log Entries - Grouped by Quarter */
+.log-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.log-quarter {
+  display: flex;
+  flex-direction: column;
+}
+
+.log-quarter-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #9ca3af;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.log-quarter-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.log-entry {
+  padding: 0;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.log-entry:hover {
+  opacity: 0.7;
+}
+
+.log-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.log-title a {
+  color: #111827;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.log-title a:hover {
+  color: #3b82f6;
+}
+
+.log-summary {
+  margin: 0.5rem 0 0 0;
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* Log Single Page - Lightweight Design */
+.log-single-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.log-single {
+  background: transparent;
+}
+
+.log-single-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.log-single-meta {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+.log-single-date {
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.log-single-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #111827;
+}
+
+.log-single-content {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.log-single-content h1,
+.log-single-content h2,
+.log-single-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.log-single-content h1 {
+  font-size: 1.75rem;
+}
+
+.log-single-content h2 {
+  font-size: 1.5rem;
+}
+
+.log-single-content h3 {
+  font-size: 1.25rem;
+}
+
+.log-single-content p {
+  margin-bottom: 1.25rem;
+}
+
+.log-single-content a {
+  color: #3b82f6;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.log-single-content a:hover {
+  color: #2563eb;
+}
+
+.log-single-content ul,
+.log-single-content ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.log-single-content li {
+  margin-bottom: 0.5rem;
+}
+
+.log-single-content code {
+  background-color: #f3f4f6;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.log-single-content pre {
+  background-color: #1f2937;
+  color: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+.log-single-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.log-single-content blockquote {
+  border-left: 3px solid #e5e7eb;
+  padding-left: 1rem;
+  margin: 1.25rem 0;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.log-single-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.log-back-link {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.log-back-link:hover {
+  color: #3b82f6;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .log-page-container,
+  .log-single-container {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .log-title {
+    font-size: 1rem;
+  }
+
+  .log-single-title {
+    font-size: 1.5rem;
+  }
+
+  .log-quarter-entries {
+    gap: 1.25rem;
+  }
+}
+

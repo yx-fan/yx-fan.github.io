@@ -6,8 +6,113 @@
     <description>Recent content in Tags on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevOps</title>
+      <link>https://yx-fan.github.io/tags/devops/</link>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IaC</title>
+      <link>https://yx-fan.github.io/tags/iac/</link>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/iac/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infrastructure</title>
+      <link>https://yx-fan.github.io/tags/infrastructure/</link>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>https://yx-fan.github.io/tags/kubernetes/</link>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Terraform</title>
+      <link>https://yx-fan.github.io/tags/terraform/</link>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/terraform/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cluster</title>
+      <link>https://yx-fan.github.io/tags/cluster/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/cluster/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Node.js</title>
+      <link>https://yx-fan.github.io/tags/node.js/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/node.js/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Scaling</title>
+      <link>https://yx-fan.github.io/tags/scaling/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/scaling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>WorkerThreads</title>
+      <link>https://yx-fan.github.io/tags/workerthreads/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/workerthreads/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AsyncAwait</title>
+      <link>https://yx-fan.github.io/tags/asyncawait/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/asyncawait/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>EventLoop</title>
+      <link>https://yx-fan.github.io/tags/eventloop/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/eventloop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>https://yx-fan.github.io/tags/javascript/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Promise</title>
+      <link>https://yx-fan.github.io/tags/promise/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/promise/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Concurrency</title>
+      <link>https://yx-fan.github.io/tags/concurrency/</link>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System Design</title>
+      <link>https://yx-fan.github.io/tags/system-design/</link>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/system-design/</guid>
+      <description></description>
+    </item>
     <item>
       <title>HDBSCAN</title>
       <link>https://yx-fan.github.io/tags/hdbscan/</link>
@@ -65,6 +170,41 @@
       <description></description>
     </item>
     <item>
+      <title>OpenSearch</title>
+      <link>https://yx-fan.github.io/tags/opensearch/</link>
+      <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/opensearch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>https://yx-fan.github.io/tags/ai/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RAG</title>
+      <link>https://yx-fan.github.io/tags/rag/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/rag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>https://yx-fan.github.io/tags/sql/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vector Database</title>
+      <link>https://yx-fan.github.io/tags/vector-database/</link>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/vector-database/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Chat</title>
       <link>https://yx-fan.github.io/tags/chat/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
@@ -93,24 +233,10 @@
       <description></description>
     </item>
     <item>
-      <title>Node.js</title>
-      <link>https://yx-fan.github.io/tags/node.js/</link>
-      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/node.js/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Real-Time Messaging</title>
       <link>https://yx-fan.github.io/tags/real-time-messaging/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
       <guid>https://yx-fan.github.io/tags/real-time-messaging/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>System Design</title>
-      <link>https://yx-fan.github.io/tags/system-design/</link>
-      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/system-design/</guid>
       <description></description>
     </item>
     <item>
@@ -188,13 +314,6 @@
       <link>https://yx-fan.github.io/tags/blockchain/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
       <guid>https://yx-fan.github.io/tags/blockchain/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cluster</title>
-      <link>https://yx-fan.github.io/tags/cluster/</link>
-      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/cluster/</guid>
       <description></description>
     </item>
     <item>

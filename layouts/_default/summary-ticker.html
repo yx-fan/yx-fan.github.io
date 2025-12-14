@@ -1,0 +1,20 @@
+{{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+<article class="ticker-card">
+  <div class="ticker-card-content">
+    {{ if not .Date.IsZero }}
+      <div class="ticker-date">{{ .Date.Format "Jan" }}</div>
+    {{ end }}
+    <h3 class="ticker-title">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h3>
+    {{ if .Summary }}
+      <p class="ticker-summary">{{ .Summary }}</p>
+    {{ end }}
+  </div>
+  {{ if $featured_image }}
+    <div class="ticker-image">
+      <img src="{{ $featured_image }}" alt="{{ .Title }}" />
+    </div>
+  {{ end }}
+</article>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Promise on Yuxin Fan</title>
+    <link>https://yx-fan.github.io/tags/promise/</link>
+    <description>Recent content in Promise on Yuxin Fan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yx-fan.github.io/tags/promise/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Async / Await Explained — What Actually Happens Under the Hood</title>
+      <link>https://yx-fan.github.io/log/async-await-explained/</link>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/async-await-explained/</guid>
+      <description>async/await doesn&amp;rsquo;t make code run in parallel. It&amp;rsquo;s syntactic sugar over Promises that makes asynchronous logic read like synchronous flow, working by pausing and resuming execution through the event loop.</description>
+    </item>
+  </channel>
+</rss>

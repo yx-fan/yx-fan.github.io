@@ -17,18 +17,23 @@ theme = "ananke"
   url = "/about/"
   weight = 2
 [[menu.main]]
+  name = "Log"
+  url = "/log/"
+  weight = 3
+[[menu.main]]
   name = "Projects"
   url = "/projects/"
-  weight = 3
+  weight = 4
 [[menu.main]]
   name = "Tags"
   url = "/tags/"
-  weight = 4
+  weight = 5
 [[menu.main]]
   name = "Resume"
   url = "https://www.linkedin.com/in/fanyuxin/"
-  weight = 5
+  weight = 6
 [params]
+  mainSections = ["log", "projects"]
   Social = [
     { name = "LinkedIn", url = "https://linkedin.com/in/yuxinfan" }
   ]

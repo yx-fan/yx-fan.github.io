@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>How to Build a Modern DevOps Infrastructure Repository | Yuxin Fan</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="A clean, layered, and cloud-native foundation for managing infrastructure both locally and in the cloud. Separates provisioning, orchestration, persistence, and automation into modular layers.">
+    <meta name="generator" content="Hugo 0.143.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+    
+    <link rel="stylesheet" href="https://yx-fan.github.io/css/shared.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script>
+      
+      const firebaseConfig = {
+        apiKey: "AIzaSyDkOKW_GzV0dBjgGLYE6ASMYB1WLLrjD4M",
+        authDomain: "yx-fan-website.firebaseapp.com",
+        databaseURL: "https://yx-fan-website-default-rtdb.firebaseio.com",
+        projectId: "yx-fan-website",
+        storageBucket: "yx-fan-website.firebasestorage.app",
+        messagingSenderId: "76941092208",
+        appId: "1:76941092208:web:8cd643195ef05a6dd09bb5",
+        measurementId: "G-XDZ9H5W5QX"
+      };
+      
+      
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KY4X96MYQ"></script>
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+
+   
+   gtag('config', 'G-4KY4X96MYQ', {
+     
+     page_type: 'content',
+     
+     content_category: 'log',
+     
+     custom_map: {
+       'dimension1': 'page_type',
+       'dimension2': 'content_category'
+     }
+   });
+</script>
+
+<script>
+
+(function() {
+  'use strict';
+  
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    const projectCards = document.querySelectorAll('.project-card a[href]');
+    projectCards.forEach(function(card) {
+      card.addEventListener('click', function(e) {
+        const projectTitle = this.closest('.project-card')?.querySelector('h2 a')?.textContent || 'Unknown';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'project_click', {
+            'event_category': 'engagement',
+            'event_label': projectTitle,
+            'value': 1
+          });
+        }
+      });
+    });
+    
+    
+    const tagItems = document.querySelectorAll('.tag-item');
+    tagItems.forEach(function(tag) {
+      tag.addEventListener('click', function(e) {
+        const tagName = this.querySelector('.tag-name')?.textContent || 'Unknown';
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'tag_click', {
+            'event_category': 'navigation',
+            'event_label': tagName,
+            'value': 1
+          });
+        }
+      });
+    });
+    
+    
+    const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="' + window.location.hostname + '"])');
+    externalLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        const linkUrl = this.href;
+        const linkText = this.textContent.trim() || linkUrl;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'external_link_click', {
+            'event_category': 'outbound',
+            'event_label': linkText,
+            'transport_type': 'beacon',
+            'event_callback': function() {
+              
+            }
+          });
+        }
+      });
+    });
+    
+    
+    const tagSearchInput = document.getElementById('tagSearch');
+    if (tagSearchInput) {
+      let searchTimeout;
+      tagSearchInput.addEventListener('input', function(e) {
+        clearTimeout(searchTimeout);
+        const searchTerm = e.target.value.trim();
+        if (searchTerm.length > 2) {
+          searchTimeout = setTimeout(function() {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'tag_search', {
+                'event_category': 'search',
+                'search_term': searchTerm,
+                'value': 1
+              });
+            }
+          }, 1000); 
+        }
+      });
+    }
+    
+    
+    let scrollDepthTracked = {
+      25: false,
+      50: false,
+      75: false,
+      100: false
+    };
+    
+    function trackScrollDepth() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = Math.round((scrollTop / docHeight) * 100);
+      
+      [25, 50, 75, 100].forEach(function(threshold) {
+        if (scrollPercent >= threshold && !scrollDepthTracked[threshold]) {
+          scrollDepthTracked[threshold] = true;
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'scroll_depth', {
+              'event_category': 'engagement',
+              'event_label': threshold + '%',
+              'value': threshold
+            });
+          }
+        }
+      });
+    }
+    
+    
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+      if (scrollTimeout) {
+        window.cancelAnimationFrame(scrollTimeout);
+      }
+      scrollTimeout = window.requestAnimationFrame(trackScrollDepth);
+    });
+    
+    
+    let timeOnPageTracked = false;
+    setTimeout(function() {
+      if (!timeOnPageTracked) {
+        timeOnPageTracked = true;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'time_on_page', {
+            'event_category': 'engagement',
+            'event_label': '30_seconds',
+            'value': 30
+          });
+        }
+      }
+    }, 30000);
+  });
+})();
+</script>
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="https://yx-fan.github.io/log/modern-devops-infrastructure-repository/">
+    
+
+    <meta property="og:url" content="https://yx-fan.github.io/log/modern-devops-infrastructure-repository/">
+  <meta property="og:site_name" content="Yuxin Fan">
+  <meta property="og:title" content="How to Build a Modern DevOps Infrastructure Repository">
+  <meta property="og:description" content="A clean, layered, and cloud-native foundation for managing infrastructure both locally and in the cloud. Separates provisioning, orchestration, persistence, and automation into modular layers.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="log">
+    <meta property="article:published_time" content="2025-11-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-11-15T00:00:00+00:00">
+    <meta property="article:tag" content="DevOps">
+    <meta property="article:tag" content="Infrastructure">
+    <meta property="article:tag" content="Terraform">
+    <meta property="article:tag" content="Kubernetes">
+    <meta property="article:tag" content="IaC">
+
+  <meta itemprop="name" content="How to Build a Modern DevOps Infrastructure Repository">
+  <meta itemprop="description" content="A clean, layered, and cloud-native foundation for managing infrastructure both locally and in the cloud. Separates provisioning, orchestration, persistence, and automation into modular layers.">
+  <meta itemprop="datePublished" content="2025-11-15T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-11-15T00:00:00+00:00">
+  <meta itemprop="wordCount" content="654">
+  <meta itemprop="keywords" content="DevOps,Infrastructure,Terraform,Kubernetes,IaC">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Build a Modern DevOps Infrastructure Repository">
+  <meta name="twitter:description" content="A clean, layered, and cloud-native foundation for managing infrastructure both locally and in the cloud. Separates provisioning, orchestration, persistence, and automation into modular layers.">
+
+	
+  <link rel="stylesheet" href="https://yx-fan.github.io/css/log.css">
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Yuxin Fan
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/" title="Home page">
+              Home
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/log/" title="Log page">
+              Log
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tags/" title="Tags page">
+              Tags
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://www.linkedin.com/in/fanyuxin/" title="Resume page">
+              Resume
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+      
+<div class="like-button-compact-container" id="likeContainerCompact">
+  <button class="like-button-compact" id="likeButtonCompact" aria-label="Like this page">
+    <span class="like-icon-compact">❤️</span>
+    <span class="like-count-compact" id="likeCountCompact">0</span>
+  </button>
+  <div class="like-particles-compact" id="likeParticlesCompact"></div>
+</div>
+
+<style>
+.like-button-compact-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.like-button-compact {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.like-button-compact:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.like-button-compact:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.like-button-compact.clicked {
+  background: rgba(255, 107, 157, 0.2);
+  border-color: rgba(255, 107, 157, 0.4);
+}
+
+.like-icon-compact {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.like-button-compact.clicked .like-icon-compact {
+  animation: heartBeatCompact 0.6s ease-in-out;
+}
+
+@keyframes heartBeatCompact {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.3) rotate(-5deg); }
+  50% { transform: scale(1.2) rotate(5deg); }
+  75% { transform: scale(1.3) rotate(-3deg); }
+}
+
+.like-count-compact {
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.like-particles-compact {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle-compact {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ff6b9d;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFloatCompact 1.5s ease-out forwards;
+  box-shadow: 0 0 4px rgba(255, 107, 157, 0.8);
+}
+
+.particle-compact:nth-child(odd) {
+  background: #ffd93d;
+  box-shadow: 0 0 4px rgba(255, 217, 61, 0.8);
+}
+
+.particle-compact:nth-child(3n) {
+  background: #6bcf7f;
+  box-shadow: 0 0 4px rgba(107, 207, 127, 0.8);
+}
+
+@keyframes particleFloatCompact {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-80px) translateX(calc(var(--random-x) * 1px)) scale(0) rotate(720deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .like-button-compact {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .like-icon-compact {
+    font-size: 0.875rem;
+  }
+  
+  .like-count-compact {
+    font-size: 0.75rem;
+  }
+}
+</style>
+
+<script>
+(function() {
+  'use strict';
+  
+  const likeButton = document.getElementById('likeButtonCompact');
+  const likeCount = document.getElementById('likeCountCompact');
+  const likeParticles = document.getElementById('likeParticlesCompact');
+  
+  if (typeof firebase === 'undefined') {
+    console.error('Firebase is not loaded');
+    return;
+  }
+  
+  const database = firebase.database();
+  const likesRef = database.ref('likes/homepage');
+  let currentCount = 0;
+  let isUpdating = false;
+  let skipListenerUpdate = false;
+  
+  const RATE_LIMIT_MS = 1000;
+  const LAST_CLICK_KEY = 'lastLikeClickCompact';
+  
+  function canClick() {
+    const lastClick = localStorage.getItem(LAST_CLICK_KEY);
+    if (!lastClick) return true;
+    const timeSinceLastClick = Date.now() - parseInt(lastClick, 10);
+    return timeSinceLastClick >= RATE_LIMIT_MS;
+  }
+  
+  function recordClick() {
+    localStorage.setItem(LAST_CLICK_KEY, Date.now().toString());
+  }
+  
+  likesRef.once('value', (snapshot) => {
+    const count = snapshot.val();
+    currentCount = count || 0;
+    likeCount.textContent = currentCount.toLocaleString();
+  }, (error) => {
+    console.error('Error loading likes:', error);
+    likeCount.textContent = '0';
+  });
+  
+  likesRef.on('value', (snapshot) => {
+    if (skipListenerUpdate) {
+      return;
+    }
+    const count = snapshot.val();
+    if (count !== null && count !== undefined) {
+      currentCount = count;
+      likeCount.textContent = currentCount.toLocaleString();
+    }
+  }, (error) => {
+    console.error('Error listening to likes:', error);
+  });
+  
+  function createParticles(count = 10) {
+    for (let i = 0; i < count; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle-compact';
+      
+      const angle = (Math.PI * 2 * i) / count;
+      const distance = 15 + Math.random() * 15;
+      const x = Math.cos(angle) * distance;
+      const y = Math.sin(angle) * distance;
+      const randomX = (Math.random() - 0.5) * 60;
+      
+      particle.style.left = `calc(50% + ${x}px)`;
+      particle.style.top = `calc(50% + ${y}px)`;
+      particle.style.animationDelay = `${Math.random() * 0.2}s`;
+      particle.style.setProperty('--random-x', randomX);
+      
+      likeParticles.appendChild(particle);
+      
+      setTimeout(() => {
+        particle.remove();
+      }, 1500);
+    }
+  }
+  
+  likeButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    if (isUpdating) {
+      return;
+    }
+    
+    isUpdating = true;
+    skipListenerUpdate = true;
+    
+    this.classList.add('clicked');
+    
+    if (!canClick()) {
+      return;
+    }
+    
+    recordClick();
+    
+    likesRef.once('value', (snapshot) => {
+      const currentValue = snapshot.val() || 0;
+      const newValue = currentValue + 1;
+      
+      likesRef.set(newValue)
+        .then(() => {
+          currentCount = newValue;
+          likeCount.textContent = newValue.toLocaleString();
+          
+          setTimeout(() => {
+            skipListenerUpdate = false;
+          }, 100);
+          
+          createParticles(10);
+          
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_like', {
+              'event_category': 'engagement',
+              'event_label': 'homepage',
+              'value': newValue,
+              'like_count': newValue,
+              'non_interaction': false
+            });
+          } else if (typeof window.dataLayer !== 'undefined') {
+            window.dataLayer.push({
+              'event': 'page_like',
+              'event_category': 'engagement',
+              'event_label': 'homepage',
+              'value': newValue,
+              'like_count': newValue
+            });
+          }
+          
+          setTimeout(() => {
+            this.classList.remove('clicked');
+            isUpdating = false;
+          }, 600);
+        })
+        .catch((error) => {
+          console.error('Error updating likes:', error);
+          isUpdating = false;
+          skipListenerUpdate = false;
+          this.classList.remove('clicked');
+        });
+    }, (error) => {
+      console.error('Error reading current value:', error);
+      isUpdating = false;
+      skipListenerUpdate = false;
+      this.classList.remove('clicked');
+    });
+  });
+})();
+</script>
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        
+        
+        
+          
+        
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title header-title-gradient">
+          Log
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+<style>
+ 
+.header-title-gradient {
+  background: linear-gradient(135deg, #5b7fa8 0%, #6b8db8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+</style>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="log-single-container">
+    <article class="log-single">
+      
+      <header class="log-single-header">
+        <div class="log-single-meta">
+          <time class="log-single-date" datetime="2025-11-15">
+            November 2025
+          </time>
+        </div>
+        <h1 class="log-single-title">How to Build a Modern DevOps Infrastructure Repository</h1>
+      </header>
+
+      
+      <div class="log-single-content">
+        <p>This structure provides a clean, layered, and cloud-native foundation for managing infrastructure both locally in a homelab and in the cloud. It separates provisioning, orchestration, persistence, and automation into modular layers—making deployments reproducible, scalable, and easy to evolve.</p>
+<p>The repository follows a layered architecture that mirrors real-world cloud stack layers: environment setup, infrastructure, orchestration, application, automation, and delivery. The flow is bootstrap, then Terraform, then Docker, then K3s, then apps, then automation, and finally CI/CD. Each layer builds on the previous one, creating a clear separation of concerns.</p>
+<p>The bootstrap layer handles system setup and environment preparation. This includes scripts for installing K3s, Terraform, Go, Docker, and configuring firewalls. It&rsquo;s the foundation that gets everything else running. Think of it as Layer 0—the system bootstrap and environment setup that prepares the machine for everything else.</p>
+<p>The Terraform layer is where infrastructure-as-code lives. It&rsquo;s organized into reusable modules for K3s provisioning, network rules and routing, persistent volumes, Cloudflare DNS and tunnel configuration, Docker-based databases, and monitoring setup. Environment-specific definitions live in separate directories—one for homelab, one for AWS, each with its own main.tf, terraform.tfvars, and backend configuration. This unified IaC approach ensures reproducible deployment anywhere, whether you&rsquo;re running in a homelab or on AWS.</p>
+<p>The Docker services layer handles persistent host services that are stateful. This includes PostgreSQL, Redis, MinIO for object storage, each with their own docker-compose.yaml, backup and restore scripts, and environment configuration. These run outside K3s on stable Docker volumes because databases, caches, and object storage need persistence and don&rsquo;t need the elasticity that Kubernetes provides.</p>
+<p>The K8s layer is where cluster-level orchestration happens with K3s. It contains native YAML manifests for Ingress, ConfigMaps, Secrets, and Jobs, plus Helm chart value files for Prometheus, Grafana, nginx-ingress, and Cloudflare tunnel. There&rsquo;s a Makefile for one-command deploy, lint, and sync operations. This is where stateless, scalable services live.</p>
+<p>The apps layer contains application services that run on K3s. Each app—whether it&rsquo;s a Go, Node, or Python API service, or a background worker—has its own Dockerfile, deployment manifests, service definitions, and documentation. These are the actual applications that users interact with, running in the Kubernetes cluster.</p>
+<p>The automation layer brings intelligence to the infrastructure. Written in Go or Python, it includes components for automating Terraform plans, monitoring cluster state, handling observability logic, managing webhooks and alerts, and scheduling periodic backups. This is where self-healing and monitoring logic lives, making the infrastructure more autonomous.</p>
+<p>The scripts layer contains manual or periodic scripts for operations like backing up everything, cleaning up resources, updating container images, deploying all services, and restoring from backups. These are the operational tools that don&rsquo;t fit into the automation layer but are still essential for day-to-day management.</p>
+<p>Finally, the CI/CD layer uses GitHub Actions workflows for Terraform planning and applying, Docker image building, and K3s deployments. This brings GitOps-style continuous delivery to the infrastructure, ensuring that changes are tested, reviewed, and deployed systematically.</p>
+<p>The key insight is the separation between stateful and stateless services. Databases, caches, and object storage run outside K3s on stable Docker volumes because they need persistence and don&rsquo;t benefit from Kubernetes&rsquo; scaling model. Application and vector services run inside K3s because they need scalability and elasticity. This separation ensures that each type of service runs in the environment that best suits its needs.</p>
+<p>The unified infrastructure-as-code approach means Terraform, Helm, and Kustomize work together to ensure reproducible deployment anywhere. Whether you&rsquo;re deploying to a homelab or AWS, the same code and processes apply. The automation-ready design means the infrastructure can monitor itself, heal itself, and deploy itself through GitOps-style continuous delivery.</p>
+<p>The mental model is bottom to top: foundation, then infrastructure, then orchestration, then automation, then delivery. Each layer depends on the layers below it, and each layer adds a new capability. Bootstrap sets up the system, Terraform defines the infrastructure, Docker provides persistent services, K3s orchestrates applications, apps deliver value, automation adds intelligence, and CI/CD ensures continuous improvement.</p>
+
+      </div>
+
+      
+      <footer class="log-single-footer">
+        <a href="https://yx-fan.github.io/log/" class="log-back-link">← Back to Log</a>
+      </footer>
+    </article>
+  </div>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://yx-fan.github.io/" >
+    &copy;  Yuxin Fan 2025 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
+

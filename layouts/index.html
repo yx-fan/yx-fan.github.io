@@ -1,5 +1,6 @@
 {{ define "head" }}
   <link rel="stylesheet" href="{{ "css/home.css" | absURL }}">
+  <script src="{{ "js/ticker-drag.js" | absURL }}" defer></script>
 {{ end }}
 
 {{ define "main" }}
@@ -77,44 +78,81 @@
           <span>Contact Me</span>
         </a>
       </div>
-
-      <!-- Like Button -->
-      {{ partial "like-button.html" . }}
     </section>
 
-    <!-- Recent Projects Section (if any) -->
+    <!-- Transition Section -->
+    <div class="content-transition">
+      <p class="transition-text">Here's what I've been working on and thinking about</p>
+    </div>
+
+    <!-- Recent Sections -->
     {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
     {{ range ($mainSections) }}
       {{ $section_name := . }}
       {{ $section := where $.Site.RegularPages "Section" "in" $section_name }}
       {{ $section_count := len $section }}
       {{ if ge $section_count 1 }}
-        <section class="recent-section">
-          <div class="recent-container">
-            {{ with $.Site.GetPage "section" $section_name }}
-              <h2 class="recent-title">
-                {{ $.Param "recent_copy" | default (i18n "recentTitle" .) }}
-              </h2>
-            {{ end }}
-            
-            {{ $n_posts := $.Param "recent_posts_number" | default 3 }}
-            <div class="recent-items">
-              {{ range (first $n_posts $section) }}
-                <div class="recent-item">
-                  {{ .Render "summary-with-image" }}
+        {{ if eq $section_name "log" }}
+          <!-- Ticker-style Log Section -->
+          <section class="ticker-section">
+            <div class="ticker-container">
+              {{ with $.Site.GetPage "section" $section_name }}
+                <div class="ticker-header">
+                  <h2 class="ticker-title-main">Recent Thoughts & Ideas</h2>
+                </div>
+              {{ end }}
+              
+              <div class="ticker-wrapper">
+                <div class="ticker-track" id="tickerTrack">
+                  {{ $n_posts := $.Param "recent_posts_number" | default 6 }}
+                  {{ range (first $n_posts $section) }}
+                    {{ .Render "summary-ticker" }}
+                  {{ end }}
+                  <!-- Duplicate for seamless loop -->
+                  {{ range (first $n_posts $section) }}
+                    {{ .Render "summary-ticker" }}
+                  {{ end }}
+                </div>
+              </div>
+
+              {{ if gt $section_count $n_posts }}
+                <div class="ticker-footer">
+                  <a href="{{ relref $ $section_name }}" class="ticker-view-all">
+                    View All Log →
+                  </a>
                 </div>
               {{ end }}
             </div>
-
-            {{ if gt $section_count $n_posts }}
-              <div class="view-all">
-                <a href="{{ relref $ $section_name }}" class="view-all-link">
-                  View All {{ $section_name | title }} →
-                </a>
+          </section>
+        {{ else }}
+          <!-- Regular Section for Projects -->
+          <section class="recent-section">
+            <div class="recent-container">
+              {{ with $.Site.GetPage "section" $section_name }}
+                <h2 class="recent-title">
+                  Featured Projects
+                </h2>
+              {{ end }}
+              
+              {{ $n_posts := $.Param "recent_posts_number" | default 3 }}
+              <div class="recent-items">
+                {{ range (first $n_posts $section) }}
+                  <div class="recent-item">
+                    {{ .Render "summary-with-image" }}
+                  </div>
+                {{ end }}
               </div>
-            {{ end }}
-          </div>
-        </section>
+
+              {{ if gt $section_count $n_posts }}
+                <div class="view-all">
+                  <a href="{{ relref $ $section_name }}" class="view-all-link">
+                    View All {{ $section_name | title }} →
+                  </a>
+                </div>
+              {{ end }}
+            </div>
+          </section>
+        {{ end }}
       {{ end }}
     {{ end }}
   </div>

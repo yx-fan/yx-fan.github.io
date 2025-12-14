@@ -6,8 +6,22 @@
     <description>Recent content in Node.js on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scaling Node.js — Worker Threads &amp; Cluster Mode</title>
+      <link>https://yx-fan.github.io/log/scaling-nodejs-worker-threads-cluster/</link>
+      <pubDate>Wed, 15 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/scaling-nodejs-worker-threads-cluster/</guid>
+      <description>Node.js runs one event loop per process—only one CPU core is used. To scale, use Cluster for multi-process or Worker Threads for multi-thread. Both enable parallelism, but in different ways.</description>
+    </item>
+    <item>
+      <title>How Node.js Achieves High Concurrency on a Single CPU Core</title>
+      <link>https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/</link>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/</guid>
+      <description>Node.js achieves high concurrency not by multi-threading, but through its event-driven, non-blocking I/O model. It efficiently overlaps I/O waiting time across requests, allowing a single thread to handle thousands of connections.</description>
+    </item>
     <item>
       <title>Group Chat Architecture and Implementation</title>
       <link>https://yx-fan.github.io/projects/chat-group-core/</link>

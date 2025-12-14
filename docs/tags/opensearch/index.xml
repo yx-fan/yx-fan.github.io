@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenSearch on Yuxin Fan</title>
+    <link>https://yx-fan.github.io/tags/opensearch/</link>
+    <description>Recent content in OpenSearch on Yuxin Fan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yx-fan.github.io/tags/opensearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why OpenSearch Shouldn&#39;t Be Used as a Primary Database</title>
+      <link>https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/</link>
+      <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/</guid>
+      <description>OpenSearch is built for search, not for storage. Its architecture prioritizes high-performance retrieval and aggregation, not transactional integrity or consistency.</description>
+    </item>
+  </channel>
+</rss>

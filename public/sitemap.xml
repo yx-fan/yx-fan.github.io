@@ -2,6 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://yx-fan.github.io/categories/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/devops/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/log/modern-devops-infrastructure-repository/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/iac/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/infrastructure/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/kubernetes/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/log/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/terraform/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/categories/thought/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/</loc>
+    <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/cluster/</loc>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/node.js/</loc>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/scaling/</loc>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/log/scaling-nodejs-worker-threads-cluster/</loc>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/workerthreads/</loc>
+    <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/log/async-await-explained/</loc>
+    <lastmod>2025-09-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/asyncawait/</loc>
+    <lastmod>2025-09-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/eventloop/</loc>
+    <lastmod>2025-09-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/javascript/</loc>
+    <lastmod>2025-09-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/promise/</loc>
+    <lastmod>2025-09-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/concurrency/</loc>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/</loc>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/system-design/</loc>
+    <lastmod>2025-08-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://yx-fan.github.io/projects/cluster-based-summarization-system/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -23,9 +95,6 @@
     <loc>https://yx-fan.github.io/tags/sentence-transformers/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/</loc>
-    <lastmod>2025-07-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://yx-fan.github.io/tags/text-clustering/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
   </url><url>
@@ -35,8 +104,26 @@
     <loc>https://yx-fan.github.io/tags/unsupervised-learning/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/</loc>
-    <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <loc>https://yx-fan.github.io/tags/opensearch/</loc>
+    <lastmod>2025-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/</loc>
+    <lastmod>2025-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/ai/</loc>
+    <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/rag/</loc>
+    <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/sql/</loc>
+    <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/log/sql-in-the-ai-era/</loc>
+    <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yx-fan.github.io/tags/vector-database/</loc>
+    <lastmod>2025-06-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/tags/chat/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
@@ -53,13 +140,7 @@
     <loc>https://yx-fan.github.io/tags/mongodb/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yx-fan.github.io/tags/node.js/</loc>
-    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://yx-fan.github.io/tags/real-time-messaging/</loc>
-    <lastmod>2024-10-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/tags/system-design/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/tags/web-socket/</loc>
@@ -99,9 +180,6 @@
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/tags/blockchain/</loc>
-    <lastmod>2024-10-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yx-fan.github.io/tags/cluster/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/projects/chat-platform-system-design-core-project/</loc>
@@ -144,7 +222,5 @@
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yx-fan.github.io/about/</loc>
-  </url><url>
-    <loc>https://yx-fan.github.io/categories/</loc>
   </url>
 </urlset>

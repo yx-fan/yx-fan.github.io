@@ -219,8 +219,8 @@
   <meta property="og:type" content="website">
 
   <meta itemprop="name" content="Tags">
-  <meta itemprop="datePublished" content="2025-07-28T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-07-28T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2025-11-15T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-11-15T00:00:00+00:00">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Tags">
 
@@ -262,6 +262,12 @@
           </li>
           
           <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/log/" title="Log page">
+              Log
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
             <a class="hover-white no-underline white-90" href="/projects/" title="Projects page">
               Projects
             </a>
@@ -285,6 +291,292 @@
 <div class="ananke-socials">
   
 </div>
+
+      
+<div class="like-button-compact-container" id="likeContainerCompact">
+  <button class="like-button-compact" id="likeButtonCompact" aria-label="Like this page">
+    <span class="like-icon-compact">❤️</span>
+    <span class="like-count-compact" id="likeCountCompact">0</span>
+  </button>
+  <div class="like-particles-compact" id="likeParticlesCompact"></div>
+</div>
+
+<style>
+.like-button-compact-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.like-button-compact {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.like-button-compact:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.like-button-compact:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.like-button-compact.clicked {
+  background: rgba(255, 107, 157, 0.2);
+  border-color: rgba(255, 107, 157, 0.4);
+}
+
+.like-icon-compact {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.like-button-compact.clicked .like-icon-compact {
+  animation: heartBeatCompact 0.6s ease-in-out;
+}
+
+@keyframes heartBeatCompact {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.3) rotate(-5deg); }
+  50% { transform: scale(1.2) rotate(5deg); }
+  75% { transform: scale(1.3) rotate(-3deg); }
+}
+
+.like-count-compact {
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+.like-particles-compact {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle-compact {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ff6b9d;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFloatCompact 1.5s ease-out forwards;
+  box-shadow: 0 0 4px rgba(255, 107, 157, 0.8);
+}
+
+.particle-compact:nth-child(odd) {
+  background: #ffd93d;
+  box-shadow: 0 0 4px rgba(255, 217, 61, 0.8);
+}
+
+.particle-compact:nth-child(3n) {
+  background: #6bcf7f;
+  box-shadow: 0 0 4px rgba(107, 207, 127, 0.8);
+}
+
+@keyframes particleFloatCompact {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(-80px) translateX(calc(var(--random-x) * 1px)) scale(0) rotate(720deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .like-button-compact {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .like-icon-compact {
+    font-size: 0.875rem;
+  }
+  
+  .like-count-compact {
+    font-size: 0.75rem;
+  }
+}
+</style>
+
+<script>
+(function() {
+  'use strict';
+  
+  const likeButton = document.getElementById('likeButtonCompact');
+  const likeCount = document.getElementById('likeCountCompact');
+  const likeParticles = document.getElementById('likeParticlesCompact');
+  
+  if (typeof firebase === 'undefined') {
+    console.error('Firebase is not loaded');
+    return;
+  }
+  
+  const database = firebase.database();
+  const likesRef = database.ref('likes/homepage');
+  let currentCount = 0;
+  let isUpdating = false;
+  let skipListenerUpdate = false;
+  
+  const RATE_LIMIT_MS = 1000;
+  const LAST_CLICK_KEY = 'lastLikeClickCompact';
+  
+  function canClick() {
+    const lastClick = localStorage.getItem(LAST_CLICK_KEY);
+    if (!lastClick) return true;
+    const timeSinceLastClick = Date.now() - parseInt(lastClick, 10);
+    return timeSinceLastClick >= RATE_LIMIT_MS;
+  }
+  
+  function recordClick() {
+    localStorage.setItem(LAST_CLICK_KEY, Date.now().toString());
+  }
+  
+  likesRef.once('value', (snapshot) => {
+    const count = snapshot.val();
+    currentCount = count || 0;
+    likeCount.textContent = currentCount.toLocaleString();
+  }, (error) => {
+    console.error('Error loading likes:', error);
+    likeCount.textContent = '0';
+  });
+  
+  likesRef.on('value', (snapshot) => {
+    if (skipListenerUpdate) {
+      return;
+    }
+    const count = snapshot.val();
+    if (count !== null && count !== undefined) {
+      currentCount = count;
+      likeCount.textContent = currentCount.toLocaleString();
+    }
+  }, (error) => {
+    console.error('Error listening to likes:', error);
+  });
+  
+  function createParticles(count = 10) {
+    for (let i = 0; i < count; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle-compact';
+      
+      const angle = (Math.PI * 2 * i) / count;
+      const distance = 15 + Math.random() * 15;
+      const x = Math.cos(angle) * distance;
+      const y = Math.sin(angle) * distance;
+      const randomX = (Math.random() - 0.5) * 60;
+      
+      particle.style.left = `calc(50% + ${x}px)`;
+      particle.style.top = `calc(50% + ${y}px)`;
+      particle.style.animationDelay = `${Math.random() * 0.2}s`;
+      particle.style.setProperty('--random-x', randomX);
+      
+      likeParticles.appendChild(particle);
+      
+      setTimeout(() => {
+        particle.remove();
+      }, 1500);
+    }
+  }
+  
+  likeButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    if (isUpdating) {
+      return;
+    }
+    
+    isUpdating = true;
+    skipListenerUpdate = true;
+    
+    this.classList.add('clicked');
+    
+    if (!canClick()) {
+      return;
+    }
+    
+    recordClick();
+    
+    likesRef.once('value', (snapshot) => {
+      const currentValue = snapshot.val() || 0;
+      const newValue = currentValue + 1;
+      
+      likesRef.set(newValue)
+        .then(() => {
+          currentCount = newValue;
+          likeCount.textContent = newValue.toLocaleString();
+          
+          setTimeout(() => {
+            skipListenerUpdate = false;
+          }, 100);
+          
+          createParticles(10);
+          
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_like', {
+              'event_category': 'engagement',
+              'event_label': 'homepage',
+              'value': newValue,
+              'like_count': newValue,
+              'non_interaction': false
+            });
+          } else if (typeof window.dataLayer !== 'undefined') {
+            window.dataLayer.push({
+              'event': 'page_like',
+              'event_category': 'engagement',
+              'event_label': 'homepage',
+              'value': newValue,
+              'like_count': newValue
+            });
+          }
+          
+          setTimeout(() => {
+            this.classList.remove('clicked');
+            isUpdating = false;
+          }, 600);
+        })
+        .catch((error) => {
+          console.error('Error updating likes:', error);
+          isUpdating = false;
+          skipListenerUpdate = false;
+          this.classList.remove('clicked');
+        });
+    }, (error) => {
+      console.error('Error reading current value:', error);
+      isUpdating = false;
+      skipListenerUpdate = false;
+      this.classList.remove('clicked');
+    });
+  });
+})();
+</script>
+
 
     </div>
   </div>
@@ -323,11 +615,11 @@
     <p class="tags-subtitle">Discover content organized by topics and technologies</p>
     <div class="tags-stats">
       <div class="stat-item">
-        <span class="stat-number">35</span>
+        <span class="stat-number">52</span>
         <span class="stat-label">Tags</span>
       </div>
       <div class="stat-item">
-        <span class="stat-number">9</span>
+        <span class="stat-number">15</span>
         <span class="stat-label">Articles</span>
       </div>
     </div>
@@ -484,7 +776,95 @@
           
           
         
+          
+          
+          
         
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+          
+          
+          
+        
+        
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/ai/" class="tag-item tag-size-1" data-tag-name="ai" style="--tag-size: 0.8">
+            <span class="tag-name">AI</span>
+            <span class="tag-count">1</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/asyncawait/" class="tag-item tag-size-1" data-tag-name="asyncawait" style="--tag-size: 0.8">
+            <span class="tag-name">AsyncAwait</span>
+            <span class="tag-count">1</span>
+          </a>
         
           
           
@@ -543,6 +923,16 @@
           
           <a href="https://yx-fan.github.io/tags/cluster/" class="tag-item tag-size-1" data-tag-name="cluster" style="--tag-size: 0.8">
             <span class="tag-name">Cluster</span>
+            <span class="tag-count">2</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/concurrency/" class="tag-item tag-size-1" data-tag-name="concurrency" style="--tag-size: 0.8">
+            <span class="tag-name">Concurrency</span>
             <span class="tag-count">1</span>
           </a>
         
@@ -553,6 +943,16 @@
           
           <a href="https://yx-fan.github.io/tags/decentralized/" class="tag-item tag-size-1" data-tag-name="decentralized" style="--tag-size: 0.8">
             <span class="tag-name">Decentralized</span>
+            <span class="tag-count">1</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/devops/" class="tag-item tag-size-1" data-tag-name="devops" style="--tag-size: 0.8">
+            <span class="tag-name">DevOps</span>
             <span class="tag-count">1</span>
           </a>
         
@@ -574,6 +974,16 @@
           <a href="https://yx-fan.github.io/tags/docker/" class="tag-item tag-size-2" data-tag-name="docker" style="--tag-size: 0.8">
             <span class="tag-name">Docker</span>
             <span class="tag-count">3</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/eventloop/" class="tag-item tag-size-1" data-tag-name="eventloop" style="--tag-size: 0.8">
+            <span class="tag-name">EventLoop</span>
+            <span class="tag-count">2</span>
           </a>
         
           
@@ -611,6 +1021,36 @@
           
           
           
+          <a href="https://yx-fan.github.io/tags/iac/" class="tag-item tag-size-1" data-tag-name="iac" style="--tag-size: 0.8">
+            <span class="tag-name">IaC</span>
+            <span class="tag-count">1</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/infrastructure/" class="tag-item tag-size-1" data-tag-name="infrastructure" style="--tag-size: 0.8">
+            <span class="tag-name">Infrastructure</span>
+            <span class="tag-count">1</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/javascript/" class="tag-item tag-size-1" data-tag-name="javascript" style="--tag-size: 0.8">
+            <span class="tag-name">JavaScript</span>
+            <span class="tag-count">1</span>
+          </a>
+        
+          
+          
+          
+          
+          
           <a href="https://yx-fan.github.io/tags/jwt/" class="tag-item tag-size-1" data-tag-name="jwt" style="--tag-size: 0.8">
             <span class="tag-name">JWT</span>
             <span class="tag-count">2</span>
@@ -623,6 +1063,16 @@
           
           <a href="https://yx-fan.github.io/tags/keyword-extraction/" class="tag-item tag-size-1" data-tag-name="keyword extraction" style="--tag-size: 0.8">
             <span class="tag-name">Keyword Extraction</span>
+            <span class="tag-count">1</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/kubernetes/" class="tag-item tag-size-1" data-tag-name="kubernetes" style="--tag-size: 0.8">
+            <span class="tag-name">Kubernetes</span>
             <span class="tag-count">1</span>
           </a>
         
@@ -683,7 +1133,7 @@
           
           <a href="https://yx-fan.github.io/tags/node.js/" class="tag-item tag-size-3" data-tag-name="node.js" style="--tag-size: 1.4">
             <span class="tag-name">Node.js</span>
-            <span class="tag-count">7</span>
+            <span class="tag-count">9</span>
           </a>
         
           
@@ -693,6 +1143,26 @@
           
           <a href="https://yx-fan.github.io/tags/ocr/" class="tag-item tag-size-1" data-tag-name="ocr" style="--tag-size: 0.8">
             <span class="tag-name">OCR</span>
+            <span class="tag-count">1</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/opensearch/" class="tag-item tag-size-1" data-tag-name="opensearch" style="--tag-size: 0.8">
+            <span class="tag-name">OpenSearch</span>
+            <span class="tag-count">1</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/promise/" class="tag-item tag-size-1" data-tag-name="promise" style="--tag-size: 0.8">
+            <span class="tag-name">Promise</span>
             <span class="tag-count">1</span>
           </a>
         
@@ -714,6 +1184,16 @@
           <a href="https://yx-fan.github.io/tags/rabbitmq/" class="tag-item tag-size-2" data-tag-name="rabbitmq" style="--tag-size: 0.8">
             <span class="tag-name">RabbitMQ</span>
             <span class="tag-count">3</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/rag/" class="tag-item tag-size-1" data-tag-name="rag" style="--tag-size: 0.8">
+            <span class="tag-name">RAG</span>
+            <span class="tag-count">1</span>
           </a>
         
           
@@ -761,6 +1241,16 @@
           
           
           
+          <a href="https://yx-fan.github.io/tags/scaling/" class="tag-item tag-size-1" data-tag-name="scaling" style="--tag-size: 0.8">
+            <span class="tag-name">Scaling</span>
+            <span class="tag-count">1</span>
+          </a>
+        
+          
+          
+          
+          
+          
           <a href="https://yx-fan.github.io/tags/sentence-transformers/" class="tag-item tag-size-1" data-tag-name="sentence transformers" style="--tag-size: 0.8">
             <span class="tag-name">Sentence Transformers</span>
             <span class="tag-count">1</span>
@@ -771,9 +1261,29 @@
           
           
           
-          <a href="https://yx-fan.github.io/tags/system-design/" class="tag-item tag-size-2" data-tag-name="system design" style="--tag-size: 0.8">
+          <a href="https://yx-fan.github.io/tags/sql/" class="tag-item tag-size-1" data-tag-name="sql" style="--tag-size: 0.8">
+            <span class="tag-name">SQL</span>
+            <span class="tag-count">1</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/system-design/" class="tag-item tag-size-3" data-tag-name="system design" style="--tag-size: 0.8">
             <span class="tag-name">System Design</span>
-            <span class="tag-count">4</span>
+            <span class="tag-count">6</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/terraform/" class="tag-item tag-size-1" data-tag-name="terraform" style="--tag-size: 0.8">
+            <span class="tag-name">Terraform</span>
+            <span class="tag-count">1</span>
           </a>
         
           
@@ -821,6 +1331,16 @@
           
           
           
+          <a href="https://yx-fan.github.io/tags/vector-database/" class="tag-item tag-size-1" data-tag-name="vector database" style="--tag-size: 0.8">
+            <span class="tag-name">Vector Database</span>
+            <span class="tag-count">1</span>
+          </a>
+        
+          
+          
+          
+          
+          
           <a href="https://yx-fan.github.io/tags/web-socket/" class="tag-item tag-size-2" data-tag-name="web socket" style="--tag-size: 0.8">
             <span class="tag-name">Web Socket</span>
             <span class="tag-count">3</span>
@@ -834,6 +1354,16 @@
           <a href="https://yx-fan.github.io/tags/web3/" class="tag-item tag-size-2" data-tag-name="web3" style="--tag-size: 0.8">
             <span class="tag-name">Web3</span>
             <span class="tag-count">4</span>
+          </a>
+        
+          
+          
+          
+          
+          
+          <a href="https://yx-fan.github.io/tags/workerthreads/" class="tag-item tag-size-1" data-tag-name="workerthreads" style="--tag-size: 0.8">
+            <span class="tag-name">WorkerThreads</span>
+            <span class="tag-count">1</span>
           </a>
         
       </div>
