@@ -4,223 +4,375 @@
   <url>
     <loc>https://yx-fan.github.io/categories/</loc>
     <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/devops/</loc>
     <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/log/modern-devops-infrastructure-repository/</loc>
     <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/iac/</loc>
     <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/infrastructure/</loc>
     <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/kubernetes/</loc>
     <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/log/</loc>
     <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/</loc>
     <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/terraform/</loc>
     <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/categories/thought/</loc>
     <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/</loc>
     <lastmod>2025-11-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/cluster/</loc>
     <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/node.js/</loc>
     <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/scaling/</loc>
     <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/log/scaling-nodejs-worker-threads-cluster/</loc>
     <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/workerthreads/</loc>
     <lastmod>2025-10-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/log/async-await-explained/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/asyncawait/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/eventloop/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/javascript/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/promise/</loc>
     <lastmod>2025-09-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/concurrency/</loc>
     <lastmod>2025-08-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/</loc>
     <lastmod>2025-08-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/system-design/</loc>
     <lastmod>2025-08-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/projects/cluster-based-summarization-system/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/hdbscan/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/keyword-extraction/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/llm/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/projects/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/nlp/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/sentence-transformers/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/text-clustering/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/umap/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/unsupervised-learning/</loc>
     <lastmod>2025-07-28T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/opensearch/</loc>
     <lastmod>2025-07-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/</loc>
     <lastmod>2025-07-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/ai/</loc>
     <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/rag/</loc>
     <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/sql/</loc>
     <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/log/sql-in-the-ai-era/</loc>
     <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/vector-database/</loc>
     <lastmod>2025-06-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/chat/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/projects/chat-group-core/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/grpc/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/message-queue/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/mongodb/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/real-time-messaging/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/web-socket/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/web3/</loc>
     <lastmod>2024-10-20T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/aws/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/projects/chat-one-to-one-core/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/express.js/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/jwt/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/ocr/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/rabbitmq/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/restapi/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/</loc>
     <lastmod>2024-10-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/authentication/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/automation/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/blockchain/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/projects/chat-platform-system-design-core-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/decentralized/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/distribution/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/docker/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/projects/msg-queue-microservice-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/microservices/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/projects/mongodb-infra-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/redis/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/replica-set/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/typescript/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/projects/web3-auth-core-project/</loc>
     <lastmod>2024-10-06T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/projects/push-notification-microservice-project/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/tags/push-notifications/</loc>
     <lastmod>2024-10-05T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://yx-fan.github.io/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://yx-fan.github.io/true/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

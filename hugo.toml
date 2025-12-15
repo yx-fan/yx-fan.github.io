@@ -1,12 +1,25 @@
-baseURL = "https://yx-fan.github.io"
+baseURL = "https://yx-fan.github.io/"
 relativeURLs = false
-canonifyURLs = false
+canonifyURLs = true
 languageCode = 'en-us'
 title = 'Yuxin Fan'
 theme = "ananke"
 [taxonomies]
   tag = "tags"
   category = "categories"
+
+# Enable robots.txt generation
+enableRobotsTXT = true
+
+# Sitemap configuration - for SEO and search engine indexing
+[sitemap]
+  # Default change frequency: monthly (updated once per month)
+  changefreq = "monthly"
+  # Default priority: 0.5 (medium priority)
+  priority = 0.5
+  # Sitemap filename
+  filename = "sitemap.xml"
+
 [menu]
 [[menu.main]]
   name = "Home"

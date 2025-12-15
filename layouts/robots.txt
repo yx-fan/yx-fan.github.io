@@ -1,0 +1,40 @@
+{{- $production := eq (getenv "HUGO_ENV") "production" | or (eq site.Params.env "production") -}}
+{{- if $production -}}
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Crawl-delay to prevent aggressive crawling (optional, in seconds)
+# Crawl-delay: 1
+
+# Disallow specific bad bots (common malicious crawlers)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Allow major search engines explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Sitemap location
+Sitemap: {{ "/sitemap.xml" | absURL }}
+{{- else -}}
+# Development environment - disallow all crawlers
+User-agent: *
+Disallow: /
+{{- end -}}
+
