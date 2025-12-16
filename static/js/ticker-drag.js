@@ -138,6 +138,75 @@
     }
   });
 
+  // Arrow button navigation
+  const navLeft = document.getElementById('tickerNavLeft');
+  const navRight = document.getElementById('tickerNavRight');
+  
+  if (navLeft && navRight) {
+    const scrollAmount = 400; // pixels to scroll per click
+    
+    // Helper function to scroll smoothly
+    function scrollTicker(direction) {
+      // Stop any running animation
+      tickerTrack.style.animationPlayState = 'paused';
+      tickerTrack.style.animation = 'none';
+      stopAnimation();
+      
+      // Get current position
+      let currentPos = getCurrentTransform();
+      const trackWidth = tickerTrack.scrollWidth / 2;
+      
+      // Calculate new position
+      let newPos = currentPos + (direction * scrollAmount);
+      
+      // Handle seamless looping
+      let normalizedStart = newPos % trackWidth;
+      if (normalizedStart > 0) normalizedStart -= trackWidth;
+      newPos = normalizedStart;
+      
+      // Smooth scroll animation
+      const startPos = currentPos;
+      const distance = newPos - startPos;
+      const duration = 300; // ms
+      const startTime = performance.now();
+      
+      function animateScroll(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        // Easing function (ease-out)
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        const currentPos = startPos + (distance * easeProgress);
+        
+        setTransform(currentPos);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          // Restart auto-scroll animation after scroll completes
+          setTimeout(() => {
+            startAnimation();
+          }, 100);
+        }
+      }
+      
+      requestAnimationFrame(animateScroll);
+    }
+    
+    // Scroll left (show earlier content)
+    navLeft.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      scrollTicker(1); // Positive direction = scroll right visually = show earlier content
+    });
+    
+    // Scroll right (show later content)
+    navRight.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      scrollTicker(-1); // Negative direction = scroll left visually = show later content
+    });
+  }
+
   // Initialize: if CSS animation is running, switch to JS animation for drag support
   // Wait for page load to ensure CSS is applied
   window.addEventListener('load', () => {

@@ -103,6 +103,11 @@
               {{ end }}
               
               <div class="ticker-wrapper">
+                <button class="ticker-nav-button ticker-nav-left" id="tickerNavLeft" aria-label="Scroll left">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
                 <div class="ticker-track" id="tickerTrack">
                   {{ $n_posts := $.Param "recent_posts_number" | default 6 }}
                   {{ range (first $n_posts $section) }}
@@ -113,6 +118,11 @@
                     {{ .Render "summary-ticker" }}
                   {{ end }}
                 </div>
+                <button class="ticker-nav-button ticker-nav-right" id="tickerNavRight" aria-label="Scroll right">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
               </div>
 
               {{ if gt $section_count $n_posts }}
