@@ -6,8 +6,15 @@
     <description>Recent content in Welcome to My Personal Website on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 15 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Redis Sorted Sets for Recent User Search History</title>
+      <link>https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/</link>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/</guid>
+      <description>Treat recent search history as ephemeral user behavior, not core business data. Redis Sorted Sets provide a natural fit: O(log N) writes, automatic ordering, de-duplication, and bounded size—all without turning a lightweight behavior signal into a database concern.</description>
+    </item>
     <item>
       <title>How to Build a Modern DevOps Infrastructure Repository</title>
       <link>https://yx-fan.github.io/log/modern-devops-infrastructure-repository/</link>

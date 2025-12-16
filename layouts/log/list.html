@@ -30,7 +30,7 @@
         {{ end }}
         
         {{ if gt (len $q4) 0 }}
-          {{ $sortedQ4 := sort $q4 "Date" }}
+          {{ $sortedQ4 := sort $q4 "Date" "desc" }}
           <div class="log-quarter">
             <h2 class="log-quarter-title">{{ $year }} Q4</h2>
             <div class="log-quarter-entries">
@@ -49,7 +49,7 @@
         {{ end }}
         
         {{ if gt (len $q3) 0 }}
-          {{ $sortedQ3 := sort $q3 "Date" }}
+          {{ $sortedQ3 := sort $q3 "Date" "desc" }}
           <div class="log-quarter">
             <h2 class="log-quarter-title">{{ $year }} Q3</h2>
             <div class="log-quarter-entries">
@@ -68,7 +68,7 @@
         {{ end }}
         
         {{ if gt (len $q2) 0 }}
-          {{ $sortedQ2 := sort $q2 "Date" }}
+          {{ $sortedQ2 := sort $q2 "Date" "desc" }}
           <div class="log-quarter">
             <h2 class="log-quarter-title">{{ $year }} Q2</h2>
             <div class="log-quarter-entries">
@@ -87,7 +87,7 @@
         {{ end }}
         
         {{ if gt (len $q1) 0 }}
-          {{ $sortedQ1 := sort $q1 "Date" }}
+          {{ $sortedQ1 := sort $q1 "Date" "desc" }}
           <div class="log-quarter">
             <h2 class="log-quarter-title">{{ $year }} Q1</h2>
             <div class="log-quarter-entries">

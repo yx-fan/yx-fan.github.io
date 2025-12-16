@@ -304,8 +304,8 @@
 
   <meta itemprop="name" content="Log">
   <meta itemprop="description" content="My thoughts, ideas, projects, and more">
-  <meta itemprop="datePublished" content="2025-11-15T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-11-15T00:00:00+00:00">
+  <meta itemprop="datePublished" content="2025-12-15T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-12-15T00:00:00+00:00">
   <meta itemprop="wordCount" content="22">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Log">
@@ -753,6 +753,11 @@
             
           
         
+          
+          
+            
+          
+        
         
         
           
@@ -762,10 +767,10 @@
               
                 <article class="log-entry">
                   <h3 class="log-title">
-                    <a href="https://yx-fan.github.io/log/scaling-nodejs-worker-threads-cluster/">Scaling Node.js — Worker Threads &amp; Cluster Mode</a>
+                    <a href="https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/">Using Redis Sorted Sets for Recent User Search History</a>
                   </h3>
                   
-                    <p class="log-summary">Node.js runs one event loop per process—only one CPU core is used. To scale, use Cluster for multi-process or Worker Threads for multi-thread. Both enable parallelism, but in different ways.</p>
+                    <p class="log-summary">Treat recent search history as ephemeral user behavior, not core business data. Redis Sorted Sets provide a natural fit: O(log N) writes, automatic ordering, de-duplication, and bounded size—all without turning a lightweight behavior signal into a database concern.</p>
                   
                 </article>
               
@@ -775,6 +780,15 @@
                   </h3>
                   
                     <p class="log-summary">A clean, layered, and cloud-native foundation for managing infrastructure both locally and in the cloud. Separates provisioning, orchestration, persistence, and automation into modular layers.</p>
+                  
+                </article>
+              
+                <article class="log-entry">
+                  <h3 class="log-title">
+                    <a href="https://yx-fan.github.io/log/scaling-nodejs-worker-threads-cluster/">Scaling Node.js — Worker Threads &amp; Cluster Mode</a>
+                  </h3>
+                  
+                    <p class="log-summary">Node.js runs one event loop per process—only one CPU core is used. To scale, use Cluster for multi-process or Worker Threads for multi-thread. Both enable parallelism, but in different ways.</p>
                   
                 </article>
               
@@ -790,10 +804,10 @@
               
                 <article class="log-entry">
                   <h3 class="log-title">
-                    <a href="https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/">Why OpenSearch Shouldn&#39;t Be Used as a Primary Database</a>
+                    <a href="https://yx-fan.github.io/log/async-await-explained/">Async / Await Explained — What Actually Happens Under the Hood</a>
                   </h3>
                   
-                    <p class="log-summary">OpenSearch is built for search, not for storage. Its architecture prioritizes high-performance retrieval and aggregation, not transactional integrity or consistency.</p>
+                    <p class="log-summary">async/await doesn&rsquo;t make code run in parallel. It&rsquo;s syntactic sugar over Promises that makes asynchronous logic read like synchronous flow, working by pausing and resuming execution through the event loop.</p>
                   
                 </article>
               
@@ -808,10 +822,10 @@
               
                 <article class="log-entry">
                   <h3 class="log-title">
-                    <a href="https://yx-fan.github.io/log/async-await-explained/">Async / Await Explained — What Actually Happens Under the Hood</a>
+                    <a href="https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/">Why OpenSearch Shouldn&#39;t Be Used as a Primary Database</a>
                   </h3>
                   
-                    <p class="log-summary">async/await doesn&rsquo;t make code run in parallel. It&rsquo;s syntactic sugar over Promises that makes asynchronous logic read like synchronous flow, working by pausing and resuming execution through the event loop.</p>
+                    <p class="log-summary">OpenSearch is built for search, not for storage. Its architecture prioritizes high-performance retrieval and aggregation, not transactional integrity or consistency.</p>
                   
                 </article>
               

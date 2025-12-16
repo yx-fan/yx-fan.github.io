@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Redis on Yuxin Fan</title>
-    <link>https://yx-fan.github.io/tags/redis/</link>
-    <description>Recent content in Redis on Yuxin Fan</description>
+    <title>Data Structures on Yuxin Fan</title>
+    <link>https://yx-fan.github.io/tags/data-structures/</link>
+    <description>Recent content in Data Structures on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Dec 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://yx-fan.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://yx-fan.github.io/tags/data-structures/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Redis Sorted Sets for Recent User Search History</title>
       <link>https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/</link>
       <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/</guid>
       <description>Treat recent search history as ephemeral user behavior, not core business data. Redis Sorted Sets provide a natural fit: O(log N) writes, automatic ordering, de-duplication, and bounded size—all without turning a lightweight behavior signal into a database concern.</description>
-    </item>
-    <item>
-      <title>CoolChat Platform System Design: Scalable and Secure Chat Architecture</title>
-      <link>https://yx-fan.github.io/projects/chat-platform-system-design-core-project/</link>
-      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/projects/chat-platform-system-design-core-project/</guid>
-      <description>A scalable, real-time chat platform leveraging Web3 authentication, microservices architecture, and message queuing for high concurrency and performance.</description>
     </item>
   </channel>
 </rss>

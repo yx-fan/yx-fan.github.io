@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Yuxin Fan</title>
+    <title>Using Redis Sorted Sets for Recent User Search History | Yuxin Fan</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Treat recent search history as ephemeral user behavior, not core business data. Redis Sorted Sets provide a natural fit: O(log N) writes, automatic ordering, de-duplication, and bounded size—all without turning a lightweight behavior signal into a database concern.">
     <meta name="generator" content="Hugo 0.143.0">
     
     
@@ -54,9 +54,9 @@
    
    gtag('config', 'G-4KY4X96MYQ', {
      
-     page_type: 'tags',
+     page_type: 'log',
      
-     content_category: 'tags',
+     content_category: 'log',
      
      custom_map: {
        'dimension1': 'page_type',
@@ -285,29 +285,38 @@
     
 
     
-    
-      <link href="https://yx-fan.github.io/tags/system-design/index.xml" rel="alternate" type="application/rss+xml" title="Yuxin Fan" />
-      <link href="https://yx-fan.github.io/tags/system-design/index.xml" rel="feed" type="application/rss+xml" title="Yuxin Fan" />
-      
-    
 
     
-      <link rel="canonical" href="https://yx-fan.github.io/tags/system-design/">
+      <link rel="canonical" href="https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/">
     
 
-    <meta property="og:url" content="https://yx-fan.github.io/tags/system-design/">
+    <meta property="og:url" content="https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/">
   <meta property="og:site_name" content="Yuxin Fan">
-  <meta property="og:title" content="System Design">
+  <meta property="og:title" content="Using Redis Sorted Sets for Recent User Search History">
+  <meta property="og:description" content="Treat recent search history as ephemeral user behavior, not core business data. Redis Sorted Sets provide a natural fit: O(log N) writes, automatic ordering, de-duplication, and bounded size—all without turning a lightweight behavior signal into a database concern.">
   <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="log">
+    <meta property="article:published_time" content="2025-12-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-12-15T00:00:00+00:00">
+    <meta property="article:tag" content="Redis">
+    <meta property="article:tag" content="System Design">
+    <meta property="article:tag" content="Data Structures">
+    <meta property="article:tag" content="Architecture">
 
-  <meta itemprop="name" content="System Design">
+  <meta itemprop="name" content="Using Redis Sorted Sets for Recent User Search History">
+  <meta itemprop="description" content="Treat recent search history as ephemeral user behavior, not core business data. Redis Sorted Sets provide a natural fit: O(log N) writes, automatic ordering, de-duplication, and bounded size—all without turning a lightweight behavior signal into a database concern.">
   <meta itemprop="datePublished" content="2025-12-15T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-12-15T00:00:00+00:00">
+  <meta itemprop="wordCount" content="319">
+  <meta itemprop="keywords" content="Redis,System Design,Data Structures,Architecture">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="System Design">
+  <meta name="twitter:title" content="Using Redis Sorted Sets for Recent User Search History">
+  <meta name="twitter:description" content="Treat recent search history as ephemeral user behavior, not core business data. Redis Sorted Sets provide a natural fit: O(log N) writes, automatic ordering, de-duplication, and bounded size—all without turning a lightweight behavior signal into a database concern.">
 
 	
+  <link rel="stylesheet" href="https://yx-fan.github.io/css/log.css">
+
   </head>
 
   <body class="ma0 avenir bg-near-white">
@@ -676,7 +685,7 @@
           
         
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title header-title-gradient">
-          Explore by Tags
+          Log
         </h1>
         
       </div>
@@ -698,141 +707,32 @@
 
     <main class="pb7" role="main">
       
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “System Design”</p>
-    </div>
-  </article>
-  <div class="mw8 center">
-    <section class="flex-ns flex-wrap justify-around mt5">
+  <div class="log-single-container">
+    <article class="log-single">
       
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Log</span>
-    <h1 class="f3 near-black">
-      <a href="https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/" class="link black dim">
-        Using Redis Sorted Sets for Recent User Search History
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Treat recent search history as ephemeral user behavior, not core business data. Redis Sorted Sets provide a natural fit: O(log N) writes, automatic ordering, de-duplication, and bounded size—all without turning a lightweight behavior signal into a database concern.
-    </div>
-    <a href="https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
+      <header class="log-single-header">
+        <div class="log-single-meta">
+          <time class="log-single-date" datetime="2025-12-15">
+            December 2025
+          </time>
         </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Log</span>
-    <h1 class="f3 near-black">
-      <a href="https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/" class="link black dim">
-        How Node.js Achieves High Concurrency on a Single CPU Core
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Node.js achieves high concurrency not by multi-threading, but through its event-driven, non-blocking I/O model. It efficiently overlaps I/O waiting time across requests, allowing a single thread to handle thousands of connections.
-    </div>
-    <a href="https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
+        <h1 class="log-single-title">Using Redis Sorted Sets for Recent User Search History</h1>
+      </header>
 
-        </div>
       
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Log</span>
-    <h1 class="f3 near-black">
-      <a href="https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/" class="link black dim">
-        Why OpenSearch Shouldn&#39;t Be Used as a Primary Database
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      OpenSearch is built for search, not for storage. Its architecture prioritizes high-performance retrieval and aggregation, not transactional integrity or consistency.
-    </div>
-    <a href="https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
+      <div class="log-single-content">
+        <p>How should a system record a user&rsquo;s recent search history in a way that is fast, ordered by recency, de-duplicated, and naturally bounded—without turning a lightweight behavior signal into a database concern? Recent searches show up everywhere: search bars, dashboards, internal tools. The data is useful, but only temporarily. It does not require strong consistency or long-term persistence, yet it is written frequently and read often.</p>
+<p>The key insight is to treat recent search history as ephemeral user behavior, not core business data. Once framed this way, persisting every search into a relational table becomes unnecessarily heavy: high write volume, custom ordering logic, and periodic cleanup jobs just to keep the data small. The problem is not storage—it is recency and uniqueness.</p>
+<p><strong>Redis Sorted Sets (ZSET)</strong> provide a natural fit for this use case. Each user maps to a single key where the member represents a stable search identifier and the score represents the timestamp of the search. When a user searches again, inserting the same member simply refreshes its score, automatically moving it to the most recent position. Older entries are trimmed by rank, keeping the set bounded to a fixed size. This keeps both writes and reads simple: writes are O(log N) and idempotent, reads return already-ordered results, and the data structure enforces recency and de-duplication automatically.</p>
+<p>The strength of this approach is not performance alone—it is semantic alignment. A sorted set naturally models what &ldquo;recent searches&rdquo; actually are: a small, ordered window of user intent where only the latest occurrence matters. By delegating ordering, uniqueness, and size limits to the data structure itself, application code stays minimal and predictable. There is no need for background cleanup, manual sorting, or duplicate handling logic. Equally important, this design supports graceful degradation. If Redis is temporarily unavailable, the core search functionality remains unaffected; only the convenience of recent history is lost. That trade-off matches the value of the feature.</p>
 
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">My Projects</span>
-    <h1 class="f3 near-black">
-      <a href="https://yx-fan.github.io/projects/chat-group-core/" class="link black dim">
-        Group Chat Architecture and Implementation
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      An in-depth exploration of the architecture and implementation of a group chat system, covering group creation, subscription, real-time messaging, and gRPC-based communication between microservices.
-    </div>
-    <a href="https://yx-fan.github.io/projects/chat-group-core/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
+      </div>
 
-        </div>
       
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">My Projects</span>
-    <h1 class="f3 near-black">
-      <a href="https://yx-fan.github.io/projects/chat-one-to-one-core/" class="link black dim">
-        One-to-One Chat Architecture and Implementation
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      An in-depth look into the one-to-one chat architecture and its implementation for handling text and media messages.
-    </div>
-    <a href="https://yx-fan.github.io/projects/chat-one-to-one-core/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">My Projects</span>
-    <h1 class="f3 near-black">
-      <a href="https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/" class="link black dim">
-        Travel Expense Tracker Backend System
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      A modular backend system for managing travel expenses, built with Node.js and Express, featuring microservices, message queues, and integration with third-party APIs.
-    </div>
-    <a href="https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">My Projects</span>
-    <h1 class="f3 near-black">
-      <a href="https://yx-fan.github.io/projects/chat-platform-system-design-core-project/" class="link black dim">
-        CoolChat Platform System Design: Scalable and Secure Chat Architecture
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      A scalable, real-time chat platform leveraging Web3 authentication, microservices architecture, and message queuing for high concurrency and performance.
-    </div>
-    <a href="https://yx-fan.github.io/projects/chat-platform-system-design-core-project/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
-        </div>
-      
-    </section>
+      <footer class="log-single-footer">
+        <a href="https://yx-fan.github.io/log/" class="log-back-link">← Back to Log</a>
+      </footer>
+    </article>
   </div>
 
     </main>
