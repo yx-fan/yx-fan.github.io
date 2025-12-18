@@ -4,6 +4,8 @@ canonifyURLs = true
 languageCode = 'en-us'
 title = 'Yuxin Fan'
 theme = "ananke"
+# Set production environment for proper indexing
+env = "production"
 [taxonomies]
   tag = "tags"
   category = "categories"

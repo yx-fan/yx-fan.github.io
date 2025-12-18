@@ -1,4 +1,4 @@
-hugo
+HUGO_ENV=production hugo
 rm -rf docs/*
 cp -r public/* docs/
 git add .
