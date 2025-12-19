@@ -9,7 +9,7 @@
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
     {{ hugo.Generator }}
     {{/* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */}}
-    {{ $production := eq (getenv "HUGO_ENV") "production" | or (eq site.Params.env "production") }}
+    {{ $production := or (eq (getenv "HUGO_ENV") "production") (eq site.Params.env "production") }}
     {{ $public := not .Params.private }}
     {{ if and $production $public }}
       <meta name="robots" content="index, follow">
