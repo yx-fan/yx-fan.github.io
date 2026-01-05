@@ -1,6 +1,7 @@
 ---
 title: "About Me"
 layout: "timeline"
+date: 2024-01-01
 ---
 
 # About Yuxin Fan

@@ -329,7 +329,7 @@
         Yuxin Fan
       
     </a>
-    <div class="flex-l items-center">
+    <div class="flex-l items-center nav-right-section">
       
 
       
@@ -400,6 +400,7 @@
   display: inline-flex;
   align-items: center;
   margin-left: 1rem;
+  flex-shrink: 0;
 }
 
 .like-button-compact {
@@ -504,17 +505,47 @@
 }
 
 @media (max-width: 768px) {
+  .like-button-compact-container {
+    margin-left: 0.5rem;
+    margin-top: 0;
+  }
+  
   .like-button-compact {
-    padding: 0.4rem 0.75rem;
+    padding: 0.35rem 0.6rem;
     font-size: 0.75rem;
+    gap: 0.3rem;
+    min-width: auto;
   }
   
   .like-icon-compact {
     font-size: 0.875rem;
+    line-height: 1;
   }
   
   .like-count-compact {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
+    min-width: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .like-button-compact-container {
+    margin-left: 0.25rem;
+  }
+  
+  .like-button-compact {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    gap: 0.25rem;
+  }
+  
+  .like-icon-compact {
+    font-size: 0.8rem;
+  }
+  
+  .like-count-compact {
+    font-size: 0.65rem;
+    min-width: 1rem;
   }
 }
 </style>
@@ -675,6 +706,56 @@
   </div>
 </nav>
 
+<style>
+ 
+@media (max-width: 768px) {
+  nav .nav-right-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+  
+  nav .nav-right-section ul {
+    width: 100%;
+    order: -1;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  nav .nav-right-section ul li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav .nav-right-section ul li a {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav .nav-right-section {
+    gap: 0.25rem;
+  }
+  
+  nav .nav-right-section ul {
+    gap: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  nav .nav-right-section ul li a {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+  }
+}
+</style>
+
+
       <div class="tc-l pv3 ph3 ph4-ns">
         
         
@@ -794,7 +875,7 @@
 <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://yx-fan.github.io/" >
-    &copy; Yuxin Fan 2024-2025
+    &copy; Yuxin Fan 2024-2026
   </a>
     <div>
 <div class="ananke-socials">

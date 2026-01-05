@@ -21,6 +21,8 @@ enableRobotsTXT = true
   priority = 0.5
   # Sitemap filename
   filename = "sitemap.xml"
+  # Exclude specific paths from sitemap
+  disable = false
 
 [menu]
 [[menu.main]]
