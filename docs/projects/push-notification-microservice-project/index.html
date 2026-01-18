@@ -403,6 +403,9 @@
     <span class="like-count-compact" id="likeCountCompact">0</span>
   </button>
   <div class="like-particles-compact" id="likeParticlesCompact"></div>
+  <div class="thank-you-message-compact" id="thankYouMessageCompact">
+    <span class="thank-you-text-compact"></span>
+  </div>
 </div>
 
 <style>
@@ -412,6 +415,7 @@
   align-items: center;
   margin-left: 1rem;
   flex-shrink: 0;
+  overflow: visible;
 }
 
 .like-button-compact {
@@ -478,6 +482,52 @@
   left: 50%;
   pointer-events: none;
   z-index: 0;
+}
+
+.thank-you-message-compact {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(-80px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10000;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
+}
+
+.thank-you-message-compact.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(-100px);
+}
+
+.thank-you-text-compact {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: linear-gradient(135deg, rgba(107, 207, 127, 0.95) 0%, rgba(91, 127, 168, 0.95) 100%);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 20px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+.thank-you-message-compact.show .thank-you-text-compact {
+  animation: thankYouPulseCompact 0.5s ease-out;
+}
+
+@keyframes thankYouPulseCompact {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .particle-compact {
@@ -568,6 +618,19 @@
   const likeButton = document.getElementById('likeButtonCompact');
   const likeCount = document.getElementById('likeCountCompact');
   const likeParticles = document.getElementById('likeParticlesCompact');
+  const thankYouMessage = document.getElementById('thankYouMessageCompact');
+  const thankYouText = thankYouMessage.querySelector('.thank-you-text-compact');
+  
+  
+  const thankYouMessages = [
+    'Thanks! 🙏',
+    'Thank you! ❤️',
+    'Appreciate it! ✨',
+    'Much appreciated! 🌟',
+    'Thanks a lot! 💙',
+    'You\'re awesome! 🎉',
+    'Thank you so much! 🌈'
+  ];
   
   if (typeof firebase === 'undefined') {
     console.error('Firebase is not loaded');
@@ -640,6 +703,53 @@
     }
   }
   
+  
+  function showThankYouMessage() {
+    if (!thankYouMessage || !thankYouText) {
+      console.error('Thank you message elements not found');
+      return;
+    }
+    
+    
+    const buttonRect = likeButton.getBoundingClientRect();
+    const centerX = buttonRect.left + buttonRect.width / 2;
+    const centerY = buttonRect.top + buttonRect.height / 2;
+    
+    
+    thankYouMessage.classList.remove('show');
+    
+    
+    const randomMessage = thankYouMessages[Math.floor(Math.random() * thankYouMessages.length)];
+    thankYouText.textContent = randomMessage;
+    
+    
+    thankYouMessage.style.left = centerX + 'px';
+    thankYouMessage.style.top = (centerY - 60) + 'px';
+    thankYouMessage.style.display = 'block';
+    thankYouMessage.style.position = 'fixed';
+    thankYouMessage.style.transform = 'translate(-50%, -50%)';
+    
+    
+    void thankYouMessage.offsetHeight;
+    
+    
+    requestAnimationFrame(() => {
+      thankYouMessage.classList.add('show');
+      thankYouMessage.style.transform = 'translate(-50%, -50%) translateY(-20px)';
+      console.log('Thank you message shown:', randomMessage);
+    });
+    
+    
+    setTimeout(() => {
+      if (thankYouMessage) {
+        thankYouMessage.classList.remove('show');
+        setTimeout(() => {
+          thankYouMessage.style.display = 'none';
+        }, 400);
+      }
+    }, 2500);
+  }
+  
   likeButton.addEventListener('click', function(e) {
     e.preventDefault();
     
@@ -653,6 +763,9 @@
     this.classList.add('clicked');
     
     if (!canClick()) {
+      isUpdating = false;
+      skipListenerUpdate = false;
+      this.classList.remove('clicked');
       return;
     }
     
@@ -672,6 +785,11 @@
           }, 100);
           
           createParticles(10);
+          
+          
+          setTimeout(() => {
+            showThankYouMessage();
+          }, 100);
           
           if (typeof gtag !== 'undefined') {
             gtag('event', 'page_like', {

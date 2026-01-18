@@ -6,16 +6,22 @@
     <span class="like-count" id="likeCount">0</span>
   </button>
   <div class="like-particles" id="likeParticles"></div>
+  <div class="thank-you-message" id="thankYouMessage">
+    <span class="thank-you-text"></span>
+  </div>
 </div>
 
 <style>
 .like-container {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 3rem auto;
-  padding: 2rem 0;
+  padding: 2rem 0 4rem 0;
+  overflow: visible;
+  min-height: 120px;
 }
 
 .like-button {
@@ -118,6 +124,53 @@
   z-index: 0;
 }
 
+.thank-you-message {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform;
+  margin-top: 1rem;
+}
+
+.thank-you-message.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.thank-you-text {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(135deg, rgba(107, 207, 127, 0.95) 0%, rgba(91, 127, 168, 0.95) 100%);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+.thank-you-message.show .thank-you-text {
+  animation: thankYouPulse 0.5s ease-out;
+}
+
+@keyframes thankYouPulse {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .particle {
   position: absolute;
   width: 6px;
@@ -173,6 +226,19 @@
   const likeButton = document.getElementById('likeButton');
   const likeCount = document.getElementById('likeCount');
   const likeParticles = document.getElementById('likeParticles');
+  const thankYouMessage = document.getElementById('thankYouMessage');
+  const thankYouText = thankYouMessage.querySelector('.thank-you-text');
+  
+  // Thank you messages array
+  const thankYouMessages = [
+    'Thanks! 🙏',
+    'Thank you! ❤️',
+    'Appreciate it! ✨',
+    'Much appreciated! 🌟',
+    'Thanks a lot! 💙',
+    'You\'re awesome! 🎉',
+    'Thank you so much! 🌈'
+  ];
   
   // Check if Firebase is available
   if (typeof firebase === 'undefined') {
@@ -251,6 +317,41 @@
     }
   }
   
+  // Show thank you message
+  function showThankYouMessage() {
+    if (!thankYouMessage || !thankYouText) {
+      console.error('Thank you message elements not found');
+      return;
+    }
+    
+    // Remove show class first to reset animation
+    thankYouMessage.classList.remove('show');
+    
+    // Randomly select a thank you message
+    const randomMessage = thankYouMessages[Math.floor(Math.random() * thankYouMessages.length)];
+    thankYouText.textContent = randomMessage;
+    
+    // Ensure message is visible by setting display
+    thankYouMessage.style.display = 'block';
+    thankYouMessage.style.visibility = 'visible';
+    
+    // Force reflow to ensure the element is ready
+    void thankYouMessage.offsetHeight;
+    
+    // Use requestAnimationFrame to ensure smooth animation
+    requestAnimationFrame(() => {
+      thankYouMessage.classList.add('show');
+      console.log('Thank you message shown:', randomMessage, 'Element:', thankYouMessage);
+    });
+    
+    // Hide the message after 2.5 seconds
+    setTimeout(() => {
+      if (thankYouMessage) {
+        thankYouMessage.classList.remove('show');
+      }
+    }, 2500);
+  }
+  
   // Handle like button click
   likeButton.addEventListener('click', function(e) {
     e.preventDefault();
@@ -269,6 +370,9 @@
     // Client-side rate limiting check
     if (!canClick()) {
       console.log('Rate limit: Please wait before clicking again');
+      isUpdating = false;
+      skipListenerUpdate = false;
+      this.classList.remove('clicked');
       return;
     }
     
@@ -293,6 +397,11 @@
           
           // Create particle effect
           createParticles(15);
+          
+          // Show thank you message (with a small delay to ensure UI is ready)
+          setTimeout(() => {
+            showThankYouMessage();
+          }, 100);
           
           // Track in Google Analytics with enhanced data
           if (typeof gtag !== 'undefined') {
