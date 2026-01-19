@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+    <loc>https://yx-fan.github.io/tags/ann/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/projects/semantic-search-system-milvus-reranking/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/cross-encoder/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/embeddings/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/information-retrieval/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/milvus/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/projects/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/rag/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/semantic-search/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/system-design/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/vector-search/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/</loc>
+    <lastmod>2026-01-18T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
     <loc>https://yx-fan.github.io/tags/architecture/</loc>
     <lastmod>2025-12-15T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -31,18 +109,6 @@
     <priority>0.5</priority>
   </url>
  <url>
-    <loc>https://yx-fan.github.io/tags/system-design/</loc>
-    <lastmod>2025-12-15T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
-    <loc>https://yx-fan.github.io/tags/</loc>
-    <lastmod>2025-12-15T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
     <loc>https://yx-fan.github.io/categories/thought/</loc>
     <lastmod>2025-12-15T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -50,12 +116,6 @@
   </url>
  <url>
     <loc>https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/</loc>
-    <lastmod>2025-12-15T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
-    <loc>https://yx-fan.github.io/</loc>
     <lastmod>2025-12-15T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -193,12 +253,6 @@
     <priority>0.5</priority>
   </url>
  <url>
-    <loc>https://yx-fan.github.io/projects/</loc>
-    <lastmod>2025-07-28T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
     <loc>https://yx-fan.github.io/tags/nlp/</loc>
     <lastmod>2025-07-28T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -242,12 +296,6 @@
   </url>
  <url>
     <loc>https://yx-fan.github.io/tags/ai/</loc>
-    <lastmod>2025-06-15T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
-    <loc>https://yx-fan.github.io/tags/rag/</loc>
     <lastmod>2025-06-15T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
