@@ -16,6 +16,13 @@
       <description>A production-ready semantic search system that separates recall and precision through a multi-stage retrieval pipeline. Combines Milvus vector search, distance-based filtering, and Cross-Encoder reranking for high-quality retrieval results.</description>
     </item>
     <item>
+      <title>Distributed Lock vs Row Lock vs Transaction</title>
+      <link>https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/</guid>
+      <description>These three mechanisms solve different problems at different layers: distributed locks protect business execution, row locks protect data mutation, and transactions define lock scope and atomicity.</description>
+    </item>
+    <item>
       <title>Using Redis Sorted Sets for Recent User Search History</title>
       <link>https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/</link>
       <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>

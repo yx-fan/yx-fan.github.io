@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Yuxin Fan</title>
+    <title>Distributed Lock vs Row Lock vs Transaction | Yuxin Fan</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="These three mechanisms solve different problems at different layers: distributed locks protect business execution, row locks protect data mutation, and transactions define lock scope and atomicity.">
     <meta name="generator" content="Hugo 0.143.0">
     
     
@@ -54,9 +54,9 @@
    
    gtag('config', 'G-4KY4X96MYQ', {
      
-     page_type: 'tags',
+     page_type: 'log',
      
-     content_category: 'tags',
+     content_category: 'log',
      
      custom_map: {
        'dimension1': 'page_type',
@@ -291,29 +291,39 @@
     
 
     
-    
-      <link href="https://yx-fan.github.io/tags/database/index.xml" rel="alternate" type="application/rss+xml" title="Yuxin Fan" />
-      <link href="https://yx-fan.github.io/tags/database/index.xml" rel="feed" type="application/rss+xml" title="Yuxin Fan" />
-      
-    
 
     
-      <link rel="canonical" href="https://yx-fan.github.io/tags/database/">
+      <link rel="canonical" href="https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/">
     
 
-    <meta property="og:url" content="https://yx-fan.github.io/tags/database/">
+    <meta property="og:url" content="https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/">
   <meta property="og:site_name" content="Yuxin Fan">
-  <meta property="og:title" content="Database">
+  <meta property="og:title" content="Distributed Lock vs Row Lock vs Transaction">
+  <meta property="og:description" content="These three mechanisms solve different problems at different layers: distributed locks protect business execution, row locks protect data mutation, and transactions define lock scope and atomicity.">
   <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="log">
+    <meta property="article:published_time" content="2026-01-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-15T00:00:00+00:00">
+    <meta property="article:tag" content="Database">
+    <meta property="article:tag" content="Concurrency">
+    <meta property="article:tag" content="Distributed Systems">
+    <meta property="article:tag" content="Transactions">
+    <meta property="article:tag" content="System Design">
 
-  <meta itemprop="name" content="Database">
+  <meta itemprop="name" content="Distributed Lock vs Row Lock vs Transaction">
+  <meta itemprop="description" content="These three mechanisms solve different problems at different layers: distributed locks protect business execution, row locks protect data mutation, and transactions define lock scope and atomicity.">
   <meta itemprop="datePublished" content="2026-01-15T00:00:00+00:00">
   <meta itemprop="dateModified" content="2026-01-15T00:00:00+00:00">
+  <meta itemprop="wordCount" content="693">
+  <meta itemprop="keywords" content="Database,Concurrency,Distributed Systems,Transactions,System Design">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Database">
+  <meta name="twitter:title" content="Distributed Lock vs Row Lock vs Transaction">
+  <meta name="twitter:description" content="These three mechanisms solve different problems at different layers: distributed locks protect business execution, row locks protect data mutation, and transactions define lock scope and atomicity.">
 
 	
+  <link rel="stylesheet" href="https://yx-fan.github.io/css/log.css">
+
   </head>
 
   <body class="ma0 avenir bg-near-white production">
@@ -881,7 +891,7 @@
           
         
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title header-title-gradient">
-          Explore by Tags
+          Log
         </h1>
         
       </div>
@@ -903,33 +913,41 @@
 
     <main class="pb7" role="main">
       
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “Database”</p>
-    </div>
-  </article>
-  <div class="mw8 center">
-    <section class="flex-ns flex-wrap justify-around mt5">
+  <div class="log-single-container">
+    <article class="log-single">
       
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Log</span>
-    <h1 class="f3 near-black">
-      <a href="https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/" class="link black dim">
-        Distributed Lock vs Row Lock vs Transaction
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      These three mechanisms solve different problems at different layers: distributed locks protect business execution, row locks protect data mutation, and transactions define lock scope and atomicity.
-    </div>
-    <a href="https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-  </div>
-</div>
-
+      <header class="log-single-header">
+        <div class="log-single-meta">
+          <time class="log-single-date" datetime="2026-01-15">
+            January 2026
+          </time>
         </div>
+        <h1 class="log-single-title">Distributed Lock vs Row Lock vs Transaction</h1>
+      </header>
+
       
-    </section>
+      <div class="log-single-content">
+        <p>Distributed locks, row locks, and transactions solve different problems at different layers. It&rsquo;s easy to confuse them, but understanding what each one protects makes the distinction clear.</p>
+<p>A distributed lock protects business execution. It answers the question: should this operation run at all? You acquire it before business logic starts, and it prevents the same workflow from being executed concurrently across services or workers. Think of it as a gatekeeper at the application level.</p>
+<p>Common implementations use Redis, ZooKeeper, or database-based locking mechanisms. The lock is typically keyed by a business identifier—like an order ID or user ID—and has a timeout to prevent deadlocks. If two workers try to process the same order simultaneously, only one will acquire the lock and proceed. The other will either wait or fail fast, depending on your implementation.</p>
+<p>The key characteristic of a distributed lock is that it exists outside the database transaction. You might acquire it, do some external API calls, perform database operations, and then release it. The lock protects the entire business workflow, not just the database operations.</p>
+<p>A row-level lock protects data mutation. It answers the question: who is allowed to modify this specific row right now? Row locks take effect immediately when the locking SQL is executed—like <code>SELECT … FOR UPDATE</code>—and remain active until the surrounding transaction commits or rolls back. This is about controlling access to specific data rows.</p>
+<p>When you execute <code>SELECT * FROM orders WHERE id = 123 FOR UPDATE</code>, the database immediately locks that row. Other transactions trying to modify the same row will block until your transaction completes. This prevents lost updates and ensures that when you read a value, modify it, and write it back, no one else has changed it in between.</p>
+<p>Row locks are database-internal mechanisms. They&rsquo;re automatic, they&rsquo;re fast, and they work within the transaction boundary. But they only protect what happens inside the database. If your business logic involves external systems, API calls, or multiple database operations that need to be coordinated, row locks alone won&rsquo;t help.</p>
+<p>A transaction is not a lock. It&rsquo;s a lifecycle boundary that groups SQL statements together and defines how long acquired locks live. The key point is that locks don&rsquo;t wait for <code>COMMIT</code> to become effective—they are enforced as soon as they are acquired. The transaction just determines when those locks are released.</p>
+<p>This is a common misconception. People think that locks only take effect when you commit, but that&rsquo;s not how it works. When you execute <code>SELECT … FOR UPDATE</code>, the lock is acquired immediately. Other transactions will block right away, not wait for your commit. The transaction boundary defines when the lock is released—either on commit or rollback.</p>
+<p>Transactions provide atomicity: either all statements succeed or none do. They provide isolation: changes are invisible to other transactions until commit. They provide consistency: the database remains in a valid state. And they provide durability: committed changes persist. But the locking behavior happens immediately, not at commit time.</p>
+<p>Why are all three needed? They solve different problems that often occur together. Consider a scenario where you need to process a payment: you want to ensure only one worker processes it (distributed lock), you want to prevent concurrent updates to the account balance (row lock), and you want to ensure the debit and credit operations happen atomically (transaction).</p>
+<p>Distributed locks prevent duplicated business execution. Without them, you might send two payment requests to an external gateway, or process the same order twice. Row locks prevent concurrent writes to the same data. Without them, you might have race conditions where two transactions read the same balance, both subtract an amount, and both write back, losing one of the updates. Transactions ensure atomicity and define lock scope. Without them, you can&rsquo;t guarantee that related operations succeed or fail together.</p>
+<p>They&rsquo;re complementary, not interchangeable. You can&rsquo;t use a distributed lock to prevent concurrent database writes—it&rsquo;s too coarse-grained and doesn&rsquo;t integrate with the database&rsquo;s concurrency control. You can&rsquo;t use row locks to prevent duplicate business operations—they only protect database access, not the broader workflow. And transactions don&rsquo;t prevent duplicate execution—they just ensure that when execution happens, the database operations are atomic.</p>
+
+      </div>
+
+      
+      <footer class="log-single-footer">
+        <a href="https://yx-fan.github.io/log/" class="log-back-link">← Back to Log</a>
+      </footer>
+    </article>
   </div>
 
     </main>

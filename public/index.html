@@ -942,6 +942,7 @@
       <div class="tech-stack-section">
         <div class="tech-stack-badges">
           <img src="https://img.shields.io/badge/Node.js-E5E7EB?style=for-the-badge&logo=nodedotjs&logoColor=339933&labelColor=E5E7EB" alt="Node.js" />
+          <img src="https://img.shields.io/badge/JavaScript-E5E7EB?style=for-the-badge&logo=javascript&logoColor=F7DF1E&labelColor=E5E7EB" alt="JavaScript" />
           <img src="https://img.shields.io/badge/TypeScript-E5E7EB?style=for-the-badge&logo=typescript&logoColor=007ACC&labelColor=E5E7EB" alt="TypeScript" />
           <img src="https://img.shields.io/badge/Express.js-E5E7EB?style=for-the-badge&logo=express&logoColor=000000&labelColor=E5E7EB" alt="Express" />
           <img src="https://img.shields.io/badge/gRPC-E5E7EB?style=for-the-badge&logo=grpc&logoColor=4285F4&labelColor=E5E7EB" alt="gRPC" />
@@ -951,12 +952,14 @@
           <img src="https://img.shields.io/badge/Laravel-E5E7EB?style=for-the-badge&logo=laravel&logoColor=FF2D20&labelColor=E5E7EB" alt="Laravel" />
           <img src="https://img.shields.io/badge/MongoDB-E5E7EB?style=for-the-badge&logo=mongodb&logoColor=4EA94B&labelColor=E5E7EB" alt="MongoDB" />
           <img src="https://img.shields.io/badge/PostgreSQL-E5E7EB?style=for-the-badge&logo=postgresql&logoColor=4169E1&labelColor=E5E7EB" alt="PostgreSQL" />
+          <img src="https://img.shields.io/badge/MySQL-E5E7EB?style=for-the-badge&logo=mysql&logoColor=4479A1&labelColor=E5E7EB" alt="MySQL" />
           <img src="https://img.shields.io/badge/Redis-E5E7EB?style=for-the-badge&logo=redis&logoColor=DC382D&labelColor=E5E7EB" alt="Redis" />
           <img src="https://img.shields.io/badge/RabbitMQ-E5E7EB?style=for-the-badge&logo=rabbitmq&logoColor=FF6600&labelColor=E5E7EB" alt="RabbitMQ" />
           <img src="https://img.shields.io/badge/Docker-E5E7EB?style=for-the-badge&logo=docker&logoColor=2496ED&labelColor=E5E7EB" alt="Docker" />
           <img src="https://img.shields.io/badge/Kubernetes-E5E7EB?style=for-the-badge&logo=kubernetes&logoColor=326CE5&labelColor=E5E7EB" alt="Kubernetes" />
           <img src="https://img.shields.io/badge/Nginx-E5E7EB?style=for-the-badge&logo=nginx&logoColor=009639&labelColor=E5E7EB" alt="Nginx" />
           <img src="https://img.shields.io/badge/AWS-E5E7EB?style=for-the-badge&logo=amazonaws&logoColor=FF9900&labelColor=E5E7EB" alt="AWS" />
+          <img src="https://img.shields.io/badge/Serverless-E5E7EB?style=for-the-badge&logo=serverless&logoColor=FD5750&labelColor=E5E7EB" alt="Serverless" />
           <img src="https://img.shields.io/badge/Web3-E5E7EB?style=for-the-badge&logo=web3dotjs&logoColor=F16822&labelColor=E5E7EB" alt="Web3" />
           <img src="https://img.shields.io/badge/Blockchain-E5E7EB?style=for-the-badge&logo=blockchaindotcom&logoColor=121D33&labelColor=E5E7EB" alt="Blockchain" />
           <img src="https://img.shields.io/badge/Socket.io-E5E7EB?style=for-the-badge&logo=socketdotio&logoColor=010101&labelColor=E5E7EB" alt="Socket.IO" />
@@ -1023,111 +1026,19 @@
 <article class="ticker-card">
   <div class="ticker-card-content">
     
-      <div class="ticker-date">Dec</div>
+      <div class="ticker-date">Jan</div>
     
     <h3 class="ticker-title">
-      <a href="https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/">Using Redis Sorted Sets for Recent User Search History</a>
+      <a href="https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/">Distributed Lock vs Row Lock vs Transaction</a>
     </h3>
     
-      <p class="ticker-summary">Treat recent search history as ephemeral user behavior, not core business data. Redis Sorted Sets provide a natural fit: O(log N) writes, automatic ordering, de-duplication, and bounded size—all without turning a lightweight behavior signal into a database concern.</p>
+      <p class="ticker-summary">These three mechanisms solve different problems at different layers: distributed locks protect business execution, row locks protect data mutation, and transactions define lock scope and atomicity.</p>
     
   </div>
   
 </article>
 
 
-                  
-                    
-<article class="ticker-card">
-  <div class="ticker-card-content">
-    
-      <div class="ticker-date">Nov</div>
-    
-    <h3 class="ticker-title">
-      <a href="https://yx-fan.github.io/log/modern-devops-infrastructure-repository/">How to Build a Modern DevOps Infrastructure Repository</a>
-    </h3>
-    
-      <p class="ticker-summary">A clean, layered, and cloud-native foundation for managing infrastructure both locally and in the cloud. Separates provisioning, orchestration, persistence, and automation into modular layers.</p>
-    
-  </div>
-  
-</article>
-
-
-                  
-                    
-<article class="ticker-card">
-  <div class="ticker-card-content">
-    
-      <div class="ticker-date">Oct</div>
-    
-    <h3 class="ticker-title">
-      <a href="https://yx-fan.github.io/log/scaling-nodejs-worker-threads-cluster/">Scaling Node.js — Worker Threads &amp; Cluster Mode</a>
-    </h3>
-    
-      <p class="ticker-summary">Node.js runs one event loop per process—only one CPU core is used. To scale, use Cluster for multi-process or Worker Threads for multi-thread. Both enable parallelism, but in different ways.</p>
-    
-  </div>
-  
-</article>
-
-
-                  
-                    
-<article class="ticker-card">
-  <div class="ticker-card-content">
-    
-      <div class="ticker-date">Sep</div>
-    
-    <h3 class="ticker-title">
-      <a href="https://yx-fan.github.io/log/async-await-explained/">Async / Await Explained — What Actually Happens Under the Hood</a>
-    </h3>
-    
-      <p class="ticker-summary">async/await doesn&rsquo;t make code run in parallel. It&rsquo;s syntactic sugar over Promises that makes asynchronous logic read like synchronous flow, working by pausing and resuming execution through the event loop.</p>
-    
-  </div>
-  
-</article>
-
-
-                  
-                    
-<article class="ticker-card">
-  <div class="ticker-card-content">
-    
-      <div class="ticker-date">Aug</div>
-    
-    <h3 class="ticker-title">
-      <a href="https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/">How Node.js Achieves High Concurrency on a Single CPU Core</a>
-    </h3>
-    
-      <p class="ticker-summary">Node.js achieves high concurrency not by multi-threading, but through its event-driven, non-blocking I/O model. It efficiently overlaps I/O waiting time across requests, allowing a single thread to handle thousands of connections.</p>
-    
-  </div>
-  
-</article>
-
-
-                  
-                    
-<article class="ticker-card">
-  <div class="ticker-card-content">
-    
-      <div class="ticker-date">Jul</div>
-    
-    <h3 class="ticker-title">
-      <a href="https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/">Why OpenSearch Shouldn&#39;t Be Used as a Primary Database</a>
-    </h3>
-    
-      <p class="ticker-summary">OpenSearch is built for search, not for storage. Its architecture prioritizes high-performance retrieval and aggregation, not transactional integrity or consistency.</p>
-    
-  </div>
-  
-</article>
-
-
-                  
-                  
                   
                     
 <article class="ticker-card">
@@ -1219,17 +1130,109 @@
 
 
                   
+                  
+                  
                     
 <article class="ticker-card">
   <div class="ticker-card-content">
     
-      <div class="ticker-date">Jul</div>
+      <div class="ticker-date">Jan</div>
     
     <h3 class="ticker-title">
-      <a href="https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/">Why OpenSearch Shouldn&#39;t Be Used as a Primary Database</a>
+      <a href="https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/">Distributed Lock vs Row Lock vs Transaction</a>
     </h3>
     
-      <p class="ticker-summary">OpenSearch is built for search, not for storage. Its architecture prioritizes high-performance retrieval and aggregation, not transactional integrity or consistency.</p>
+      <p class="ticker-summary">These three mechanisms solve different problems at different layers: distributed locks protect business execution, row locks protect data mutation, and transactions define lock scope and atomicity.</p>
+    
+  </div>
+  
+</article>
+
+
+                  
+                    
+<article class="ticker-card">
+  <div class="ticker-card-content">
+    
+      <div class="ticker-date">Dec</div>
+    
+    <h3 class="ticker-title">
+      <a href="https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/">Using Redis Sorted Sets for Recent User Search History</a>
+    </h3>
+    
+      <p class="ticker-summary">Treat recent search history as ephemeral user behavior, not core business data. Redis Sorted Sets provide a natural fit: O(log N) writes, automatic ordering, de-duplication, and bounded size—all without turning a lightweight behavior signal into a database concern.</p>
+    
+  </div>
+  
+</article>
+
+
+                  
+                    
+<article class="ticker-card">
+  <div class="ticker-card-content">
+    
+      <div class="ticker-date">Nov</div>
+    
+    <h3 class="ticker-title">
+      <a href="https://yx-fan.github.io/log/modern-devops-infrastructure-repository/">How to Build a Modern DevOps Infrastructure Repository</a>
+    </h3>
+    
+      <p class="ticker-summary">A clean, layered, and cloud-native foundation for managing infrastructure both locally and in the cloud. Separates provisioning, orchestration, persistence, and automation into modular layers.</p>
+    
+  </div>
+  
+</article>
+
+
+                  
+                    
+<article class="ticker-card">
+  <div class="ticker-card-content">
+    
+      <div class="ticker-date">Oct</div>
+    
+    <h3 class="ticker-title">
+      <a href="https://yx-fan.github.io/log/scaling-nodejs-worker-threads-cluster/">Scaling Node.js — Worker Threads &amp; Cluster Mode</a>
+    </h3>
+    
+      <p class="ticker-summary">Node.js runs one event loop per process—only one CPU core is used. To scale, use Cluster for multi-process or Worker Threads for multi-thread. Both enable parallelism, but in different ways.</p>
+    
+  </div>
+  
+</article>
+
+
+                  
+                    
+<article class="ticker-card">
+  <div class="ticker-card-content">
+    
+      <div class="ticker-date">Sep</div>
+    
+    <h3 class="ticker-title">
+      <a href="https://yx-fan.github.io/log/async-await-explained/">Async / Await Explained — What Actually Happens Under the Hood</a>
+    </h3>
+    
+      <p class="ticker-summary">async/await doesn&rsquo;t make code run in parallel. It&rsquo;s syntactic sugar over Promises that makes asynchronous logic read like synchronous flow, working by pausing and resuming execution through the event loop.</p>
+    
+  </div>
+  
+</article>
+
+
+                  
+                    
+<article class="ticker-card">
+  <div class="ticker-card-content">
+    
+      <div class="ticker-date">Aug</div>
+    
+    <h3 class="ticker-title">
+      <a href="https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/">How Node.js Achieves High Concurrency on a Single CPU Core</a>
+    </h3>
+    
+      <p class="ticker-summary">Node.js achieves high concurrency not by multi-threading, but through its event-driven, non-blocking I/O model. It efficiently overlaps I/O waiting time across requests, allowing a single thread to handle thousands of connections.</p>
     
   </div>
   

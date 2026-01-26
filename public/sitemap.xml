@@ -79,13 +79,55 @@
     <priority>0.5</priority>
   </url>
  <url>
-    <loc>https://yx-fan.github.io/tags/architecture/</loc>
-    <lastmod>2025-12-15T00:00:00&#43;00:00</lastmod>
+    <loc>https://yx-fan.github.io/categories/</loc>
+    <lastmod>2026-01-15T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
  <url>
-    <loc>https://yx-fan.github.io/categories/</loc>
+    <loc>https://yx-fan.github.io/tags/concurrency/</loc>
+    <lastmod>2026-01-15T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/database/</loc>
+    <lastmod>2026-01-15T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/</loc>
+    <lastmod>2026-01-15T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/distributed-systems/</loc>
+    <lastmod>2026-01-15T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/log/</loc>
+    <lastmod>2026-01-15T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/categories/thought/</loc>
+    <lastmod>2026-01-15T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/transactions/</loc>
+    <lastmod>2026-01-15T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/architecture/</loc>
     <lastmod>2025-12-15T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -97,19 +139,7 @@
     <priority>0.5</priority>
   </url>
  <url>
-    <loc>https://yx-fan.github.io/log/</loc>
-    <lastmod>2025-12-15T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
     <loc>https://yx-fan.github.io/tags/redis/</loc>
-    <lastmod>2025-12-15T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
-    <loc>https://yx-fan.github.io/categories/thought/</loc>
     <lastmod>2025-12-15T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -213,12 +243,6 @@
  <url>
     <loc>https://yx-fan.github.io/tags/promise/</loc>
     <lastmod>2025-09-15T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
-    <loc>https://yx-fan.github.io/tags/concurrency/</loc>
-    <lastmod>2025-08-15T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

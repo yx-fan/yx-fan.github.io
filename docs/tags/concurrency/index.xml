@@ -6,8 +6,15 @@
     <description>Recent content in Concurrency on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/tags/concurrency/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distributed Lock vs Row Lock vs Transaction</title>
+      <link>https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/</guid>
+      <description>These three mechanisms solve different problems at different layers: distributed locks protect business execution, row locks protect data mutation, and transactions define lock scope and atomicity.</description>
+    </item>
     <item>
       <title>How Node.js Achieves High Concurrency on a Single CPU Core</title>
       <link>https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/</link>

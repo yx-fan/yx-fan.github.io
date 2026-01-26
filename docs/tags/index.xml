@@ -72,6 +72,34 @@
       <description></description>
     </item>
     <item>
+      <title>Concurrency</title>
+      <link>https://yx-fan.github.io/tags/concurrency/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Database</title>
+      <link>https://yx-fan.github.io/tags/database/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Distributed Systems</title>
+      <link>https://yx-fan.github.io/tags/distributed-systems/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Transactions</title>
+      <link>https://yx-fan.github.io/tags/transactions/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/transactions/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Architecture</title>
       <link>https://yx-fan.github.io/tags/architecture/</link>
       <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
@@ -181,13 +209,6 @@
       <link>https://yx-fan.github.io/tags/promise/</link>
       <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
       <guid>https://yx-fan.github.io/tags/promise/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Concurrency</title>
-      <link>https://yx-fan.github.io/tags/concurrency/</link>
-      <pubDate>Fri, 15 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/concurrency/</guid>
       <description></description>
     </item>
     <item>
