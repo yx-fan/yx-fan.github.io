@@ -1,7 +1,7 @@
 ---
 title: "Log"
-description: "My thoughts, ideas, projects, and more"
+description: "Technical thoughts and insights"
 ---
 
-This is where I record my thoughts, ideas, project experiences, and technical insights. You can browse different types of content by category.
+This is where I record my technical thoughts and insights. These are reflections on programming, system design, databases, infrastructure, and the deeper understanding that comes from building and working with complex systems.
 
