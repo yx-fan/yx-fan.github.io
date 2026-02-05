@@ -6,8 +6,57 @@
     <description>Recent content in Tags on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Orchestration</title>
+      <link>https://yx-fan.github.io/tags/ai-orchestration/</link>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/ai-orchestration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LangGraph</title>
+      <link>https://yx-fan.github.io/tags/langgraph/</link>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/langgraph/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM</title>
+      <link>https://yx-fan.github.io/tags/llm/</link>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Microservices</title>
+      <link>https://yx-fan.github.io/tags/microservices/</link>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/microservices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redis</title>
+      <link>https://yx-fan.github.io/tags/redis/</link>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>System Design</title>
+      <link>https://yx-fan.github.io/tags/system-design/</link>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/system-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vector Database</title>
+      <link>https://yx-fan.github.io/tags/vector-database/</link>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/tags/vector-database/</guid>
+      <description></description>
+    </item>
     <item>
       <title>ANN</title>
       <link>https://yx-fan.github.io/tags/ann/</link>
@@ -58,13 +107,6 @@
       <description></description>
     </item>
     <item>
-      <title>System Design</title>
-      <link>https://yx-fan.github.io/tags/system-design/</link>
-      <pubDate>Sun, 18 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/system-design/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Vector Search</title>
       <link>https://yx-fan.github.io/tags/vector-search/</link>
       <pubDate>Sun, 18 Jan 2026 00:00:00 +0000</pubDate>
@@ -111,13 +153,6 @@
       <link>https://yx-fan.github.io/tags/data-structures/</link>
       <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
       <guid>https://yx-fan.github.io/tags/data-structures/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Redis</title>
-      <link>https://yx-fan.github.io/tags/redis/</link>
-      <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/redis/</guid>
       <description></description>
     </item>
     <item>
@@ -226,13 +261,6 @@
       <description></description>
     </item>
     <item>
-      <title>LLM</title>
-      <link>https://yx-fan.github.io/tags/llm/</link>
-      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/llm/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>NLP</title>
       <link>https://yx-fan.github.io/tags/nlp/</link>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
@@ -286,13 +314,6 @@
       <link>https://yx-fan.github.io/tags/sql/</link>
       <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://yx-fan.github.io/tags/sql/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Vector Database</title>
-      <link>https://yx-fan.github.io/tags/vector-database/</link>
-      <pubDate>Sun, 15 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/vector-database/</guid>
       <description></description>
     </item>
     <item>
@@ -426,13 +447,6 @@
       <link>https://yx-fan.github.io/tags/docker/</link>
       <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
       <guid>https://yx-fan.github.io/tags/docker/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Microservices</title>
-      <link>https://yx-fan.github.io/tags/microservices/</link>
-      <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://yx-fan.github.io/tags/microservices/</guid>
       <description></description>
     </item>
     <item>

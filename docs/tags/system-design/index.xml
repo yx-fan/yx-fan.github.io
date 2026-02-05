@@ -6,8 +6,15 @@
     <description>Recent content in System Design on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/tags/system-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MCP Orchestration System: Production-Oriented Agent Control Plane</title>
+      <link>https://yx-fan.github.io/projects/mcp-orchestration-system/</link>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/projects/mcp-orchestration-system/</guid>
+      <description>A production-oriented MCP (Model Control Plane) orchestration system designed to manage agentic workflows with statefulness, extensibility, cost control, and multi-step reasoning capabilities.</description>
+    </item>
     <item>
       <title>Building a Production-Oriented Semantic Search System with Milvus and Cross-Encoder Reranking</title>
       <link>https://yx-fan.github.io/projects/semantic-search-system-milvus-reranking/</link>
