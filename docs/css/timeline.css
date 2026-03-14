@@ -1,11 +1,10 @@
-/* Timeline - 12px/month scale, compact and readable */
-/* Scale: 2011.01 to 2026.12 = 192 months * 12px = 2304px */
+/* Timeline - dynamic height & year positions via timeline.js */
 .timeline {
   position: relative;
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px 0 40px;
-  min-height: 2364px;
+  min-height: 2400px; /* fallback, JS sets based on cards */
   /* Center axis: vertical line + dashed ticks (12px period) */
   background-image: repeating-linear-gradient(
     to bottom,
@@ -19,18 +18,20 @@
   background-repeat: repeat-y;
 }
 
-/* Year ruler - on center axis, between left/right cards so not blocked */
+/* Year ruler - positions set by JS based on card density */
 .timeline-ruler {
   position: absolute;
   left: 50%;
-  margin-left: 12px; /* just right of center line */
+  margin-left: 12px;
   top: 20px;
   width: 36px;
-  height: 2304px;
-  z-index: 3; /* above cards */
+  height: 100%;
+  min-height: 2400px;
+  z-index: 3;
   pointer-events: none;
 }
 
+/* Year positions set inline from card boundaries (non-uniform) */
 .timeline-year {
   position: absolute;
   font-size: 0.7rem;
@@ -40,29 +41,13 @@
   transform: translateY(-50%);
   white-space: nowrap;
 }
-.timeline-ruler .timeline-year:nth-child(1) { top: 0; }
-.timeline-ruler .timeline-year:nth-child(2) { top: 144px; }
-.timeline-ruler .timeline-year:nth-child(3) { top: 288px; }
-.timeline-ruler .timeline-year:nth-child(4) { top: 432px; }
-.timeline-ruler .timeline-year:nth-child(5) { top: 576px; }
-.timeline-ruler .timeline-year:nth-child(6) { top: 720px; }
-.timeline-ruler .timeline-year:nth-child(7) { top: 864px; }
-.timeline-ruler .timeline-year:nth-child(8) { top: 1008px; }
-.timeline-ruler .timeline-year:nth-child(9) { top: 1152px; }
-.timeline-ruler .timeline-year:nth-child(10) { top: 1296px; }
-.timeline-ruler .timeline-year:nth-child(11) { top: 1440px; }
-.timeline-ruler .timeline-year:nth-child(12) { top: 1584px; }
-.timeline-ruler .timeline-year:nth-child(13) { top: 1728px; }
-.timeline-ruler .timeline-year:nth-child(14) { top: 1872px; }
-.timeline-ruler .timeline-year:nth-child(15) { top: 2016px; }
-.timeline-ruler .timeline-year:nth-child(16) { top: 2160px; }
 
 .timeline-items {
   position: absolute;
   top: 20px;
   left: 0;
   right: 0;
-  min-height: 2304px;
+  min-height: 2400px;
   z-index: 2;
 }
 
@@ -114,7 +99,7 @@
   display: none;
 }
 
-/* Circle - centered on start date tick */
+/* Circle - top edge aligns with card top (event start point) */
 .timeline-circle-left,
 .timeline-circle-right {
   width: 25px;
@@ -124,14 +109,9 @@
   background-color: white;
   border: 4px solid #2196F3;
   border-radius: 50%;
-  margin-top: -12.5px; /* center on date line */
+  margin-top: 0; /* align circle top with card top */
   z-index: 2;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* UPenn: circle at 2020.12 (732px), card at 880px - offset circle up */
-.timeline-item--upenn .timeline-circle-left {
-  margin-top: var(--circle-offset, -12.5px);
 }
 
 .timeline-content {
@@ -139,23 +119,12 @@
   max-width: 380px; /* slightly narrower so cards stay clear of center */
 }
 
-.timeline-item .timeline-date {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #5b7fa8;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.02em;
-}
-
 .timeline-item .timeline-content h3 {
   margin: 0;
-  font-size: 1.25em;
 }
 
 .timeline-item .timeline-content p {
-  margin: 10px 0;
-  font-size: 1em;
-  line-height: 1.5;
+  margin: 0;
 }
 
 h2 {
