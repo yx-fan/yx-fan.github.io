@@ -10,7 +10,6 @@
     <section class="about-hero">
         <div class="about-hero-content">
             <div class="about-intro">
-                {{/* Remove the h1 title from content since it's now in header */}}
                 {{ $content := .Content }}
                 {{ $content = replaceRE `(?s)<h1[^>]*>.*?</h1>\s*` "" $content }}
                 {{ $content | safeHTML }}
@@ -44,41 +43,48 @@
                 <h3 class="section-title">Core Competencies</h3>
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h4>Backend Development</h4>
+                        <h4>Distributed Systems Architecture</h4>
                         <div class="skill-tags">
-                            <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">gRPC</span>
-                            <span class="skill-tag">REST API</span>
-                            <span class="skill-tag">Microservices</span>
+                            <span class="skill-tag">System Design</span>
+                            <span class="skill-tag">Distributed Systems</span>
+                            <span class="skill-tag">Microservices Architecture</span>
+                            <span class="skill-tag">Event-Driven Systems</span>
+                            <span class="skill-tag">API Architecture</span>
+                            <span class="skill-tag">High-Throughput Messaging</span>
+                            <span class="skill-tag">Real-time Systems</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h4>Data & Infrastructure</h4>
+                        <h4>Cloud & Platform Infrastructure</h4>
                         <div class="skill-tags">
-                            <span class="skill-tag">MongoDB</span>
-                            <span class="skill-tag">Redis</span>
-                            <span class="skill-tag">RabbitMQ</span>
-                            <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Cloud-Native Architecture</span>
+                            <span class="skill-tag">Serverless Systems</span>
+                            <span class="skill-tag">Containerized Services</span>
+                            <span class="skill-tag">Infrastructure as Code</span>
+                            <span class="skill-tag">Caching & Messaging Systems</span>
+                            <span class="skill-tag">Scalable Data Storage</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h4>Blockchain & Web3</h4>
+                        <h4>AI & Intelligent Systems</h4>
                         <div class="skill-tags">
-                            <span class="skill-tag">Web3</span>
-                            <span class="skill-tag">Blockchain</span>
-                            <span class="skill-tag">Smart Contracts</span>
-                            <span class="skill-tag">Wallet Auth</span>
+                            <span class="skill-tag">LLM Applications</span>
+                            <span class="skill-tag">Retrieval-Augmented Generation</span>
+                            <span class="skill-tag">AI Agents</span>
+                            <span class="skill-tag">Vector Search Systems</span>
+                            <span class="skill-tag">Similarity Search</span>
+                            <span class="skill-tag">AI-driven Automation</span>
                         </div>
                     </div>
                     <div class="skill-category">
-                        <h4>Financial Analysis</h4>
+                        <h4>Data & Financial Systems</h4>
                         <div class="skill-tags">
-                            <span class="skill-tag">Data Analysis</span>
-                            <span class="skill-tag">Financial Modeling</span>
-                            <span class="skill-tag">M&A Due Diligence</span>
-                            <span class="skill-tag">Risk Management</span>
+                            <span class="skill-tag">Data Platforms</span>
+                            <span class="skill-tag">Data Pipelines</span>
+                            <span class="skill-tag">Business Intelligence</span>
+                            <span class="skill-tag">Financial Systems</span>
+                            <span class="skill-tag">Risk Analytics</span>
+                            <span class="skill-tag">M&A Data Analysis</span>
                         </div>
                     </div>
                 </div>
@@ -116,13 +122,6 @@
                 <div class="timeline-date">2025.04 – 2026.03</div>
                 <h4>Toronto, Canada</h4>
                 <p>Led backend development for logistics technology—scalable systems, multi-carrier integration, and event-driven orchestration for high-volume workflows.</p>
-                <div class="timeline-tags">
-                    <span class="timeline-tag">PHP</span>
-                    <span class="timeline-tag">Laravel</span>
-                    <span class="timeline-tag">PostgreSQL</span>
-                    <span class="timeline-tag">Distributed Systems</span>
-                    <span class="timeline-tag">Logistics Technology</span>
-                </div>
             </div>
         </div>
         <div class="timeline-item" data-start-date="2023.03">
@@ -132,13 +131,6 @@
                 <div class="timeline-date">2023.03 – 2025.03</div>
                 <h4>Toronto, Canada</h4>
                 <p>Architected and implemented microservices for a Web3 chat platform, managing messaging, group chat, and message queue systems.</p>
-                <div class="timeline-tags">
-                    <span class="timeline-tag">Web3</span>
-                    <span class="timeline-tag">Node.js</span>
-                    <span class="timeline-tag">gRPC</span>
-                    <span class="timeline-tag">RabbitMQ</span>
-                    <span class="timeline-tag">MongoDB</span>
-                </div>
             </div>
         </div>
         <div class="timeline-item" data-start-date="2021.11">
@@ -148,12 +140,6 @@
                 <div class="timeline-date">2021.11 – 2023.03</div>
                 <h4>Shenzhen, China</h4>
                 <p>Led data-driven projects and developed operational models to monitor financial performance, utilizing data analysis and visualization tools.</p>
-                <div class="timeline-tags">
-                    <span class="timeline-tag">Python</span>
-                    <span class="timeline-tag">ETL</span>
-                    <span class="timeline-tag">Tableau</span>
-                    <span class="timeline-tag">Cloud Technology</span>
-                </div>
             </div>
         </div>
         <div class="timeline-item" data-start-date="2021.03">
@@ -163,11 +149,6 @@
                 <div class="timeline-date">2021.03 – 2021.11</div>
                 <h4>Shanghai, China</h4>
                 <p>Developed data due diligence frameworks and conducted top-down business model evaluations for multiple M&A projects.</p>
-                <div class="timeline-tags">
-                    <span class="timeline-tag">ETL</span>
-                    <span class="timeline-tag">SQL</span>
-                    <span class="timeline-tag">Alteryx</span>
-                </div>
             </div>
         </div>
         <div class="timeline-item timeline-item--education timeline-item--upenn" data-start-date="2020.12">
@@ -177,10 +158,6 @@
                 <div class="timeline-date">2020.12 – 2024.05</div>
                 <h4>Remote, USA</h4>
                 <p>- Master of Computer Information Technology, 3.87</p>
-                <div class="timeline-tags">
-                    <span class="timeline-tag">MCIT</span>
-                    <span class="timeline-tag">Software Development</span>
-                </div>
             </div>
         </div>
         <div class="timeline-item timeline-item--education" data-start-date="2018.08">
@@ -191,11 +168,6 @@
                 <h4>Cleveland, USA</h4>
                 <p>- Master of Business Administration in Operations and Business Analytics, 4.00</p>
                 <p>- Master of Science in Finance (Big Data Track), 4.00</p>
-                <div class="timeline-tags">
-                    <span class="timeline-tag">MBA</span>
-                    <span class="timeline-tag">Financial Mathematics</span>
-                    <span class="timeline-tag">Analytics</span>
-                </div>
             </div>
         </div>
         <div class="timeline-item" data-start-date="2015.09">
@@ -205,11 +177,6 @@
                 <div class="timeline-date">2015.09 – 2018.07</div>
                 <h4>Shenzhen, China</h4>
                 <p>Contributed to audit engagements by performing financial audits, ensuring compliance with regulations, and enhancing audit efficiency through standardized procedures.</p>
-                <div class="timeline-tags">
-                    <span class="timeline-tag">IPO</span>
-                    <span class="timeline-tag">Financial Audit</span>
-                    <span class="timeline-tag">Compliance</span>
-                </div>
             </div>
         </div>
         <div class="timeline-item timeline-item--education" data-start-date="2011.09">
@@ -220,10 +187,6 @@
                 <h4>Guangzhou, China</h4>
                 <p>- Bachelor of Science in Finance, 3.81</p>
                 <p>- Bachelor of Business Administration in Accounting, 3.61</p>
-                <div class="timeline-tags">
-                    <span class="timeline-tag">Finance</span>
-                    <span class="timeline-tag">Accounting</span>
-                </div>
             </div>
         </div>
         </div>

@@ -1,4 +1,4 @@
-/* About Page Enhanced Styles */
+/* About Page - Hero with intro, certs, skills */
 
 .about-hero {
     max-width: 1200px;
@@ -40,8 +40,6 @@
     text-align: center;
     padding: 2rem 0;
 }
-
-/* Section title styles are now in shared.css */
 
 .cert-badges {
     display: flex;
@@ -116,27 +114,85 @@
 .skill-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 
 .skill-tag {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, #5b7fa8 0%, #6b8db8 100%);
-    color: white;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.85rem;
+    background: #f8fafc;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.85rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    letter-spacing: 0.01em;
+    transition: all 0.2s ease;
     cursor: default;
 }
 
 .skill-tag:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(91, 127, 168, 0.4);
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #334155;
 }
 
-/* Timeline Section Enhancements */
+/* Legacy */
+.about-intro-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2rem;
+}
+
+.about-intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-intro {
+    text-align: center;
+}
+
+.about-intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.about-intro p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Certifications - compact pills, centered below intro */
+.certifications-compact {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.cert-badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.cert-pill {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #5b7fa8;
+    background: rgba(91, 127, 168, 0.12);
+    border-radius: 20px;
+}
+
+/* Timeline Section - same container as intro for unified flow */
 .timeline-section {
     max-width: 1200px;
     margin: 0 auto;
