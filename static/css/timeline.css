@@ -1,153 +1,231 @@
-/* Overall timeline styles */
+/* Timeline - 12px/month scale, compact and readable */
+/* Scale: 2011.01 to 2026.12 = 192 months * 12px = 2304px */
 .timeline {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-top: 20px;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0 40px;
+  min-height: 2364px;
+  /* Center axis: vertical line + dashed ticks (12px period) */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 9px,
+    #94a3b8 9px,
+    #94a3b8 12px
+  );
+  background-size: 2px 100%;
+  background-position: center top;
+  background-repeat: repeat-y;
+}
+
+/* Year ruler - on center axis, between left/right cards so not blocked */
+.timeline-ruler {
+  position: absolute;
+  left: 50%;
+  margin-left: 12px; /* just right of center line */
+  top: 20px;
+  width: 36px;
+  height: 2304px;
+  z-index: 3; /* above cards */
+  pointer-events: none;
+}
+
+.timeline-year {
+  position: absolute;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+.timeline-ruler .timeline-year:nth-child(1) { top: 0; }
+.timeline-ruler .timeline-year:nth-child(2) { top: 144px; }
+.timeline-ruler .timeline-year:nth-child(3) { top: 288px; }
+.timeline-ruler .timeline-year:nth-child(4) { top: 432px; }
+.timeline-ruler .timeline-year:nth-child(5) { top: 576px; }
+.timeline-ruler .timeline-year:nth-child(6) { top: 720px; }
+.timeline-ruler .timeline-year:nth-child(7) { top: 864px; }
+.timeline-ruler .timeline-year:nth-child(8) { top: 1008px; }
+.timeline-ruler .timeline-year:nth-child(9) { top: 1152px; }
+.timeline-ruler .timeline-year:nth-child(10) { top: 1296px; }
+.timeline-ruler .timeline-year:nth-child(11) { top: 1440px; }
+.timeline-ruler .timeline-year:nth-child(12) { top: 1584px; }
+.timeline-ruler .timeline-year:nth-child(13) { top: 1728px; }
+.timeline-ruler .timeline-year:nth-child(14) { top: 1872px; }
+.timeline-ruler .timeline-year:nth-child(15) { top: 2016px; }
+.timeline-ruler .timeline-year:nth-child(16) { top: 2160px; }
+
+.timeline-items {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  min-height: 2304px;
+  z-index: 2;
+}
+
+/* Items positioned by start date */
+.timeline-item {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr; /* wider center gap: cards away from axis */
+  align-items: start;
+  gap: 0;
+  padding: 0 0 20px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Odd: card on left, circle in center */
+.timeline-item:nth-child(odd) .timeline-content {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  max-width: 100%;
+}
+
+.timeline-item:nth-child(odd) .timeline-circle-left {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+}
+
+.timeline-item:nth-child(odd) .timeline-circle-right {
+  display: none;
+}
+
+/* Even: circle in center, card on right */
+.timeline-item:nth-child(even) .timeline-content {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: start;
+  max-width: 100%;
+}
+
+.timeline-item:nth-child(even) .timeline-circle-right {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+}
+
+.timeline-item:nth-child(even) .timeline-circle-left {
+  display: none;
+}
+
+/* Circle - centered on start date tick */
+.timeline-circle-left,
+.timeline-circle-right {
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+  background-color: white;
+  border: 4px solid #2196F3;
+  border-radius: 50%;
+  margin-top: -12.5px; /* center on date line */
+  z-index: 2;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* UPenn: circle at 2020.12 (732px), card at 880px - offset circle up */
+.timeline-item--upenn .timeline-circle-left {
+  margin-top: var(--circle-offset, -12.5px);
+}
+
+.timeline-content {
+  width: calc(100% - 20px);
+  max-width: 380px; /* slightly narrower so cards stay clear of center */
+}
+
+.timeline-item .timeline-date {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5b7fa8;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.timeline-item .timeline-content h3 {
+  margin: 0;
+  font-size: 1.25em;
+}
+
+.timeline-item .timeline-content p {
+  margin: 10px 0;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+
+/* Responsive - flow layout on mobile, no scale */
+@media screen and (max-width: 768px) {
+  .timeline {
+    min-height: auto;
+    background-position: 30px top;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 8px,
+      #94a3b8 8px,
+      #94a3b8 10px
+    );
   }
-  
-  .timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background-color: #ddd;
+
+  .timeline-ruler {
+    display: none;
+  }
+
+  .timeline-items {
+    position: relative;
     top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -3px;
-    z-index: 1;
+    min-height: 0;
   }
-  
-  /* Timeline item styles */
+
   .timeline-item {
-    padding: 20px 40px;
-    background-color: inherit;
-    width: 50%;
-    box-sizing: border-box;
-  }
-  
-  /* Alternate alignment for timeline items */
-  .timeline-item:nth-child(odd) {
-    position: relative;
-    left: 0;
-  }
-  
-  .timeline-item:nth-child(even) {
-    position: relative;
-    left: 50%;
-  }
-  
-  /* Blue circle styles */
-  .timeline-circle-left {
-    position: absolute;
-    top: 20px;
-    left: 100%;
-    transform: translateX(-50%);
-    width: 25px;
-    height: 25px;
-    background-color: white;
-    border: 4px solid #2196F3;
-    border-radius: 50%;
-    z-index: 2;
+    position: relative !important;
+    top: auto !important;
+    margin-bottom: 2.5rem;
   }
 
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-circle-left,
   .timeline-circle-right {
-    position: absolute;
-    top: 20px;
-    left: 0%;
-    transform: translateX(-50%);
-    width: 25px;
-    height: 25px;
-    background-color: white;
-    border: 4px solid #2196F3;
-    border-radius: 50%;
-    z-index: 2;
-  }
-  
-  /* Timeline date styles */
-  .timeline-item .timeline-date {
-    position: absolute;
-    top: 12px;
-    width: 120px;
-    text-align: right;
-    left: -160px;
-    font-weight: 600;
-  }
-  
-  .timeline-item:nth-child(even) .timeline-date {
-    left: calc(100% + 40px);
-    text-align: left;
-  }
-  
-  /* Content styles */
-  .timeline-item .timeline-content h3 {
-    margin: 0;
-    font-size: 1.25em;
-  }
-  
-  .timeline-item .timeline-content p {
-    margin: 10px 0;
-    font-size: 1em;
-    line-height: 1.5;
-  }
-  
-  h2 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 40px;
+    margin-top: 0.5rem;
   }
 
-  /* Small circle styles for timeline */
-.small-circle-left, .small-circle-right {
-    position: absolute;
-    top: 55px; /* Vertical position relative to the large circle */
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    border: 2px solid #FF9800; /* Small circle color */
-    border-radius: 50%;
-    z-index: 1;
-}
-
-/* Left side small circle */
-.small-circle-left {
-    left: 100%;
-    transform: translateX(-50%);
-}
-
-/* Right side small circle */
-.small-circle-right {
-    left: 0;
-    transform: translateX(-50%);
-}
-  
-  /* Responsive styles */
-  @media screen and (max-width: 768px) {
-    .timeline::after {
-      left: 60px;
-    }
-  
-    .timeline-item {
-      width: 100%;
-      padding-left: 80px;
-      padding-right: 25px;
-      left: 0;
-    }
-  
-    .timeline-item .timeline-circle {
-      left: 60px;
-      transform: translateX(0);
-    }
-  
-    .timeline-item .timeline-date {
-      left: 0;
-      top: -20px;
-      text-align: left;
-      font-size: 0.9em;
-    }
-  
-    .timeline-item:nth-child(even) .timeline-date {
-      left: 0;
-    }
+  .timeline-item {
+    grid-template-columns: 60px 1fr;
   }
-  
+
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-circle-left,
+  .timeline-item:nth-child(even) .timeline-circle-right {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-circle-right,
+  .timeline-item:nth-child(even) .timeline-circle-left {
+    display: none;
+  }
+
+  .timeline-content {
+    width: 100%;
+    max-width: none;
+  }
+}

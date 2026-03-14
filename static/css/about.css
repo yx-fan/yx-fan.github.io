@@ -179,6 +179,7 @@
 .timeline-section .timeline-item:nth-child(5) { animation-delay: 0.5s; }
 .timeline-section .timeline-item:nth-child(6) { animation-delay: 0.6s; }
 .timeline-section .timeline-item:nth-child(7) { animation-delay: 0.7s; }
+.timeline-section .timeline-item:nth-child(8) { animation-delay: 0.8s; }
 
 @keyframes fadeInUp {
     from {
@@ -192,12 +193,18 @@
 }
 
 .timeline-content {
+    margin-top: 0; /* card top aligns with circle/start date */
     background: white;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     position: relative;
+}
+
+/* Education cards: subtle background to distinguish from work */
+.timeline-item--education .timeline-content {
+    background: #f8fafc;
 }
 
 .timeline-content::before {
@@ -211,13 +218,25 @@
     border-radius: 10px 10px 0 0;
 }
 
-.timeline-section .timeline-item:hover .timeline-content {
-    transform: translateX(5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+/* Card + circle linked on hover - subtle, elegant */
+.timeline-section .timeline-item {
+    cursor: pointer;
+}
+
+.timeline-section .timeline-item:nth-child(odd):hover .timeline-content {
+    transform: translateX(4px);
+    box-shadow: 0 6px 24px rgba(91, 127, 168, 0.12), 0 0 0 1px rgba(91, 127, 168, 0.08);
 }
 
 .timeline-section .timeline-item:nth-child(even):hover .timeline-content {
-    transform: translateX(-5px);
+    transform: translateX(-4px);
+    box-shadow: 0 6px 24px rgba(91, 127, 168, 0.12), 0 0 0 1px rgba(91, 127, 168, 0.08);
+}
+
+.timeline-section .timeline-item:hover .timeline-circle-left,
+.timeline-section .timeline-item:hover .timeline-circle-right {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 3px rgba(91, 127, 168, 0.15);
 }
 
 .timeline-content h3 {
@@ -240,6 +259,31 @@
     margin: 0;
 }
 
+/* Timeline tags - light, subtle */
+.timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.timeline-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: #64748b;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(148, 163, 184, 0.12);
+    transition: all 0.2s ease;
+}
+
+.timeline-tag:hover {
+    background: rgba(148, 163, 184, 0.2);
+    color: #475569;
+}
+
 .timeline-date {
     font-weight: 600;
     color: #5b7fa8;
@@ -257,7 +301,7 @@
 
 .timeline-section .timeline-item:hover .timeline-circle-left,
 .timeline-section .timeline-item:hover .timeline-circle-right {
-    transform: translateX(-50%) scale(1.2);
+    transform: scale(1.2);
     box-shadow: 0 0 0 6px rgba(91, 127, 168, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 

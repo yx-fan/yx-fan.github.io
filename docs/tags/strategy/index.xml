@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Strategy on Yuxin Fan</title>
+    <link>https://yx-fan.github.io/tags/strategy/</link>
+    <description>Recent content in Strategy on Yuxin Fan</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://yx-fan.github.io/tags/strategy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multi-Third-Party Integration: Factory &#43; Strategy in Practice</title>
+      <link>https://yx-fan.github.io/log/factory-strategy-multi-third-party-integration/</link>
+      <pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/log/factory-strategy-multi-third-party-integration/</guid>
+      <description>When integrating multiple external systems, treat each integration as an independent strategy and use a factory to select the implementation at runtime. Differences stay isolated in their own implementations; the main flow only cares about &amp;lsquo;who to call&amp;rsquo; and &amp;lsquo;how to orchestrate&amp;rsquo;.</description>
+    </item>
+  </channel>
+</rss>
