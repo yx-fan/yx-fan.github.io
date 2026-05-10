@@ -1,6 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
+    <loc>https://yx-fan.github.io/tags/distributed-systems/</loc>
+    <lastmod>2026-05-10T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/projects/</loc>
+    <lastmod>2026-05-10T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/projects/real-time-system-health-signals/</loc>
+    <lastmod>2026-05-10T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/redis/</loc>
+    <lastmod>2026-05-10T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/system-design/</loc>
+    <lastmod>2026-05-10T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/</loc>
+    <lastmod>2026-05-10T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/tags/web-socket/</loc>
+    <lastmod>2026-05-10T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
+    <loc>https://yx-fan.github.io/</loc>
+    <lastmod>2026-05-10T00:00:00&#43;00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+ <url>
     <loc>https://yx-fan.github.io/categories/</loc>
     <lastmod>2026-03-13T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -43,25 +91,7 @@
     <priority>0.5</priority>
   </url>
  <url>
-    <loc>https://yx-fan.github.io/tags/system-design/</loc>
-    <lastmod>2026-03-13T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
-    <loc>https://yx-fan.github.io/tags/</loc>
-    <lastmod>2026-03-13T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
     <loc>https://yx-fan.github.io/categories/thought/</loc>
-    <lastmod>2026-03-13T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
-    <loc>https://yx-fan.github.io/</loc>
     <lastmod>2026-03-13T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -92,18 +122,6 @@
   </url>
  <url>
     <loc>https://yx-fan.github.io/tags/microservices/</loc>
-    <lastmod>2026-02-05T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
-    <loc>https://yx-fan.github.io/projects/</loc>
-    <lastmod>2026-02-05T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
-    <loc>https://yx-fan.github.io/tags/redis/</loc>
     <lastmod>2026-02-05T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -182,12 +200,6 @@
   </url>
  <url>
     <loc>https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/</loc>
-    <lastmod>2026-01-15T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
-    <loc>https://yx-fan.github.io/tags/distributed-systems/</loc>
     <lastmod>2026-01-15T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -428,12 +440,6 @@
   </url>
  <url>
     <loc>https://yx-fan.github.io/tags/real-time-messaging/</loc>
-    <lastmod>2024-10-20T00:00:00&#43;00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
- <url>
-    <loc>https://yx-fan.github.io/tags/web-socket/</loc>
     <lastmod>2024-10-20T00:00:00&#43;00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

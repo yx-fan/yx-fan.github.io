@@ -6,8 +6,15 @@
     <description>Recent content in Welcome to My Personal Website on Yuxin Fan</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://yx-fan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Real-Time System Health Layer: From Metrics to Operational Signals</title>
+      <link>https://yx-fan.github.io/projects/real-time-system-health-signals/</link>
+      <pubDate>Sun, 10 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://yx-fan.github.io/projects/real-time-system-health-signals/</guid>
+      <description>A scalable observability layer that turns raw backlog, lag, and throughput numbers into time-based signals—so operators answer “are we keeping up?” without interpreting dashboards.</description>
+    </item>
     <item>
       <title>Multi-Third-Party Integration: Factory &#43; Strategy in Practice</title>
       <link>https://yx-fan.github.io/log/factory-strategy-multi-third-party-integration/</link>
