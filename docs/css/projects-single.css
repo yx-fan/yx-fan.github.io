@@ -117,6 +117,22 @@
   user-select: none;
 }
 
+.ps-views {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.ps-view-count {
+  font-variant-numeric: tabular-nums;
+  color: var(--ps-muted);
+}
+
+.ps-view-label {
+  font-weight: 400;
+  color: var(--ps-faint);
+}
+
 .ps-lede {
   margin: 1.25rem 0 0;
   font-size: 1.125rem;

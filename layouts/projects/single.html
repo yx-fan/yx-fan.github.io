@@ -29,6 +29,13 @@
             <span class="ps-meta-dot" aria-hidden="true">·</span>
             {{ end }}
             <span class="ps-meta-read">{{ .ReadingTime }} min read</span>
+            {{ with .File }}
+            <span class="ps-meta-dot" aria-hidden="true">·</span>
+            <span class="ps-views" aria-label="Approximate page reads">
+              <span id="ps-view-count" class="ps-view-count" data-slug="{{ .ContentBaseName }}">—</span>
+              <span class="ps-view-label">reads</span>
+            </span>
+            {{ end }}
           </div>
           {{ with .Params.summary }}
           <p class="ps-lede">{{ . }}</p>
@@ -82,4 +89,5 @@
       </article>
     </div>
   </div>
+  <script src="{{ "js/project-pageviews.js" | absURL }}" defer></script>
 {{ end }}
