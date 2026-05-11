@@ -323,12 +323,13 @@
   <meta name="twitter:description" content="Learn how I built a message queue microservice using gRPC and RabbitMQ, with support for direct and fanout publish/subscribe models.">
 
 	
+  <link rel="stylesheet" href="https://yx-fan.github.io/css/projects-single.css">
+
   </head>
 
   <body class="ma0 avenir bg-near-white production">
 
     
-   
   
 
   <header>
@@ -892,14 +893,14 @@
 
     <main class="pb7" role="main">
       
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        My Projects
-      </aside>
-      
+  <div class="ps-page">
+    <div class="ps-container">
+      <nav class="ps-nav" aria-label="Project navigation">
+        <a href="https://yx-fan.github.io/projects/" class="ps-nav-back">
+          <span class="ps-nav-back-icon" aria-hidden="true">←</span>
+          <span>All projects</span>
+        </a>
+        <div class="ps-nav-share">
 
 
 
@@ -932,18 +933,29 @@
   </div>
 
 
+</div>
+      </nav>
 
-      <h1 class="f1 athelas mt3 mb1">Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2024-10-06T00:00:00Z">October 6, 2024</time>
-      
+      <article class="ps-article">
+        <header class="ps-header">
+          <p class="ps-eyebrow">My Projects</p>
+          <h1 class="ps-title">Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution</h1>
+          <div class="ps-meta">
+            
+            <time class="ps-meta-time" datetime="2024-10-06T00:00:00Z">October 6, 2024</time>
+            <span class="ps-meta-dot" aria-hidden="true">·</span>
+            
+            <span class="ps-meta-read">4 min read</span>
+          </div>
+          
+          <p class="ps-lede">Learn how I built a message queue microservice using gRPC and RabbitMQ, with support for direct and fanout publish/subscribe models.</p>
+          
+        </header>
 
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>In today&rsquo;s highly interconnected systems, efficient and reliable communication between services is crucial for building scalable and resilient microservice architectures. To address this, I built the <strong>Message Queue Microservice</strong>, a gRPC-based messaging system powered by RabbitMQ to support publish/subscribe models, making it easier to handle communication between various services.</p>
+        <div class="ps-columns">
+          <div class="ps-main">
+            <div class="ps-body">
+              <p>In today&rsquo;s highly interconnected systems, efficient and reliable communication between services is crucial for building scalable and resilient microservice architectures. To address this, I built the <strong>Message Queue Microservice</strong>, a gRPC-based messaging system powered by RabbitMQ to support publish/subscribe models, making it easier to handle communication between various services.</p>
 <p>This article outlines the development of the microservice, the features it provides, and the technical challenges encountered during the implementation.</p>
 <h2 id="project-overview">Project Overview</h2>
 <p>The <strong>Message Queue Microservice</strong> is designed to facilitate communication between distributed services by using RabbitMQ to queue and distribute messages. The microservice allows for two main messaging patterns: <strong>Direct</strong> and <strong>Fanout</strong> publish/subscribe.</p>
@@ -1004,70 +1016,70 @@
 <p>Building the <strong>Message Queue Microservice</strong> was a rewarding experience that helped me deepen my understanding of distributed systems and gRPC-based communication. RabbitMQ provided a robust and scalable foundation for handling messages, while Docker ensured that the service could be deployed easily across environments.</p>
 <p>If you’re interested in the technical implementation, feel free to check out the project on <a href="https://github.com/your-username/msg-queue-microservice">GitHub</a>. This project is open-source and contributions are welcome.</p>
 <hr>
-<ul class="pa0">
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/grpc/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GRPC</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/rabbitmq/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">RabbitMQ</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/microservices/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Microservices</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/docker/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Docker</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/node.js/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Node.js</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/typescript/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">TypeScript</a>
-   </li>
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
+
+            </div>
+
+            
+            <div class="ps-tags-wrap" aria-label="Tags">
+              <span class="ps-tags-label">Topics</span>
+              <div class="ps-tags">
+                
+                <a href="https://yx-fan.github.io/tags/grpc/" class="ps-tag">GRPC</a>
+                
+                <a href="https://yx-fan.github.io/tags/rabbitmq/" class="ps-tag">RabbitMQ</a>
+                
+                <a href="https://yx-fan.github.io/tags/microservices/" class="ps-tag">Microservices</a>
+                
+                <a href="https://yx-fan.github.io/tags/docker/" class="ps-tag">Docker</a>
+                
+                <a href="https://yx-fan.github.io/tags/node.js/" class="ps-tag">Node.js</a>
+                
+                <a href="https://yx-fan.github.io/tags/typescript/" class="ps-tag">TypeScript</a>
+                
+              </div>
+            </div>
+            
+
+            <footer class="ps-end">
+              <a href="https://yx-fan.github.io/projects/" class="ps-btn">
+                <span>Back to all projects</span>
+                <span class="ps-btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </footer>
+          </div>
+
+          <aside class="ps-aside" aria-labelledby="ps-related-title">
+            <div class="ps-related-card">
+              <h2 id="ps-related-title" class="ps-related-title">Related</h2>
+              
+              
+              <ul class="ps-related-list">
+                
+                <li>
+                  <a href="https://yx-fan.github.io/projects/push-notification-microservice-project/">Push Notification Microservice: Scalable Multi-Platform Notification System</a>
+                </li>
+                
+                <li>
+                  <a href="https://yx-fan.github.io/projects/chat-platform-system-design-core-project/">CoolChat Platform System Design: Scalable and Secure Chat Architecture</a>
+                </li>
+                
+                <li>
+                  <a href="https://yx-fan.github.io/projects/mongodb-infra-project/">MongoDB Cluster Setup: Automated Deployment for High Availability and Scalability</a>
+                </li>
+                
+                <li>
+                  <a href="https://yx-fan.github.io/projects/web3-auth-core-project/">Web3 Wallet Authentication System: A Decentralized Approach</a>
+                </li>
+                
+              </ul>
+              
+              <a href="https://yx-fan.github.io/projects/" class="ps-related-all">View all projects →</a>
+            </div>
+          </aside>
+        </div>
+      </article>
     </div>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/push-notification-microservice-project/">Push Notification Microservice: Scalable Multi-Platform Notification System</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/chat-platform-system-design-core-project/">CoolChat Platform System Design: Scalable and Secure Chat Architecture</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/mongodb-infra-project/">MongoDB Cluster Setup: Automated Deployment for High Availability and Scalability</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/web3-auth-core-project/">Web3 Wallet Authentication System: A Decentralized Approach</a>
-        </li>
-	    
-    </ul>
-</div>
-
-</aside>
-
-  </article>
+  </div>
 
     </main>
     

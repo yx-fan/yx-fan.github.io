@@ -323,12 +323,13 @@
   <meta name="twitter:description" content="A gRPC-based push notification microservice.">
 
 	
+  <link rel="stylesheet" href="https://yx-fan.github.io/css/projects-single.css">
+
   </head>
 
   <body class="ma0 avenir bg-near-white production">
 
     
-   
   
 
   <header>
@@ -892,14 +893,14 @@
 
     <main class="pb7" role="main">
       
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        My Projects
-      </aside>
-      
+  <div class="ps-page">
+    <div class="ps-container">
+      <nav class="ps-nav" aria-label="Project navigation">
+        <a href="https://yx-fan.github.io/projects/" class="ps-nav-back">
+          <span class="ps-nav-back-icon" aria-hidden="true">←</span>
+          <span>All projects</span>
+        </a>
+        <div class="ps-nav-share">
 
 
 
@@ -932,18 +933,29 @@
   </div>
 
 
+</div>
+      </nav>
 
-      <h1 class="f1 athelas mt3 mb1">Push Notification Microservice: Scalable Multi-Platform Notification System</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2024-10-05T00:00:00Z">October 5, 2024</time>
-      
+      <article class="ps-article">
+        <header class="ps-header">
+          <p class="ps-eyebrow">My Projects</p>
+          <h1 class="ps-title">Push Notification Microservice: Scalable Multi-Platform Notification System</h1>
+          <div class="ps-meta">
+            
+            <time class="ps-meta-time" datetime="2024-10-05T00:00:00Z">October 5, 2024</time>
+            <span class="ps-meta-dot" aria-hidden="true">·</span>
+            
+            <span class="ps-meta-read">4 min read</span>
+          </div>
+          
+          <p class="ps-lede">A gRPC-based push notification microservice.</p>
+          
+        </header>
 
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="overview">Overview</h2>
+        <div class="ps-columns">
+          <div class="ps-main">
+            <div class="ps-body">
+              <h2 id="overview">Overview</h2>
 <p>The <strong>Push Notification Microservice</strong> is a project I developed to handle the complexities of sending push notifications to different platforms, such as iOS and Android, using multiple providers. The service is built with <strong>Node.js</strong> and <strong>gRPC</strong>, enabling it to efficiently send notifications based on the platform and region.</p>
 <p>Additionally, the project includes <strong>grpcui</strong>, a web-based UI that allows developers to interact with the gRPC service directly through a browser. This service is designed to be scalable and easily extendable, allowing integration with new notification providers in the future.</p>
 <h2 id="system-architecture">System Architecture</h2>
@@ -1002,47 +1014,52 @@
 <h2 id="conclusion">Conclusion</h2>
 <p>The <strong>Push Notification Microservice</strong> was developed as part of a broader system for handling notifications across platforms and regions. It is a flexible, scalable solution that leverages the power of gRPC and supports multiple providers. In the future, I plan to extend this project by adding more notification providers and further optimizing performance.</p>
 <p>For more projects and updates, visit my <a href="https://github.com/yx-fan/push-notification-microservice">GitHub profile</a>.</p>
-<ul class="pa0">
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/grpc/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">GRPC</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/microservices/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Microservices</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/node.js/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Node.js</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/typescript/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">TypeScript</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/docker/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Docker</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/push-notifications/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Push Notifications</a>
-   </li>
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
+
+            </div>
+
+            
+            <div class="ps-tags-wrap" aria-label="Tags">
+              <span class="ps-tags-label">Topics</span>
+              <div class="ps-tags">
+                
+                <a href="https://yx-fan.github.io/tags/grpc/" class="ps-tag">GRPC</a>
+                
+                <a href="https://yx-fan.github.io/tags/microservices/" class="ps-tag">Microservices</a>
+                
+                <a href="https://yx-fan.github.io/tags/node.js/" class="ps-tag">Node.js</a>
+                
+                <a href="https://yx-fan.github.io/tags/typescript/" class="ps-tag">TypeScript</a>
+                
+                <a href="https://yx-fan.github.io/tags/docker/" class="ps-tag">Docker</a>
+                
+                <a href="https://yx-fan.github.io/tags/push-notifications/" class="ps-tag">Push Notifications</a>
+                
+              </div>
+            </div>
+            
+
+            <footer class="ps-end">
+              <a href="https://yx-fan.github.io/projects/" class="ps-btn">
+                <span>Back to all projects</span>
+                <span class="ps-btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </footer>
+          </div>
+
+          <aside class="ps-aside" aria-labelledby="ps-related-title">
+            <div class="ps-related-card">
+              <h2 id="ps-related-title" class="ps-related-title">Related</h2>
+              
+              
+              <p class="ps-related-empty">Explore more on the projects page.</p>
+              
+              <a href="https://yx-fan.github.io/projects/" class="ps-related-all">View all projects →</a>
+            </div>
+          </aside>
+        </div>
+      </article>
     </div>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-</aside>
-
-  </article>
+  </div>
 
     </main>
     

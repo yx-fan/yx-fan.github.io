@@ -1,0 +1,85 @@
+{{ define "head" }}
+  <link rel="stylesheet" href="{{ "css/projects-single.css" | absURL }}">
+{{ end }}
+
+{{ define "header" }}
+  {{ partial "page-header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  <div class="ps-page">
+    <div class="ps-container">
+      <nav class="ps-nav" aria-label="Project navigation">
+        <a href="{{ .Parent.Permalink }}" class="ps-nav-back">
+          <span class="ps-nav-back-icon" aria-hidden="true">←</span>
+          <span>All projects</span>
+        </a>
+        <div class="ps-nav-share">
+          {{- partial "social-share.html" . -}}
+        </div>
+      </nav>
+
+      <article class="ps-article">
+        <header class="ps-header">
+          <p class="ps-eyebrow">{{ .CurrentSection.Title | default "Projects" }}</p>
+          <h1 class="ps-title">{{ .Title }}</h1>
+          <div class="ps-meta">
+            {{ if not .Date.IsZero }}
+            <time class="ps-meta-time" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            <span class="ps-meta-dot" aria-hidden="true">·</span>
+            {{ end }}
+            <span class="ps-meta-read">{{ .ReadingTime }} min read</span>
+          </div>
+          {{ with .Params.summary }}
+          <p class="ps-lede">{{ . }}</p>
+          {{ end }}
+        </header>
+
+        <div class="ps-columns">
+          <div class="ps-main">
+            <div class="ps-body">
+              {{ .Content }}
+            </div>
+
+            {{ with .GetTerms "tags" }}
+            <div class="ps-tags-wrap" aria-label="Tags">
+              <span class="ps-tags-label">Topics</span>
+              <div class="ps-tags">
+                {{ range . }}
+                <a href="{{ .RelPermalink }}" class="ps-tag">{{ .LinkTitle }}</a>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+
+            <footer class="ps-end">
+              <a href="{{ .Parent.Permalink }}" class="ps-btn">
+                <span>Back to all projects</span>
+                <span class="ps-btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </footer>
+          </div>
+
+          <aside class="ps-aside" aria-labelledby="ps-related-title">
+            <div class="ps-related-card">
+              <h2 id="ps-related-title" class="ps-related-title">Related</h2>
+              {{ $related := .Site.RegularPages.Related . | first 8 }}
+              {{ with $related }}
+              <ul class="ps-related-list">
+                {{ range . }}
+                <li>
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </li>
+                {{ end }}
+              </ul>
+              {{ else }}
+              <p class="ps-related-empty">Explore more on the projects page.</p>
+              {{ end }}
+              <a href="{{ $.Parent.Permalink }}" class="ps-related-all">View all projects →</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </div>
+  </div>
+{{ end }}

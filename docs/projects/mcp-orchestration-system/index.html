@@ -323,12 +323,13 @@
   <meta name="twitter:description" content="A production-oriented MCP (Model Control Plane) orchestration system designed to manage agentic workflows with statefulness, extensibility, cost control, and multi-step reasoning capabilities.">
 
 	
+  <link rel="stylesheet" href="https://yx-fan.github.io/css/projects-single.css">
+
   </head>
 
   <body class="ma0 avenir bg-near-white production">
 
     
-   
   
 
   <header>
@@ -892,14 +893,14 @@
 
     <main class="pb7" role="main">
       
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        My Projects
-      </aside>
-      
+  <div class="ps-page">
+    <div class="ps-container">
+      <nav class="ps-nav" aria-label="Project navigation">
+        <a href="https://yx-fan.github.io/projects/" class="ps-nav-back">
+          <span class="ps-nav-back-icon" aria-hidden="true">←</span>
+          <span>All projects</span>
+        </a>
+        <div class="ps-nav-share">
 
 
 
@@ -932,18 +933,29 @@
   </div>
 
 
+</div>
+      </nav>
 
-      <h1 class="f1 athelas mt3 mb1">MCP Orchestration System: Production-Oriented Agent Control Plane</h1>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2026-02-05T00:00:00Z">February 5, 2026</time>
-      
+      <article class="ps-article">
+        <header class="ps-header">
+          <p class="ps-eyebrow">My Projects</p>
+          <h1 class="ps-title">MCP Orchestration System: Production-Oriented Agent Control Plane</h1>
+          <div class="ps-meta">
+            
+            <time class="ps-meta-time" datetime="2026-02-05T00:00:00Z">February 5, 2026</time>
+            <span class="ps-meta-dot" aria-hidden="true">·</span>
+            
+            <span class="ps-meta-read">7 min read</span>
+          </div>
+          
+          <p class="ps-lede">A production-oriented MCP (Model Control Plane) orchestration system designed to manage agentic workflows with statefulness, extensibility, cost control, and multi-step reasoning capabilities.</p>
+          
+        </header>
 
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h3 id="1-overview">1. Overview</h3>
+        <div class="ps-columns">
+          <div class="ps-main">
+            <div class="ps-body">
+              <h3 id="1-overview">1. Overview</h3>
 <p>As large language models become increasingly capable, many systems treat them as the center of the architecture: a single prompt in, a single response out. While this approach is sufficient for demos, it quickly breaks down in production settings that require statefulness, extensibility, cost control, and multi-step reasoning.</p>
 <p>This project implements a production-oriented MCP (Model Control Plane) orchestration system designed to manage agentic workflows in a structured, observable, and evolvable manner.</p>
 <p>Rather than framing the system as &ldquo;an AI agent,&rdquo; it is deliberately designed as a control plane that coordinates intent understanding, workflow planning, conditional execution, state and memory management, and post-execution validation and persistence.</p>
@@ -996,110 +1008,88 @@
 <h3 id="6-conclusion">6. Conclusion</h3>
 <p>This project demonstrates that scalable agentic systems require control planes, not clever prompts. By treating intent resolution, workflow planning, execution, and memory as separate but coordinated responsibilities, the MCP architecture provides a robust foundation for building complex, multi-step AI systems that remain understandable, testable, and extensible.</p>
 <p>The resulting system is not a chatbot—it is an agent orchestration platform capable of supporting diverse domains, evolving workflows, and production-level operational constraints. The architecture&rsquo;s emphasis on explicit contracts, centralized orchestration, and configuration-driven workflows ensures that the system can evolve without becoming unmaintainable, making it suitable for production environments where reliability, observability, and cost control are paramount.</p>
-<ul class="pa0">
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/system-design/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">System Design</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/ai-orchestration/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">AI Orchestration</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/llm/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">LLM</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/langgraph/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">LangGraph</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/redis/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Redis</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/vector-database/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Vector Database</a>
-   </li>
-  
-   <li class="list di">
-     <a href="https://yx-fan.github.io/tags/microservices/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Microservices</a>
-   </li>
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
+
+            </div>
+
+            
+            <div class="ps-tags-wrap" aria-label="Tags">
+              <span class="ps-tags-label">Topics</span>
+              <div class="ps-tags">
+                
+                <a href="https://yx-fan.github.io/tags/system-design/" class="ps-tag">System Design</a>
+                
+                <a href="https://yx-fan.github.io/tags/ai-orchestration/" class="ps-tag">AI Orchestration</a>
+                
+                <a href="https://yx-fan.github.io/tags/llm/" class="ps-tag">LLM</a>
+                
+                <a href="https://yx-fan.github.io/tags/langgraph/" class="ps-tag">LangGraph</a>
+                
+                <a href="https://yx-fan.github.io/tags/redis/" class="ps-tag">Redis</a>
+                
+                <a href="https://yx-fan.github.io/tags/vector-database/" class="ps-tag">Vector Database</a>
+                
+                <a href="https://yx-fan.github.io/tags/microservices/" class="ps-tag">Microservices</a>
+                
+              </div>
+            </div>
+            
+
+            <footer class="ps-end">
+              <a href="https://yx-fan.github.io/projects/" class="ps-btn">
+                <span>Back to all projects</span>
+                <span class="ps-btn-arrow" aria-hidden="true">→</span>
+              </a>
+            </footer>
+          </div>
+
+          <aside class="ps-aside" aria-labelledby="ps-related-title">
+            <div class="ps-related-card">
+              <h2 id="ps-related-title" class="ps-related-title">Related</h2>
+              
+              
+              <ul class="ps-related-list">
+                
+                <li>
+                  <a href="https://yx-fan.github.io/projects/chat-platform-system-design-core-project/">CoolChat Platform System Design: Scalable and Secure Chat Architecture</a>
+                </li>
+                
+                <li>
+                  <a href="https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/">Using Redis Sorted Sets for Recent User Search History</a>
+                </li>
+                
+                <li>
+                  <a href="https://yx-fan.github.io/projects/semantic-search-system-milvus-reranking/">Building a Production-Oriented Semantic Search System with Milvus and Cross-Encoder Reranking</a>
+                </li>
+                
+                <li>
+                  <a href="https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/">Distributed Lock vs Row Lock vs Transaction</a>
+                </li>
+                
+                <li>
+                  <a href="https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/">How Node.js Achieves High Concurrency on a Single CPU Core</a>
+                </li>
+                
+                <li>
+                  <a href="https://yx-fan.github.io/projects/cluster-based-summarization-system/">Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline</a>
+                </li>
+                
+                <li>
+                  <a href="https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/">Why OpenSearch Shouldn&#39;t Be Used as a Primary Database</a>
+                </li>
+                
+                <li>
+                  <a href="https://yx-fan.github.io/log/sql-in-the-ai-era/">SQL in the AI Era</a>
+                </li>
+                
+              </ul>
+              
+              <a href="https://yx-fan.github.io/projects/" class="ps-related-all">View all projects →</a>
+            </div>
+          </aside>
+        </div>
+      </article>
     </div>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/chat-platform-system-design-core-project/">CoolChat Platform System Design: Scalable and Secure Chat Architecture</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/log/redis-sorted-sets-recent-search-history/">Using Redis Sorted Sets for Recent User Search History</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/semantic-search-system-milvus-reranking/">Building a Production-Oriented Semantic Search System with Milvus and Cross-Encoder Reranking</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/log/distributed-lock-vs-row-lock-vs-transaction/">Distributed Lock vs Row Lock vs Transaction</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/log/how-nodejs-achieves-high-concurrency/">How Node.js Achieves High Concurrency on a Single CPU Core</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/cluster-based-summarization-system/">Cluster-Based Summarization System: Scalable Text Clustering and Summarization Pipeline</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/log/opensearch-shouldnt-be-primary-database/">Why OpenSearch Shouldn&#39;t Be Used as a Primary Database</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/log/sql-in-the-ai-era/">SQL in the AI Era</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/chat-group-core/">Group Chat Architecture and Implementation</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/chat-one-to-one-core/">One-to-One Chat Architecture and Implementation</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/travel-expense-tracker-backend-system-core/">Travel Expense Tracker Backend System</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/msg-queue-microservice-project/">Message Queue Microservice: Building a Scalable gRPC and RabbitMQ-Based Solution</a>
-        </li>
-	    
-	     <li  class="mb2">
-          <a href="https://yx-fan.github.io/projects/push-notification-microservice-project/">Push Notification Microservice: Scalable Multi-Platform Notification System</a>
-        </li>
-	    
-    </ul>
-</div>
-
-</aside>
-
-  </article>
+  </div>
 
     </main>
     
